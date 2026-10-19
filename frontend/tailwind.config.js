@@ -10,9 +10,62 @@ export default {
 			},
 			colors: {
 				overlay: 'rgb(10 10 12 / <alpha-value>)',
-				'pc-pink': '#ff00ff',
-				'pc-pink-hover': '#fa48ff',
-				'pc-purple': '#9622fc',
+				// Dasenda surface/content ramp, replacing Tailwind's default gray
+				// scale — the single highest-leverage change for the app's overall
+				// look: gray-50..950 covers ~2000 class usages across every panel,
+				// border and text color in this codebase. One monotonic ramp serves
+				// both modes the same way the original scale did — direction (light
+				// vs dark class), not which mode is active, decides which end reads.
+				gray: {
+					50: '#F3F4F6',
+					100: '#EEF0F2',
+					200: '#CBD1D4',
+					300: '#A3A8AD',
+					400: '#8B9196',
+					500: '#5A5F66',
+					600: '#33353A',
+					700: '#1C1D20',
+					800: '#121213',
+					900: '#070809',
+					950: '#050607'
+				},
+				// slate is used almost as heavily as gray in this codebase (199
+				// usages) for the same neutral surface/border/text role — same ramp,
+				// so it doesn't clash against the now-teal-tinted gray scale above.
+				slate: {
+					50: '#F3F4F6',
+					100: '#EEF0F2',
+					200: '#CBD1D4',
+					300: '#A3A8AD',
+					400: '#8B9196',
+					500: '#5A5F66',
+					600: '#33353A',
+					700: '#1C1D20',
+					800: '#121213',
+					900: '#070809',
+					950: '#050607'
+				},
+				// Tailwind's default blue scale, replaced the same way as gray above —
+				// this is the actual dominant primary/CTA/link color in the markup
+				// (289 raw blue-NNN usages, far more than the semantic cta-blue name).
+				blue: {
+					50: 'rgb(var(--pc-blue-50) / <alpha-value>)',
+					100: 'rgb(var(--pc-blue-100) / <alpha-value>)',
+					200: 'rgb(var(--pc-blue-200) / <alpha-value>)',
+					300: 'rgb(var(--pc-blue-300) / <alpha-value>)',
+					400: 'rgb(var(--pc-blue-400) / <alpha-value>)',
+					500: 'rgb(var(--pc-blue-500) / <alpha-value>)',
+					600: 'rgb(var(--pc-blue-600) / <alpha-value>)',
+					700: 'rgb(var(--pc-blue-700) / <alpha-value>)',
+					800: 'rgb(var(--pc-blue-800) / <alpha-value>)',
+					900: 'rgb(var(--pc-blue-900) / <alpha-value>)'
+				},
+				// Dasenda brand accent (app.css defines --pc-accent* and swaps it per
+				// html.dark) — consolidates what were three upstream brand hues
+				// (pink/purple used as primary CTA colors) into Dasenda's one accent.
+				'pc-pink': 'rgb(var(--pc-accent) / <alpha-value>)',
+				'pc-pink-hover': 'rgb(var(--pc-accent-hover) / <alpha-value>)',
+				'pc-purple': 'rgb(var(--pc-accent) / <alpha-value>)',
 				'devil-gray': '#666',
 				'half-devil-gray': '#333',
 				'pc-red': '#f6287b',
@@ -20,9 +73,11 @@ export default {
 				'pleasant-gray': '#f8f8ff',
 				'grayblue-light': '#ebeaf9',
 				'grayblue-dark': '#9a9ab7',
-				'cta-blue': '#445ecc',
-				'active-blue': '#1e3fa8',
-				'highlight-blue': '#6887ea',
+				// Also consolidated into the Dasenda accent — same reasoning as
+				// pc-pink/pc-purple above (primary CTA / selected-state colors).
+				'cta-blue': 'rgb(var(--pc-accent) / <alpha-value>)',
+				'active-blue': 'rgb(var(--pc-accent-active) / <alpha-value>)',
+				'highlight-blue': 'rgb(var(--pc-accent-hover) / <alpha-value>)',
 				'cta-green': '#5dd8c4',
 				'cta-light-blue': '#d4d4ff',
 				'cta-orange': '#f9a66e',

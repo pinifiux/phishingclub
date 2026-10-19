@@ -2,6 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dasenda (Carpent design system v1.2) brand tokens — same source of truth as
+   Cassiterion-SOC (index.css, html.reseller-dasenda) and Craine-Console
+   (theme/index.ts). Appearance only; these back the pc-* / cta-* / active-* /
+   highlight-* Tailwind color names in tailwind.config.js, which is what
+   every component actually references — nothing below is read directly. */
+:root {
+	--pc-accent: var(--pc-accent-light-mode);
+	--pc-accent-hover: var(--pc-accent-light-mode-hover);
+	--pc-accent-active: var(--pc-accent-light-mode-active);
+
+	--pc-accent-light-mode: 11 110 115;
+	--pc-accent-light-mode-hover: 84 154 157;
+	--pc-accent-light-mode-active: 8 77 80;
+	--pc-accent-dark-mode: 61 219 217;
+	--pc-accent-dark-mode-hover: 119 230 228;
+	--pc-accent-dark-mode-active: 43 153 152;
+
+	--pc-surface-raised: var(--pc-surface-raised-light);
+	--pc-surface-overlay: var(--pc-surface-overlay-light);
+	--pc-hairline: var(--pc-hairline-light);
+	--pc-content-primary: var(--pc-content-primary-light);
+	--pc-content-muted: var(--pc-content-muted-light);
+	--pc-content-subtle: var(--pc-content-subtle-light);
+
+	/* Tint/shade ramp derived from the accent, replacing Tailwind's default
+	   `blue` — the actual dominant primary/CTA/link color in this codebase
+	   (289 raw blue-NNN usages vs. a handful of the semantic cta-blue name).
+	   500/600 = the accent itself; lighter below, darker above. */
+	--pc-blue-50: 240 246 247;
+	--pc-blue-100: 221 235 235;
+	--pc-blue-200: 187 214 216;
+	--pc-blue-300: 143 188 191;
+	--pc-blue-400: 84 154 157;
+	--pc-blue-500: var(--pc-accent-light-mode);
+	--pc-blue-600: var(--pc-accent-light-mode);
+	--pc-blue-700: 9 90 94;
+	--pc-blue-800: 7 70 74;
+	--pc-blue-900: 5 51 53;
+
+	--pc-surface-base-dark: 7 8 9;
+	--pc-surface-raised-dark: 18 18 19;
+	--pc-surface-overlay-dark: 28 29 32;
+	--pc-hairline-dark: 37 37 38;
+	--pc-content-primary-dark: 237 237 237;
+	--pc-content-muted-dark: 163 168 173;
+	--pc-content-subtle-dark: 139 145 150;
+
+	--pc-surface-base-light: 243 244 246;
+	--pc-surface-raised-light: 255 255 255;
+	--pc-surface-overlay-light: 238 240 242;
+	--pc-hairline-light: 230 232 235;
+	--pc-content-primary-light: 17 20 23;
+	--pc-content-muted-light: 75 83 89;
+	--pc-content-subtle-light: 99 107 114;
+}
+
+/* theme.js toggles this class on <html> — same mechanism already in place,
+   just repointing the accent/surface variables to the dark-mode set. */
+html.dark {
+	--pc-accent: var(--pc-accent-dark-mode);
+	--pc-accent-hover: var(--pc-accent-dark-mode-hover);
+	--pc-accent-active: var(--pc-accent-dark-mode-active);
+
+	--pc-surface-raised: var(--pc-surface-raised-dark);
+	--pc-surface-overlay: var(--pc-surface-overlay-dark);
+	--pc-hairline: var(--pc-hairline-dark);
+	--pc-content-primary: var(--pc-content-primary-dark);
+	--pc-content-muted: var(--pc-content-muted-dark);
+	--pc-content-subtle: var(--pc-content-subtle-dark);
+
+	--pc-blue-50: 243 253 253;
+	--pc-blue-100: 228 250 250;
+	--pc-blue-200: 201 245 244;
+	--pc-blue-300: 166 238 238;
+	--pc-blue-400: 119 230 228;
+	--pc-blue-500: var(--pc-accent-dark-mode);
+	--pc-blue-600: var(--pc-accent-dark-mode);
+	--pc-blue-700: 50 180 178;
+	--pc-blue-800: 39 140 139;
+	--pc-blue-900: 28 101 100;
+}
+
 /* @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@700;900&family=Titillium+Web:wght@400;600&display=swap'); */
 
 @font-face {
