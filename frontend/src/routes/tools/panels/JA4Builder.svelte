@@ -316,11 +316,11 @@
 			tabindex="0"
 			on:keypress={(e) => { if (e.key === 'Enter' || e.key === ' ') navigator.clipboard.writeText(ja4Result); }}
 		>
-			<p class="text-xs text-gray-600 dark:text-gray-400 mb-1">JA4 Fingerprint (click to copy):</p>
+			<p class="text-xs text-content-muted mb-1">JA4 Fingerprint (click to copy):</p>
 			<p class="text-sm font-mono font-medium text-blue-700 dark:text-blue-300 break-all select-all">
 				{ja4Result}
 			</p>
-			<p class="text-xs text-gray-500 dark:text-gray-500 mt-2 font-mono">
+			<p class="text-xs text-content-subtle mt-2 font-mono">
 				[protocol][version][sni][cipher_count][ext_count][alpn]_[sorted_cipher_hash]_[sorted_ext+sigalg_hash]
 			</p>
 		</div>
@@ -371,7 +371,7 @@
 			href="https://github.com/FoxIO-LLC/ja4"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-xs text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-200"
+			class="text-xs text-brand hover:underline transition-colors duration-200"
 		>
 			Learn more about JA4
 		</a>

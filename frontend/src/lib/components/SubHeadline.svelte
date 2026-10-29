@@ -1,5 +1,5 @@
 <h2
-	class="text-lg text-gray-600 dark:text-gray-300 font-bold uppercase transition-colors duration-200"
+	class="font-sans text-[11px] font-semibold uppercase tracking-[0.1em] text-content-muted"
 >
 	<slot />
 </h2>

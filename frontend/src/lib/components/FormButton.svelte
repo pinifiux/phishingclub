@@ -9,7 +9,7 @@
 	class:w-32={size === 'small'}
 	class:w-36={size === 'medium'}
 	class:w-60={size === 'large'}
-	class="bg-cta-blue px-2 py-2 self-end hover:opacity-80 dark:hover:opacity-90 text-white text-sm font-bold flex justify-center items-center uppercase rounded-md transition-all duration-200 disabled:opacity-50 dark:disabled:opacity-60"
+	class="bg-brand text-[#04231b] hover:bg-brand/90 px-3 py-1.5 self-end text-sm font-medium flex justify-center items-center rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-brand/40 disabled:opacity-50"
 	on:click
 >
 	{#if isSubmitting}

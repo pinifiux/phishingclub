@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <title>Cassiterion agent constellation pattern</title>
+  <g stroke="#C5A46B" stroke-width="1" fill="none" opacity="0.55">
+    <path d="M70 130L220 100L360 190L510 120L650 260L810 150L970 240L1120 140"/>
+    <path d="M40 380L180 300L330 420L470 330L610 430L760 340L910 450L1060 320L1180 390"/>
+    <path d="M90 650L240 560L390 690L540 570L700 680L850 580L1000 690L1160 570"/>
+    <path d="M220 100L180 300L240 560L220 100"/>
+    <path d="M360 190L330 420L390 690L360 190"/>
+    <path d="M510 120L470 330L540 570L510 120"/>
+    <path d="M650 260L610 430L700 680L650 260"/>
+    <path d="M810 150L760 340L850 580L810 150"/>
+    <path d="M970 240L910 450L1000 690L970 240"/>
+  </g>
+  <g fill="#C5A46B">
+    <circle cx="70" cy="130" r="4"/><circle cx="220" cy="100" r="4"/><circle cx="360" cy="190" r="4"/><circle cx="510" cy="120" r="4"/><circle cx="650" cy="260" r="4"/><circle cx="810" cy="150" r="4"/><circle cx="970" cy="240" r="4"/><circle cx="1120" cy="140" r="4"/>
+    <circle cx="40" cy="380" r="4"/><circle cx="180" cy="300" r="4"/><circle cx="330" cy="420" r="4"/><circle cx="470" cy="330" r="4"/><circle cx="610" cy="430" r="4"/><circle cx="760" cy="340" r="4"/><circle cx="910" cy="450" r="4"/><circle cx="1060" cy="320" r="4"/><circle cx="1180" cy="390" r="4"/>
+    <circle cx="90" cy="650" r="4"/><circle cx="240" cy="560" r="4"/><circle cx="390" cy="690" r="4"/><circle cx="540" cy="570" r="4"/><circle cx="700" cy="680" r="4"/><circle cx="850" cy="580" r="4"/><circle cx="1000" cy="690" r="4"/><circle cx="1160" cy="570" r="4"/>
+  </g>
+</svg>

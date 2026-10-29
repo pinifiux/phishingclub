@@ -152,7 +152,7 @@
 <div class="flex flex-wrap gap-6">
 	<SettingsCard title="PDF Reports">
 		<div class="space-y-4">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Generate PDF reports for campaigns. Requires Chromium and system dependencies.
 			</p>
 			<p
@@ -168,7 +168,7 @@
 		<svelte:fragment slot="footer">
 			<Button
 				size={'large'}
-				backgroundColor={isReportPDFEnabled ? 'bg-red-600' : 'bg-cta-blue'}
+				backgroundColor={isReportPDFEnabled ? 'bg-danger text-white hover:bg-danger/90' : 'bg-brand text-[#04231b] hover:bg-brand/90'}
 				disabled={isTogglingReportPDF}
 				on:click={onClickReportPDFToggle}
 			>
@@ -179,7 +179,7 @@
 
 	{#if isReportPDFEnabled}
 		<SettingsCard title="Report Template">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Default HTML template used when generating campaign PDF reports. Companies without their own
 				template fall back to this.
 			</p>
@@ -189,7 +189,7 @@
 		</SettingsCard>
 
 		<SettingsCard title="Report Delivery">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Default delivery settings used to email campaign reports. Companies without their own
 				configuration fall back to this.
 			</p>
@@ -217,7 +217,7 @@
 			modalMode="update"
 		>
 			<div
-				class="w-80vw col-start-1 col-end-4 row-start-1 py-8 px-6 flex flex-col bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+				class="w-80vw col-start-1 col-end-4 row-start-1 py-8 px-6 flex flex-col bg-surface-raised text-content transition-colors duration-200"
 			>
 				<Editor contentType="report" bind:value={reportTemplateContent} />
 				<FormError message={reportTemplateError} />
@@ -234,7 +234,7 @@
 		onConfirm={onConfirmEnableReportPDF}
 		ok="Enable"
 	>
-		<div class="mt-4 text-gray-700 dark:text-gray-200 space-y-3">
+		<div class="mt-4 text-content-muted space-y-3">
 			<p>
 				PDF report generation requires Chromium and additional system dependencies that are not part
 				of the standard installation.

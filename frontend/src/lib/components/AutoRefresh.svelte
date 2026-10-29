@@ -74,7 +74,7 @@
 <div class="absolute top-0 right-0 min-w-[180px]">
 	<div class="flex items-center gap-2">
 		<span
-			class="font-semibold text-slate-600 dark:text-gray-300 transition-colors duration-200 whitespace-nowrap"
+			class="font-semibold text-content-muted transition-colors duration-200 whitespace-nowrap"
 			>Auto-Refresh</span
 		>
 		<div class="relative">

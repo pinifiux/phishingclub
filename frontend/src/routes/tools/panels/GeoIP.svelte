@@ -57,13 +57,13 @@
 
 			<FormError message={lookupError} />
 
-			<div class="text-xs text-gray-500 dark:text-gray-400 transition-colors duration-200">
+			<div class="text-xs text-content-subtle transition-colors duration-200">
 				Data from
 				<a
 					href="https://github.com/ipverse/rir-ip"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="text-blue-600 dark:text-blue-400 hover:underline"
+					class="text-brand hover:underline"
 				>
 					ipverse/rir-ip
 				</a>

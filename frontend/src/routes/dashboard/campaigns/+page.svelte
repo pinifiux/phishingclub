@@ -209,7 +209,7 @@
 		<SubHeadline>Campaigns</SubHeadline>
 		<div class="flex items-center gap-4">
 			<label class="flex items-center gap-2 cursor-pointer">
-				<span class="font-semibold text-slate-600 dark:text-gray-300 whitespace-nowrap">
+				<span class="font-semibold text-content-muted whitespace-nowrap">
 					Include test campaigns
 				</span>
 				<div class="relative flex items-center">
@@ -221,12 +221,12 @@
 						class="peer sr-only"
 					/>
 					<div
-						class="w-5 h-5 border-2 border-slate-300 dark:border-gray-700/60 rounded
+						class="w-5 h-5 border-2 border-hairline rounded
 						       peer-checked:border-cta-blue dark:peer-checked:border-highlight-blue/80 peer-checked:bg-cta-blue dark:peer-checked:bg-highlight-blue/80
 						       peer-focus:border-slate-400 dark:peer-focus:border-highlight-blue/80 peer-focus:bg-gray-100 dark:peer-focus:bg-gray-700/60
 						       transition-all duration-200 ease-in-out
 						       flex items-center justify-center
-						       bg-slate-50 dark:bg-gray-900/60"
+						       bg-surface-inset"
 					>
 						{#if includeTestCampaigns}
 							<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,7 +242,7 @@
 				</div>
 			</label>
 			<div class="flex items-center gap-2">
-				<span class="font-semibold text-slate-600 dark:text-gray-300 whitespace-nowrap">
+				<span class="font-semibold text-content-muted whitespace-nowrap">
 					Auto-Refresh
 				</span>
 				<TextFieldSelect

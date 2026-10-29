@@ -736,7 +736,7 @@ portal.example.com:
 						/>
 						<TableCopyButton title={'Copy'} on:click={() => openCopyModal(proxy.id)} />
 						<button
-							class="w-full px py-1 text-slate-600 dark:text-gray-200 hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
+							class="w-full px py-1 text-content-muted hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
 							on:click={() => openIPAllowListModal(proxy)}
 							title="View IP Allow List"
 						>
@@ -766,9 +766,9 @@ portal.example.com:
 			>
 				{#if editorMode === 'yaml'}
 					<!-- Basic Information Section - only shown in YAML mode -->
-					<div class="w-full mb-6 pt-4 pb-2 border-b border-gray-200 dark:border-gray-600">
+					<div class="w-full mb-6 pt-4 pb-2 border-b border-hairline">
 						<div class="flex justify-between items-center mb-3">
-							<h3 class="text-base font-medium text-pc-darkblue dark:text-white">
+							<h3 class="text-base font-medium text-content">
 								Basic Information
 							</h3>
 						</div>
@@ -830,7 +830,7 @@ portal.example.com:
 				>
 					<div class={isModalFullscreen ? 'flex flex-col h-full min-h-0' : 'space-y-4'}>
 						<div class="flex items-center justify-between mb-4">
-							<h3 class="text-base font-medium text-pc-darkblue dark:text-white">
+							<h3 class="text-base font-medium text-content">
 								Proxy Configuration
 							</h3>
 							<div class="flex items-center gap-3">
@@ -838,7 +838,7 @@ portal.example.com:
 								<div class="flex gap-2">
 									<button
 										type="button"
-										class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-gray-400 bg-slate-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-md hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors"
+										class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-content-muted bg-slate-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-md hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors"
 										on:click={() =>
 											editorMode === 'yaml'
 												? triggerYamlImport()
@@ -860,7 +860,7 @@ portal.example.com:
 									</button>
 									<button
 										type="button"
-										class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-gray-400 bg-slate-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-md hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors"
+										class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-content-muted bg-slate-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-md hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors"
 										on:click={() =>
 											editorMode === 'yaml'
 												? exportYamlConfig()
@@ -883,14 +883,14 @@ portal.example.com:
 								</div>
 								<!-- Editor Mode Tabs -->
 								<div
-									class="flex border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden"
+									class="flex border border-hairline rounded-lg overflow-hidden"
 								>
 									<button
 										type="button"
 										class="px-4 py-2 text-sm font-medium transition-colors duration-200 {editorMode ===
 										'yaml'
 											? 'bg-blue-600 text-white'
-											: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'}"
+											: 'bg-surface-overlay text-content-muted hover:bg-gray-200 dark:hover:bg-gray-600'}"
 										on:click={() => (editorMode = 'yaml')}
 									>
 										YAML
@@ -900,7 +900,7 @@ portal.example.com:
 										class="px-4 py-2 text-sm font-medium transition-colors duration-200 {editorMode ===
 										'gui'
 											? 'bg-blue-600 text-white'
-											: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'}"
+											: 'bg-surface-overlay text-content-muted hover:bg-gray-200 dark:hover:bg-gray-600'}"
 										on:click={() => (editorMode = 'gui')}
 									>
 										Visual
@@ -990,10 +990,10 @@ portal.example.com:
 				{#if isLoadingIPAllowList}
 					<div class="flex items-center justify-center py-8">
 						<div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-						<span class="ml-2 text-gray-600 dark:text-gray-400">Loading...</span>
+						<span class="ml-2 text-content-muted">Loading...</span>
 					</div>
 				{:else if !ipAllowListEntries || ipAllowListEntries.length === 0}
-					<div class="text-center py-8 text-gray-500 dark:text-gray-400">
+					<div class="text-center py-8 text-content-subtle">
 						No IP addresses are allow listed
 					</div>
 				{:else}

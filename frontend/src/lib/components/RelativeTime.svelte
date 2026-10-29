@@ -88,7 +88,7 @@
 		: value instanceof Date
 			? value.toLocaleString()
 			: ''}
-	class="text-gray-600 dark:text-gray-400 transition-colors duration-200"
+	class="text-content-muted transition-colors duration-200"
 >
 	{formattedTime}
 </span>

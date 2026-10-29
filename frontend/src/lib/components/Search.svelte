@@ -30,7 +30,7 @@
 </script>
 
 <div class="relative flex items-center">
-	<img class="ml-2 w-4 h-4 absolute z-10" src="/search-icon.svg" alt="search icon" />
+	<img class="ml-2.5 w-3.5 h-3.5 absolute z-10 opacity-60 dark:invert" src="/search-icon.svg" alt="search icon" />
 	<input
 		type="text"
 		bind:value
@@ -39,7 +39,7 @@
 				setSearch();
 			}
 		}}
-		class="bg-grayblue-light dark:bg-gray-900/60 w-56 border text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-700/60 pl-8 py-2 relative rounded-lg focus:outline-none focus:ring-0 focus:border-cta-blue dark:focus:border-highlight-blue/80 focus:border transition-colors duration-200"
+		class="relative w-56 rounded-md border border-hairline bg-surface-inset text-sm text-content outline-none placeholder:text-content-subtle focus:border-brand/60 py-1.5 pl-8 pr-3"
 		placeholder="Search"
 	/>
 </div>

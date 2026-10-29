@@ -273,17 +273,17 @@
 		tabindex="-1"
 	>
 		<div
-			class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-lg mx-4 overflow-hidden transition-colors duration-200"
+			class="bg-surface-raised rounded-lg shadow-2xl w-full max-w-lg mx-4 overflow-hidden transition-colors duration-200"
 			role="presentation"
 		>
 			<!-- search input -->
-			<div class="p-4 border-b border-gray-200 dark:border-gray-700 transition-colors duration-200">
+			<div class="p-4 border-b border-hairline transition-colors duration-200">
 				<input
 					bind:this={searchInput}
 					bind:value={searchQuery}
 					type="text"
 					placeholder="search pages..."
-					class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-200"
+					class="w-full px-3 py-2 bg-surface-overlay border border-hairline rounded-md text-content focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-200"
 				/>
 			</div>
 
@@ -291,7 +291,7 @@
 			<div class="max-h-96 overflow-y-auto">
 				{#if filteredItems.length === 0}
 					<div
-						class="p-4 text-center text-gray-500 dark:text-gray-400 transition-colors duration-200"
+						class="p-4 text-center text-content-subtle transition-colors duration-200"
 					>
 						no pages found
 					</div>
@@ -308,15 +308,15 @@
 						>
 							<div class="flex flex-col">
 								<span
-									class="text-gray-900 dark:text-gray-100 font-medium transition-colors duration-200"
+									class="text-content font-medium transition-colors duration-200"
 								>
 									{item.label}
 									{#if item.external}
-										<span class="text-xs text-gray-500 dark:text-gray-400 ml-1">↗</span>
+										<span class="text-xs text-content-subtle ml-1">↗</span>
 									{/if}
 								</span>
 								<span
-									class="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200"
+									class="text-sm text-content-subtle transition-colors duration-200"
 								>
 									{item.category}
 								</span>

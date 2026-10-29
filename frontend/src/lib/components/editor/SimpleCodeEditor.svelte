@@ -229,7 +229,7 @@
 	class:dark:bg-gray-900={isExpanded}
 >
 	<div
-		class="bg-white dark:bg-gray-800 transition-colors duration-200"
+		class="bg-surface-raised transition-colors duration-200"
 		class:rounded-md={!isExpanded}
 		class:h-full={isExpanded}
 		class:flex={isExpanded}
@@ -273,7 +273,7 @@
 					<button
 						type="button"
 						on:click={() => (isExpanded = !isExpanded)}
-						class="h-8 border-2 border-gray-300 dark:border-gray-600 rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+						class="h-8 border-2 border-hairline rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-surface-raised text-content-muted transition-colors duration-200"
 					>
 						{#if !isExpanded}
 							<!-- Expand icon -->
@@ -313,7 +313,7 @@
 					</button>
 				{/if}
 				{#if enableProxyCompletion}
-					<div class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+					<div class="flex items-center text-xs text-content-subtle">
 						<span>Ctrl+Space for suggestions • Tab to accept</span>
 					</div>
 				{/if}
@@ -352,7 +352,7 @@
 			<button
 				type="button"
 				on:click={() => (showExample = !showExample)}
-				class="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline focus:outline-none transition-colors duration-200"
+				class="text-xs text-brand hover:text-blue-800 dark:hover:text-blue-300 underline focus:outline-none transition-colors duration-200"
 			>
 				{showExample ? 'Hide' : 'Show'} example
 			</button>

@@ -1002,14 +1002,14 @@ declare var Infinity: number;
 
 	<!-- Main split: editor + right panel -->
 	<div
-		class="flex flex-1 gap-0 min-h-0 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden"
+		class="flex flex-1 gap-0 min-h-0 border border-hairline rounded-md overflow-hidden"
 	>
 		<!-- JS editor (60%) -->
 		<div class="flex flex-col" style="flex: 6; min-width: 0;">
 			<div
-				class="flex items-center justify-between px-3 py-1 bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
+				class="flex items-center justify-between px-3 py-1 bg-gray-100 dark:bg-gray-800 border-b border-hairline"
 			>
-				<span class="text-xs font-mono text-gray-500 dark:text-gray-400">JavaScript</span>
+				<span class="text-xs font-mono text-content-subtle">JavaScript</span>
 				<button
 					type="button"
 					on:click={() => vimModeEnabled.update((v) => !v)}
@@ -1036,7 +1036,7 @@ declare var Infinity: number;
 			<div bind:this={editorContainer} class="flex-1" style="min-height: 0;"></div>
 			<div
 				bind:this={vimStatusBarEl}
-				class="h-5 bg-gray-100 dark:bg-gray-800 text-xs text-gray-500 dark:text-gray-400 px-2"
+				class="h-5 bg-gray-100 dark:bg-gray-800 text-xs text-content-subtle px-2"
 			></div>
 		</div>
 
@@ -1046,12 +1046,12 @@ declare var Infinity: number;
 		<!-- Right panel (40%) -->
 		<div class="flex flex-col" style="flex: 4; min-width: 0;">
 			<!-- Tab bar -->
-			<div class="flex border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+			<div class="flex border-b border-hairline bg-surface-overlay">
 				<button
 					type="button"
 					class="px-4 py-2 text-sm font-medium transition-colors {activeTab === 'config'
-						? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-500'
-						: 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}"
+						? 'text-brand border-b-2 border-blue-500'
+						: 'text-content-subtle hover:text-gray-700 dark:hover:text-gray-200'}"
 					on:click={() => (activeTab = 'config')}
 				>
 					Config
@@ -1059,8 +1059,8 @@ declare var Infinity: number;
 				<button
 					type="button"
 					class="px-4 py-2 text-sm font-medium transition-colors {activeTab === 'run'
-						? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-500'
-						: 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}"
+						? 'text-brand border-b-2 border-blue-500'
+						: 'text-content-subtle hover:text-gray-700 dark:hover:text-gray-200'}"
 					on:click={() => (activeTab = 'run')}
 				>
 					Run / Test
@@ -1077,7 +1077,7 @@ declare var Infinity: number;
 				{#if activeTab === 'config'}
 					<div class="space-y-4">
 						<div>
-							<p class="block text-xs font-medium text-gray-600 dark:text-gray-400 mb-1">
+							<p class="block text-xs font-medium text-content-muted mb-1">
 								Browser Mode
 							</p>
 							<div class="flex gap-2">
@@ -1085,7 +1085,7 @@ declare var Infinity: number;
 									type="button"
 									class="flex-1 py-1.5 text-sm rounded border transition-colors {cfgMode === 'local'
 										? 'bg-blue-600 text-white border-blue-600'
-										: 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-blue-400'}"
+										: 'bg-surface-raised text-content-muted border-hairline hover:border-blue-400'}"
 									on:click={() => {
 										cfgMode = 'local';
 										dispatch('change', getModel());
@@ -1098,7 +1098,7 @@ declare var Infinity: number;
 									class="flex-1 py-1.5 text-sm rounded border transition-colors {cfgMode ===
 									'remote'
 										? 'bg-blue-600 text-white border-blue-600'
-										: 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-blue-400'}"
+										: 'bg-surface-raised text-content-muted border-hairline hover:border-blue-400'}"
 									on:click={() => {
 										cfgMode = 'remote';
 										dispatch('change', getModel());
@@ -1108,7 +1108,7 @@ declare var Infinity: number;
 								</button>
 							</div>
 
-							<p class="text-xs text-gray-400 dark:text-gray-500 mt-2">
+							<p class="text-xs text-content-subtle mt-2">
 								{#if cfgMode === 'local'}
 									Spawns an isolated Chrome process per session.
 								{:else}
@@ -1123,7 +1123,7 @@ declare var Infinity: number;
 								on:keyup={() => dispatch('change', getModel())}
 								placeholder="http://localhost:9222">Remote DevTools URL</TextField
 							>
-							<p class="text-xs text-gray-400 dark:text-gray-500 -mt-2">
+							<p class="text-xs text-content-subtle -mt-2">
 								Start Chrome with <code class="font-mono">--remote-debugging-port=9222</code> then enter the host:port or full URL here.
 							</p>
 						{:else}
@@ -1139,9 +1139,9 @@ declare var Infinity: number;
 										type="checkbox"
 										bind:checked={cfgHeadless}
 										on:change={() => dispatch('change', getModel())}
-										class="w-4 h-4 rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500"
+										class="w-4 h-4 rounded border-hairline text-blue-600 focus:ring-blue-500"
 									/>
-									<span class="text-sm text-gray-700 dark:text-gray-300">Headless</span>
+									<span class="text-sm text-content-muted">Headless</span>
 								</label>
 							</div>
 							<TextField
@@ -1151,7 +1151,7 @@ declare var Infinity: number;
 								placeholder="en-US">Language</TextField
 							>
 							<div class="flex flex-col">
-								<p class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200 text-sm">
+								<p class="font-semibold text-content-muted py-2 transition-colors duration-200 text-sm">
 									Flags <span class="font-normal text-xs">(one per line — <code class="font-mono">--flag</code> adds/overrides, <code class="font-mono">!--flag</code> removes)</span>
 								</p>
 								<textarea
@@ -1159,7 +1159,7 @@ declare var Infinity: number;
 									on:keyup={() => dispatch('change', getModel())}
 									rows="3"
 									placeholder="--use-gl=egl"
-									class="font-mono rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border focus:outline-none focus:border-solid focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 transition-colors duration-200 border-transparent dark:border-gray-700/60 focus:border-slate-400 dark:focus:border-highlight-blue/80 resize-y w-full text-sm"
+									class="font-mono rounded-md py-2 pl-2 text-content-muted border focus:outline-none focus:border-solid focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset transition-colors duration-200 border-hairline focus:border-slate-400 dark:focus:border-highlight-blue/80 resize-y w-full text-sm"
 								></textarea>
 							</div>
 						{/if}
@@ -1219,7 +1219,7 @@ declare var Infinity: number;
 							{#if runLog.length > 0}
 								<button
 									type="button"
-									class="px-3 py-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 border border-gray-300 dark:border-gray-600 rounded transition-colors"
+									class="px-3 py-1.5 text-sm text-content-subtle hover:text-gray-700 dark:hover:text-gray-200 border border-hairline rounded transition-colors"
 									on:click={() => {
 										runLog = [];
 									}}

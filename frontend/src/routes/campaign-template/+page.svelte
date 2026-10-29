@@ -891,7 +891,7 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 			<div class="col-span-3 w-full overflow-y-auto px-6 py-4 space-y-8">
 				<!-- Basic Information Section -->
 				<div class="w-full">
-					<h3 class="text-base font-medium text-pc-darkblue dark:text-white mb-3">
+					<h3 class="text-base font-medium text-content mb-3">
 						Basic Information
 					</h3>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -914,7 +914,7 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 				<!-- Delivery Configuration Section -->
 				<!-- Email/API Configuration -->
 				<div class="w-full">
-					<h3 class="text-base font-medium text-pc-darkblue dark:text-white mb-3">
+					<h3 class="text-base font-medium text-content mb-3">
 						Email Configuration
 					</h3>
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -947,7 +947,7 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 
 				<!-- Page Flow Section -->
 				<div class="w-full">
-					<h3 class="text-base font-medium text-pc-darkblue dark:text-white mb-3">Page Flow</h3>
+					<h3 class="text-base font-medium text-content mb-3">Page Flow</h3>
 					<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
 						<div class="md:col-span-2 flex flex-col space-y-6">
 							<!-- Before Landing Page -->
@@ -995,21 +995,21 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 								<div class="flex items-center">
 									<div
 										class={`w-10 h-10 rounded-lg flex items-center justify-center border mr-3 transition-colors duration-200
-                                    ${formValues.beforeLandingPage ? 'bg-blue-50 dark:bg-blue-900/40 border-blue-300 dark:border-blue-500' : 'bg-gray-100 dark:bg-gray-800/60 border-gray-300 dark:border-gray-600'}`}
+                                    ${formValues.beforeLandingPage ? 'bg-blue-50 dark:bg-blue-900/40 border-blue-300 dark:border-blue-500' : 'bg-surface-overlay border-hairline'}`}
 									>
 										<span
-											class={`text-xl transition-colors duration-200 ${formValues.beforeLandingPage ? 'text-blue-500 dark:text-blue-300' : 'text-gray-400 dark:text-gray-500'}`}
+											class={`text-xl transition-colors duration-200 ${formValues.beforeLandingPage ? 'text-blue-500 dark:text-blue-300' : 'text-content-subtle'}`}
 											>1</span
 										>
 									</div>
 									<div class="flex-1">
 										<p
-											class="text-xs font-medium text-gray-900 dark:text-gray-300 transition-colors duration-200"
+											class="text-xs font-medium text-content transition-colors duration-200"
 										>
 											Before Landing Page
 										</p>
 										<p
-											class="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[180px] transition-colors duration-200"
+											class="text-xs text-content-subtle truncate max-w-[180px] transition-colors duration-200"
 										>
 											{formValues.beforeLandingPage || 'Not selected'}
 										</p>
@@ -1035,12 +1035,12 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 									</div>
 									<div class="flex-1">
 										<p
-											class="text-xs font-medium text-gray-900 dark:text-gray-300 transition-colors duration-200"
+											class="text-xs font-medium text-content transition-colors duration-200"
 										>
 											Landing {formValues.landingPageType === 'proxy' ? 'Proxy' : 'Page'}
 										</p>
 										<p
-											class="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[180px] transition-colors duration-200"
+											class="text-xs text-content-subtle truncate max-w-[180px] transition-colors duration-200"
 										>
 											{formValues.landingPage || 'Required'}
 										</p>
@@ -1058,21 +1058,21 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 								<div class="flex items-center">
 									<div
 										class={`w-10 h-10 rounded-lg flex items-center justify-center border mr-3 transition-colors duration-200
-                                    ${formValues.afterLandingPage ? 'bg-blue-50 dark:bg-blue-900/40 border-blue-300 dark:border-blue-500' : 'bg-gray-100 dark:bg-gray-800/60 border-gray-300 dark:border-gray-600'}`}
+                                    ${formValues.afterLandingPage ? 'bg-blue-50 dark:bg-blue-900/40 border-blue-300 dark:border-blue-500' : 'bg-surface-overlay border-hairline'}`}
 									>
 										<span
-											class={`text-xl transition-colors duration-200 ${formValues.afterLandingPage ? 'text-blue-500 dark:text-blue-300' : 'text-gray-400 dark:text-gray-500'}`}
+											class={`text-xl transition-colors duration-200 ${formValues.afterLandingPage ? 'text-blue-500 dark:text-blue-300' : 'text-content-subtle'}`}
 											>3</span
 										>
 									</div>
 									<div class="flex-1">
 										<p
-											class="text-xs font-medium text-gray-900 dark:text-gray-300 transition-colors duration-200"
+											class="text-xs font-medium text-content transition-colors duration-200"
 										>
 											After Landing Page
 										</p>
 										<p
-											class="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[180px] transition-colors duration-200"
+											class="text-xs text-content-subtle truncate max-w-[180px] transition-colors duration-200"
 										>
 											{formValues.afterLandingPage || 'Not selected'}
 										</p>
@@ -1091,21 +1091,21 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 									<div class="flex items-center">
 										<div
 											class={`w-10 h-10 rounded-lg flex items-center justify-center border mr-3 transition-colors duration-200
-			                                    ${formValues.afterLandingPageRedirectURL ? 'bg-blue-50 dark:bg-blue-900/40 border-blue-300 dark:border-blue-500' : 'bg-gray-100 dark:bg-gray-800/60 border-gray-300 dark:border-gray-600'}`}
+			                                    ${formValues.afterLandingPageRedirectURL ? 'bg-blue-50 dark:bg-blue-900/40 border-blue-300 dark:border-blue-500' : 'bg-surface-overlay border-hairline'}`}
 										>
 											<span
-												class={`text-xl transition-colors duration-200 ${formValues.afterLandingPageRedirectURL ? 'text-blue-500 dark:text-blue-300' : 'text-gray-400 dark:text-gray-500'}`}
+												class={`text-xl transition-colors duration-200 ${formValues.afterLandingPageRedirectURL ? 'text-blue-500 dark:text-blue-300' : 'text-content-subtle'}`}
 												>4</span
 											>
 										</div>
 										<div class="flex-1">
 											<p
-												class="text-xs font-medium text-gray-900 dark:text-gray-300 transition-colors duration-200"
+												class="text-xs font-medium text-content transition-colors duration-200"
 											>
 												POST Redirect URL
 											</p>
 											<p
-												class="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[180px] transition-colors duration-200"
+												class="text-xs text-content-subtle truncate max-w-[180px] transition-colors duration-200"
 											>
 												{formValues.afterLandingPageRedirectURL || 'Not set'}
 											</p>
@@ -1134,7 +1134,7 @@ Simulation URLs to allow:\n${allowListingData.simulationUrl}\n
 
 				{#if showAdvancedOptions}
 					<div class="w-full border-t pt-6 mt-6">
-						<h3 class="text-base font-medium text-pc-darkblue dark:text-white mb-3">
+						<h3 class="text-base font-medium text-content mb-3">
 							Advanced Options
 						</h3>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">

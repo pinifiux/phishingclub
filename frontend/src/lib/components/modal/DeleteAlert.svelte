@@ -47,19 +47,19 @@
 				<!--
 				<h3 class="text-lg font-medium text-gray-900">Delete {type}</h3>
 				-->
-				<p class="mt-2 text-gray-600 dark:text-gray-400">
+				<p class="mt-2 text-content-muted">
 					{#if actionMessage}
 						{actionMessage}
 						{#if name?.length > 30}
 							<br />
 						{/if}
-						<span class="font-medium text-gray-900 dark:text-gray-300">"{name}"</span>?
+						<span class="font-medium text-content">"{name}"</span>?
 					{:else}
 						Are you sure you want to delete
 						{#if name?.length > 30}
 							<br />
 						{/if}
-						<span class="font-medium text-gray-900 dark:text-gray-300">"{name}"</span>?
+						<span class="font-medium text-content">"{name}"</span>?
 					{/if}
 				</p>
 			</div>
@@ -67,8 +67,8 @@
 			<!-- Impact Section -->
 			{#if list.length}
 				<div class="bg-gray-50 dark:bg-gray-800/40 rounded-lg p-4 transition-colors duration-200">
-					<p class="font-medium text-gray-900 dark:text-gray-300 mb-3">Side effects:</p>
-					<ul class="space-y-2 ml-4 list-disc text-gray-600 dark:text-gray-400">
+					<p class="font-medium text-content mb-3">Side effects:</p>
+					<ul class="space-y-2 ml-4 list-disc text-content-muted">
 						{#each list as line}
 							<li>{line}</li>
 						{/each}

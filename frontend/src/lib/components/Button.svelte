@@ -1,5 +1,5 @@
 <script>
-	export let backgroundColor = 'bg-cta-blue';
+	export let backgroundColor = 'bg-brand text-[#04231b] hover:bg-brand/90';
 	/*
 	linear-gradient(#64a6e6, #9198e5);
 	*/
@@ -9,7 +9,7 @@
 </script>
 
 <button
-	class="{backgroundColor} px-6 py-2 text-white rounded-md uppercase font-semibold hover:opacity-80 text-sm transition-all duration-200 dark:hover:opacity-90 {css}"
+	class="{backgroundColor} inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brand/40 disabled:opacity-50 {css}"
 	class:w-32={size === 'small'}
 	class:w-36={size === 'medium'}
 	class:w-60={size === 'large'}

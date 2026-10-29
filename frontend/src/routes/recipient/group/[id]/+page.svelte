@@ -409,8 +409,8 @@
 		{groupValues.name}
 	</SubHeadline>
 	{#if groupValues.isDynamic}
-		<p class="text-sm font-semibold text-slate-600 dark:text-gray-400 mt-2">Dynamic group</p>
-		<p class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+		<p class="text-sm font-semibold text-content-muted mt-2">Dynamic group</p>
+		<p class="text-sm text-content-subtle mb-8">
 			Recipients where
 			<span class="font-mono text-xs bg-gray-200 dark:bg-gray-700 px-1 rounded"
 				>{groupValues.filterField}</span
@@ -659,7 +659,7 @@
 					<!-- Statistics Section -->
 					<div class="grid grid-cols-1 gap-6">
 						<div>
-							<h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Recipients</h3>
+							<h3 class="font-semibold text-content mb-2">Recipients</h3>
 							<ul class="space-y-1">
 								<li>Total: {importResult.summary.total}</li>
 								<li>Created: {importResult.summary.created}</li>
@@ -677,11 +677,11 @@
 						<div class="space-y-4">
 							{#if importResult.createdRecipients?.length > 0}
 								<div
-									class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+									class="bg-surface-overlay rounded-lg border border-hairline"
 								>
 									<details class="group">
 										<summary
-											class="cursor-pointer p-4 font-semibold text-base text-pc-darkblue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
+											class="cursor-pointer p-4 font-semibold text-base text-content hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
 										>
 											<svg
 												class="w-4 h-4 transition-transform group-open:rotate-90"
@@ -705,13 +705,13 @@
 														class="flex items-center justify-between py-2 px-3 rounded hover:bg-white dark:hover:bg-gray-700/50 transition-colors"
 													>
 														<span
-															class="text-sm text-gray-900 dark:text-gray-100 font-medium truncate flex-1"
+															class="text-sm text-content font-medium truncate flex-1"
 														>
 															{recipient.email}
 														</span>
 														{#if recipient.firstName || recipient.lastName}
 															<span
-																class="text-sm text-gray-500 dark:text-gray-400 ml-4 whitespace-nowrap"
+																class="text-sm text-content-subtle ml-4 whitespace-nowrap"
 															>
 																{recipient.firstName || ''}
 																{recipient.lastName || ''}
@@ -727,11 +727,11 @@
 
 							{#if importResult.updatedRecipients?.length > 0}
 								<div
-									class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+									class="bg-surface-overlay rounded-lg border border-hairline"
 								>
 									<details class="group">
 										<summary
-											class="cursor-pointer p-4 font-semibold text-base text-pc-darkblue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
+											class="cursor-pointer p-4 font-semibold text-base text-content hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
 										>
 											<svg
 												class="w-4 h-4 transition-transform group-open:rotate-90"
@@ -755,13 +755,13 @@
 														class="flex items-center justify-between py-2 px-3 rounded hover:bg-white dark:hover:bg-gray-700/50 transition-colors"
 													>
 														<span
-															class="text-sm text-gray-900 dark:text-gray-100 font-medium truncate flex-1"
+															class="text-sm text-content font-medium truncate flex-1"
 														>
 															{recipient.email}
 														</span>
 														{#if recipient.firstName || recipient.lastName}
 															<span
-																class="text-sm text-gray-500 dark:text-gray-400 ml-4 whitespace-nowrap"
+																class="text-sm text-content-subtle ml-4 whitespace-nowrap"
 															>
 																{recipient.firstName || ''}
 																{recipient.lastName || ''}
@@ -777,11 +777,11 @@
 
 							{#if csvSkippedRows.length > 0}
 								<div
-									class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+									class="bg-surface-overlay rounded-lg border border-hairline"
 								>
 									<details class="group">
 										<summary
-											class="cursor-pointer p-4 font-semibold text-base text-pc-darkblue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
+											class="cursor-pointer p-4 font-semibold text-base text-content hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
 										>
 											<svg
 												class="w-4 h-4 transition-transform group-open:rotate-90"
@@ -799,7 +799,7 @@
 											<span>Skipped in CSV ({csvSkippedRows.length})</span>
 										</summary>
 										<div class="px-4 pb-4">
-											<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+											<p class="text-sm text-content-subtle mb-3">
 												These rows were skipped during CSV parsing (before import)
 											</p>
 											<div class="space-y-1">
@@ -808,11 +808,11 @@
 														class="flex items-center justify-between py-2 px-3 rounded hover:bg-white dark:hover:bg-gray-700/50 transition-colors"
 													>
 														<span
-															class="text-sm text-gray-900 dark:text-gray-100 font-medium truncate flex-1"
+															class="text-sm text-content font-medium truncate flex-1"
 														>
 															Line {skip.line}: {skip.reason}
 															{#if skip.row?.email}
-																<span class="text-gray-500 dark:text-gray-400 ml-2"
+																<span class="text-content-subtle ml-2"
 																	>({skip.row.email})</span
 																>
 															{/if}
@@ -827,11 +827,11 @@
 
 							{#if importResult.failures?.length > 0}
 								<div
-									class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+									class="bg-surface-overlay rounded-lg border border-hairline"
 								>
 									<details class="group">
 										<summary
-											class="cursor-pointer p-4 font-semibold text-base text-pc-darkblue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
+											class="cursor-pointer p-4 font-semibold text-base text-content hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
 										>
 											<svg
 												class="w-4 h-4 transition-transform group-open:rotate-90"
@@ -849,7 +849,7 @@
 											<span>Import Errors ({importResult.failures.length})</span>
 										</summary>
 										<div class="px-4 pb-4">
-											<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+											<p class="text-sm text-content-subtle mb-3">
 												These recipients failed to import (backend errors)
 											</p>
 											<div class="space-y-1">
@@ -858,7 +858,7 @@
 														class="flex items-center justify-between py-2 px-3 rounded hover:bg-white dark:hover:bg-gray-700/50 transition-colors"
 													>
 														<span
-															class="text-sm text-gray-900 dark:text-gray-100 font-medium truncate flex-1"
+															class="text-sm text-content font-medium truncate flex-1"
 														>
 															{err.email}: {err.reason}
 														</span>

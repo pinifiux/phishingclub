@@ -406,17 +406,17 @@
 		<div class="flex flex-col gap-2 mb-3 flex-shrink-0">
 			<!-- Status row -->
 			<div class="flex items-center gap-4">
-				<span class="text-sm text-gray-500 dark:text-gray-400">
+				<span class="text-sm text-content-subtle">
 					Status: <span class="font-medium"
 						class:text-green-500={status === 'Connected'}
 						class:text-red-500={status.includes('error') || status.includes('end') || status.includes('Disconnected')}
 						>{status}</span>
 				</span>
 				{#if email}
-					<span class="text-sm text-gray-500 dark:text-gray-400">{email}</span>
+					<span class="text-sm text-content-subtle">{email}</span>
 				{/if}
 				{#if status === 'Connected'}
-					<span class="text-sm text-gray-500 dark:text-gray-400">{fps} fps</span>
+					<span class="text-sm text-content-subtle">{fps} fps</span>
 				{/if}
 				<button
 					type="button"
@@ -469,7 +469,7 @@
 					type="button"
 					disabled={!controlMode}
 					on:click={navigateBack}
-					class="p-1.5 rounded text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-default transition-colors"
+					class="p-1.5 rounded text-content-subtle hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-default transition-colors"
 					title="Back"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
@@ -480,7 +480,7 @@
 					type="button"
 					disabled={!controlMode}
 					on:click={navigateForward}
-					class="p-1.5 rounded text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-default transition-colors"
+					class="p-1.5 rounded text-content-subtle hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-30 disabled:cursor-default transition-colors"
 					title="Forward"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
@@ -491,8 +491,8 @@
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div
 					class="flex-1 flex items-center rounded border {controlMode
-						? 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 cursor-text'
-						: 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50'}"
+						? 'border-hairline bg-surface-raised cursor-text'
+						: 'border-hairline bg-gray-50 dark:bg-gray-800/50'}"
 					on:click={() => { if (controlMode) document.getElementById('rb-url-input')?.select(); }}
 				>
 					<input
@@ -507,7 +507,7 @@
 							e.stopPropagation();
 						}}
 						readonly={!controlMode}
-						class="flex-1 px-2.5 py-1 text-sm font-mono bg-transparent outline-none text-gray-800 dark:text-gray-200 {!controlMode ? 'cursor-default select-text' : ''}"
+						class="flex-1 px-2.5 py-1 text-sm font-mono bg-transparent outline-none text-content {!controlMode ? 'cursor-default select-text' : ''}"
 						placeholder="about:blank"
 					/>
 				</div>

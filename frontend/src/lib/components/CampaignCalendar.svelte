@@ -545,7 +545,7 @@
 </script>
 
 <div
-	class="w-full bg-white dark:bg-gray-900/80 rounded-lg shadow-sm p-2 sm:p-4 border border-gray-200 dark:border-gray-700/60 transition-colors duration-200"
+	class="w-full bg-surface-raised rounded-lg shadow-sm p-2 sm:p-4 border border-hairline transition-colors duration-200"
 >
 	<div class="space-y-3 sm:space-y-4 min-h-[400px] sm:min-h-[600px] max-w-[1600px] mx-auto">
 		<!-- Controls Row -->
@@ -555,14 +555,14 @@
 				<!-- Left: View Mode & Options (hidden on mobile, shown in second row) -->
 				<div class="hidden sm:flex flex-wrap items-center gap-3">
 					<label
-						class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+						class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 					>
 						View:
 						<select
 							value={viewMode}
 							on:change={(e) =>
 								handleViewModeChange(/** @type {HTMLSelectElement} */ (e.target).value)}
-							class="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+							class="border border-hairline rounded px-2 py-1 text-xs bg-surface-raised text-content-muted hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 						>
 							<option value="month">Month</option>
 							<option value="week">Week</option>
@@ -570,20 +570,20 @@
 					</label>
 
 					<label
-						class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+						class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 					>
 						Start from today:
 						<input
 							type="checkbox"
 							checked={startFromToday}
 							on:change={handleStartFromTodayChange}
-							class="h-4 w-4 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-900 text-blue-600 accent-blue-600 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+							class="h-4 w-4 border border-hairline rounded bg-surface-raised text-blue-600 accent-blue-600 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 						/>
 					</label>
 
 					{#if viewMode === 'week' && !startFromToday}
 						<label
-							class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+							class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 						>
 							Week starts:
 							<select
@@ -594,7 +594,7 @@
 											parseInt(/** @type {HTMLSelectElement} */ (e.target).value)
 										)
 									)}
-								class="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+								class="border border-hairline rounded px-2 py-1 text-xs bg-surface-raised text-content-muted hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 							>
 								<option value={0}>Sunday</option>
 								<option value={1}>Monday</option>
@@ -613,7 +613,7 @@
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-5 w-5 sm:h-4 sm:w-4 text-gray-600 dark:text-gray-400"
+							class="h-5 w-5 sm:h-4 sm:w-4 text-content-muted"
 							fill="none"
 							viewBox="0 0 24 24"
 							stroke="currentColor"
@@ -628,7 +628,7 @@
 					</button>
 
 					<button
-						class="px-3 py-1 sm:px-2 sm:py-0.5 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 border border-gray-300 dark:border-gray-600 hover:border-cta-blue dark:hover:border-highlight-blue rounded transition-colors duration-200"
+						class="px-3 py-1 sm:px-2 sm:py-0.5 text-xs font-medium text-content-muted hover:text-gray-900 dark:hover:text-gray-200 border border-hairline hover:border-cta-blue dark:hover:border-highlight-blue rounded transition-colors duration-200"
 						on:click={goToToday}
 						disabled={isLoadingNewMonth}
 					>
@@ -636,7 +636,7 @@
 					</button>
 
 					<h2
-						class="text-xs sm:text-sm font-semibold text-gray-900 dark:text-gray-300 min-w-[140px] sm:min-w-[180px] text-center"
+						class="text-xs sm:text-sm font-semibold text-content min-w-[140px] sm:min-w-[180px] text-center"
 					>
 						{getHeaderTitle()}
 					</h2>
@@ -649,7 +649,7 @@
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-5 w-5 sm:h-4 sm:w-4 text-gray-600 dark:text-gray-400"
+							class="h-5 w-5 sm:h-4 sm:w-4 text-content-muted"
 							fill="none"
 							viewBox="0 0 24 24"
 							stroke="currentColor"
@@ -668,7 +668,7 @@
 				<div class="hidden sm:flex flex-wrap items-center gap-3">
 					{#each [{ key: 'SCHEDULED', color: COLORS.SCHEDULED, label: 'Scheduled' }, { key: 'ACTIVE', color: COLORS.ACTIVE, label: 'Active' }, { key: 'COMPLETED', color: COLORS.COMPLETED, label: 'Completed' }, { key: 'SELF_MANAGED', color: COLORS.SELF_MANAGED, label: 'Self-managed' }] as item}
 						<button
-							class="flex items-center cursor-pointer select-none hover:opacity-80 transition-opacity duration-200 text-xs text-gray-700 dark:text-gray-300"
+							class="flex items-center cursor-pointer select-none hover:opacity-80 transition-opacity duration-200 text-xs text-content-muted"
 							on:click={() => toggleFilter(item.key)}
 						>
 							<div
@@ -690,37 +690,37 @@
 
 			<!-- Mobile controls row -->
 			<div class="flex sm:hidden flex-wrap items-center justify-center gap-x-4 gap-y-2 order-2">
-				<label class="flex items-center gap-1.5 text-xs text-gray-700 dark:text-gray-300">
+				<label class="flex items-center gap-1.5 text-xs text-content-muted">
 					<select
 						value={viewMode}
 						on:change={(e) =>
 							handleViewModeChange(/** @type {HTMLSelectElement} */ (e.target).value)}
-						class="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200"
+						class="border border-hairline rounded px-2 py-1 text-xs bg-surface-raised text-content-muted"
 					>
 						<option value="month">Month</option>
 						<option value="week">Week</option>
 					</select>
 				</label>
 
-				<label class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300">
+				<label class="flex items-center gap-1 text-xs text-content-muted">
 					Today:
 					<input
 						type="checkbox"
 						checked={startFromToday}
 						on:change={handleStartFromTodayChange}
-						class="h-4 w-4 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-900 text-blue-600 accent-blue-600 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+						class="h-4 w-4 border border-hairline rounded bg-surface-raised text-blue-600 accent-blue-600 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 					/>
 				</label>
 
 				{#if viewMode === 'week' && !startFromToday}
-					<label class="flex items-center gap-1.5 text-xs text-gray-700 dark:text-gray-300">
+					<label class="flex items-center gap-1.5 text-xs text-content-muted">
 						<select
 							value={weekStartsOn}
 							on:change={(e) =>
 								handleWeekStartsOnChange(
 									/** @type {0 | 1} */ (parseInt(/** @type {HTMLSelectElement} */ (e.target).value))
 								)}
-							class="border border-gray-300 dark:border-gray-600 rounded px-2 py-1 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200"
+							class="border border-hairline rounded px-2 py-1 text-xs bg-surface-raised text-content-muted"
 						>
 							<option value={0}>Sun</option>
 							<option value={1}>Mon</option>
@@ -733,7 +733,7 @@
 			<div class="flex sm:hidden flex-wrap items-center justify-center gap-x-3 gap-y-1 order-3">
 				{#each [{ key: 'SCHEDULED', color: COLORS.SCHEDULED, label: 'Sch' }, { key: 'ACTIVE', color: COLORS.ACTIVE, label: 'Act' }, { key: 'COMPLETED', color: COLORS.COMPLETED, label: 'Done' }, { key: 'SELF_MANAGED', color: COLORS.SELF_MANAGED, label: 'Self' }] as item}
 					<button
-						class="flex items-center cursor-pointer select-none hover:opacity-80 transition-opacity duration-200 text-[10px] text-gray-700 dark:text-gray-300"
+						class="flex items-center cursor-pointer select-none hover:opacity-80 transition-opacity duration-200 text-[10px] text-content-muted"
 						on:click={() => toggleFilter(item.key)}
 					>
 						<div
@@ -768,7 +768,7 @@
 				<div class="grid grid-cols-7 text-center mb-1">
 					{#each dayHeaders as day, i}
 						<div
-							class="text-[10px] sm:text-sm font-medium text-gray-600 dark:text-gray-400 py-1 sm:py-2"
+							class="text-[10px] sm:text-sm font-medium text-content-muted py-1 sm:py-2"
 						>
 							<span class="hidden sm:inline">{day}</span>
 							<span class="sm:hidden">{dayHeadersShort[i]}</span>
@@ -784,7 +784,7 @@
 						<div
 							class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 dark:border-highlight-blue/80"
 						></div>
-						<span class="text-gray-600 dark:text-gray-400">Loading calendar...</span>
+						<span class="text-content-muted">Loading calendar...</span>
 					</div>
 				</div>
 			{:else}
@@ -794,7 +794,7 @@
 							<div
 								class="calendar-day relative border rounded-md overflow-hidden {scrollBarClassesHorizontal} {day.isToday
 									? 'border-blue-500 dark:border-blue-400 bg-blue-50/50 dark:bg-blue-900/20 ring-1 ring-blue-500/30 dark:ring-blue-400/30'
-									: 'border-gray-200 dark:border-gray-700/60'}
+									: 'border-hairline'}
 										{day.isToday
 									? ''
 									: day.isCurrentMonth && !day.isNextMonth
@@ -804,9 +804,9 @@
 								<!-- date number -->
 								<div
 									class="date-header text-xs sm:text-sm px-1 sm:px-2 py-0.5 sm:py-1 {day.isToday
-										? 'font-bold text-blue-600 dark:text-blue-400'
+										? 'font-bold text-brand'
 										: day.isCurrentMonth && !day.isNextMonth
-											? 'text-gray-600 dark:text-gray-400'
+											? 'text-content-muted'
 											: 'text-gray-400 dark:text-gray-600'}"
 								>
 									{day.date.getDate()}
@@ -826,13 +826,13 @@
 											<div class="flex-1 min-w-0">
 												{#if showCompany && campaign.company?.name}
 													<div
-														class="company-name truncate text-gray-500 dark:text-gray-400 text-[8px] sm:text-[10px] font-medium uppercase tracking-wide leading-tight"
+														class="company-name truncate text-content-subtle text-[8px] sm:text-[10px] font-medium uppercase tracking-wide leading-tight"
 													>
 														{truncateText(campaign.company.name, 22)}
 													</div>
 												{/if}
 												<div
-													class="campaign-name truncate text-[10px] sm:text-xs leading-snug font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"
+													class="campaign-name truncate text-[10px] sm:text-xs leading-snug font-medium text-content-muted group-hover:text-gray-900 dark:group-hover:text-gray-100"
 												>
 													{truncateText(campaign.name, 24)}
 												</div>

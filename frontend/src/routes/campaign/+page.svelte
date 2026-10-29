@@ -1684,7 +1684,7 @@
 							? 'bg-blue-300 dark:bg-indigo-700 text-white'
 							: currentStep === index + 1
 								? 'bg-blue-600 dark:bg-indigo-600 text-white'
-								: 'bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600'
+								: 'bg-surface-raised text-content-subtle border-2 border-hairline'
 					}
         `}
 						role="tab"
@@ -1715,8 +1715,8 @@
           mt-2 text-xs sm:text-sm font-medium text-center
           ${
 						currentStep > index + 1 || currentStep === index + 1
-							? 'text-blue-600 dark:text-blue-400'
-							: 'text-gray-500 dark:text-gray-400'
+							? 'text-brand'
+							: 'text-content-subtle'
 					}
         `}
 					>
@@ -1823,7 +1823,7 @@
 									<div class="flex items-center gap-1">
 										<button
 											type="button"
-											class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
+											class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
 											on:click|preventDefault={() =>
 												(formValues.sendStartAt = new Date().toISOString())}
 										>
@@ -1831,7 +1831,7 @@
 										</button>
 										<button
 											type="button"
-											class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
+											class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
 											on:click|preventDefault={() =>
 												(formValues.sendStartAt = new Date(Date.now() + 86400000).toISOString())}
 										>
@@ -1839,7 +1839,7 @@
 										</button>
 										<button
 											type="button"
-											class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
+											class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
 											on:click|preventDefault={() =>
 												(formValues.sendStartAt = new Date(Date.now() + 604800000).toISOString())}
 										>
@@ -1852,7 +1852,7 @@
 									<div class="pt-4 pb-6">
 										<div class="flex flex-col gap-2">
 											<p
-												class="font-semibold text-slate-600 dark:text-gray-400 py-1 transition-colors duration-200"
+												class="font-semibold text-content-muted py-1 transition-colors duration-200"
 											>
 												Distribution Speed
 
@@ -1935,7 +1935,7 @@
 										<div class="flex items-center gap-1">
 											<button
 												type="button"
-												class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
+												class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
 												on:click|preventDefault={() =>
 													(formValues.sendEndAt = new Date().toISOString())}
 											>
@@ -1943,7 +1943,7 @@
 											</button>
 											<button
 												type="button"
-												class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
+												class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
 												on:click|preventDefault={() =>
 													(formValues.sendEndAt = new Date(Date.now() + 86400000).toISOString())}
 											>
@@ -1951,7 +1951,7 @@
 											</button>
 											<button
 												type="button"
-												class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
+												class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 transition-colors duration-200"
 												on:click|preventDefault={() =>
 													(formValues.sendEndAt = new Date(Date.now() + 604800000).toISOString())}
 											>
@@ -2035,7 +2035,7 @@
 								<div class="flex">
 									<div>
 										<input
-											class="rounded-md py-2 text-gray-600 text-center border border-transparent focus:outline-none focus:border-solid focus:border-slate-400 focus:bg-gray-100 bg-grayblue-light font-normal"
+											class="rounded-md py-2 text-gray-600 text-center border border-transparent focus:outline-none focus:border-solid focus:border-slate-400 focus:bg-gray-100 bg-surface-inset font-normal"
 											id="constraintStartTime"
 											type="time"
 											required
@@ -2051,7 +2051,7 @@
 									</div>
 									<div>
 										<input
-											class="rounded-md py-2 text-gray-600 text-center border border-transparent focus:outline-none focus:border-solid focus:border-slate-400 focus:bg-gray-100 bg-grayblue-light font-normal"
+											class="rounded-md py-2 text-gray-600 text-center border border-transparent focus:outline-none focus:border-solid focus:border-slate-400 focus:bg-gray-100 bg-surface-inset font-normal"
 											id="constraintEndTime"
 											type="time"
 											required
@@ -2214,16 +2214,16 @@
 							<div class="mb-6 pt-4">
 								<div class="flex flex-col">
 									<div class="flex items-center py-2">
-										<p class="font-semibold text-slate-600 dark:text-gray-400">Webhooks</p>
+										<p class="font-semibold text-content-muted">Webhooks</p>
 										<ToolTip>
 											Configure multiple webhooks to receive campaign event notifications. Each
 											webhook can have its own data level and event filters.
 										</ToolTip>
 										<div
-											class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+											class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 										>
 											<p
-												class="text-slate-600 dark:text-gray-400 text-xs transition-colors duration-200"
+												class="text-content-muted text-xs transition-colors duration-200"
 											>
 												optional
 											</p>
@@ -2270,7 +2270,7 @@
 
 												<div class="pt-1">
 													<div class="flex items-center gap-2 mb-2">
-														<p class="text-xs font-semibold text-gray-700 dark:text-gray-300">
+														<p class="text-xs font-semibold text-content-muted">
 															Events
 														</p>
 														<span
@@ -2291,7 +2291,7 @@
 																on:click={() => toggleWebhookEvent(index, eventOption.value)}
 																class="px-2.5 py-1 rounded-md text-xs font-medium transition-colors duration-200 {isSelected
 																	? 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border border-green-400 dark:border-green-500 hover:bg-green-100 dark:hover:bg-green-900/40'
-																	: 'bg-white dark:bg-gray-900/60 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 hover:border-blue-300 dark:hover:border-highlight-blue/80 hover:bg-blue-50 dark:hover:bg-highlight-blue/20'}"
+																	: 'bg-white dark:bg-gray-900/60 text-content-muted border border-hairline hover:border-blue-300 dark:hover:border-highlight-blue/80 hover:bg-blue-50 dark:hover:bg-highlight-blue/20'}"
 															>
 																{eventOption.label}
 															</button>
@@ -2376,9 +2376,9 @@
 									>
 								{:else}
 									<div
-										class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600"
+										class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg border-2 border-dashed border-hairline"
 									>
-										<p class="text-gray-600 dark:text-gray-400 text-sm">
+										<p class="text-content-muted text-sm">
 											<strong>Anti-bot / Evasion Page</strong><br />
 											You must select a deny page first to use evasion pages.
 										</p>
@@ -2411,9 +2411,9 @@
 									{/if}
 								{:else}
 									<div
-										class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600"
+										class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg border-2 border-dashed border-hairline"
 									>
-										<p class="text-gray-600 dark:text-gray-400 text-sm">
+										<p class="text-content-muted text-sm">
 											<strong>Filtering mode</strong><br />
 											You must select a deny page first to use filtering.
 										</p>
@@ -2432,26 +2432,26 @@
 							<div class="grid grid-cols-2 gap-6">
 								<!-- Basic Information -->
 								<div
-									class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm transition-colors duration-200"
+									class="bg-surface-raised p-6 rounded-lg shadow-sm transition-colors duration-200"
 								>
 									<h3
-										class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
+										class="text-xl font-semibold text-content mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
 									>
 										Basic Information
 									</h3>
 									<div class="grid grid-cols-[120px_1fr] gap-y-3">
 										<span class="text-grayblue-dark font-medium">Name:</span>
-										<span class="text-pc-darkblue dark:text-white"
+										<span class="text-content"
 											>{formValues.name || 'Not set'}</span
 										>
 
 										<span class="text-grayblue-dark font-medium">Template:</span>
-										<span class="text-pc-darkblue dark:text-white"
+										<span class="text-content"
 											>{formValues.template || 'Not set'}</span
 										>
 
 										<span class="text-grayblue-dark font-medium">Type:</span>
-										<span class="text-pc-darkblue dark:text-white"
+										<span class="text-content"
 											>{formValues.isTest ? 'Test' : 'Production'}</span
 										>
 									</div>
@@ -2459,10 +2459,10 @@
 
 								<!-- Recipients -->
 								<div
-									class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm transition-colors duration-200"
+									class="bg-surface-raised p-6 rounded-lg shadow-sm transition-colors duration-200"
 								>
 									<h3
-										class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
+										class="text-xl font-semibold text-content mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
 									>
 										Recipients
 									</h3>
@@ -2470,7 +2470,7 @@
 										<div class="grid grid-cols-[120px_1fr] gap-y-3">
 											<span class="text-grayblue-dark font-medium">Groups:</span>
 											<span
-												class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+												class="text-content transition-colors duration-200"
 											>
 												{formValues.recipientGroups.length
 													? formValues.recipientGroups.join(', ')
@@ -2479,7 +2479,7 @@
 
 											{#if !lateScheduleEnabled}
 												<span class="text-grayblue-dark font-medium">Total:</span>
-												<span class="text-pc-darkblue dark:text-white"
+												<span class="text-content"
 													>{formValues.selectedCount} recipients</span
 												>
 											{/if}
@@ -2524,10 +2524,10 @@
 							<div class="grid grid-cols-2 gap-6">
 								<!-- Email/API Sender Information -->
 								<div
-									class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm transition-colors duration-200"
+									class="bg-surface-raised p-6 rounded-lg shadow-sm transition-colors duration-200"
 								>
 									<h3
-										class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
+										class="text-xl font-semibold text-content mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
 									>
 										Delivery Details
 									</h3>
@@ -2537,18 +2537,18 @@
 										{#if template?.apiSender}
 											<div class="grid grid-cols-[120px_1fr] gap-y-3">
 												<span class="text-grayblue-dark font-medium">Type:</span>
-												<span class="text-pc-darkblue dark:text-white font-semibold"
+												<span class="text-content font-semibold"
 													>API Sender</span
 												>
 
 												<span class="text-grayblue-dark font-medium">Name:</span>
-												<span class="text-pc-darkblue dark:text-white"
+												<span class="text-content"
 													>{template.apiSender.name || 'Not set'}</span
 												>
 
 												{#if template?.email}
 													<span class="text-grayblue-dark font-medium">Email:</span>
-													<span class="text-pc-darkblue dark:text-white"
+													<span class="text-content"
 														>{template.email.name || 'Not set'}</span
 													>
 												{/if}
@@ -2556,25 +2556,25 @@
 										{:else if template?.email}
 											<div class="grid grid-cols-[120px_1fr] gap-y-3">
 												<span class="text-grayblue-dark font-medium">Type:</span>
-												<span class="text-pc-darkblue dark:text-white font-semibold">SMTP</span>
+												<span class="text-content font-semibold">SMTP</span>
 
 												<span class="text-grayblue-dark font-medium">Name:</span>
-												<span class="text-pc-darkblue dark:text-white"
+												<span class="text-content"
 													>{template.email.name || 'Not set'}</span
 												>
 
 												<span class="text-grayblue-dark font-medium">From:</span>
-												<span class="text-pc-darkblue dark:text-white"
+												<span class="text-content"
 													>{template.email.mailHeaderFrom || 'Not set'}</span
 												>
 
 												<span class="text-grayblue-dark font-medium">Mail from:</span>
-												<span class="text-pc-darkblue dark:text-white"
+												<span class="text-content"
 													>{template.email.mailEnvelopeFrom || 'Not set'}</span
 												>
 
 												<span class="text-grayblue-dark font-medium">Subject:</span>
-												<span class="text-pc-darkblue dark:text-white"
+												<span class="text-content"
 													>{template.email.mailHeaderSubject || 'Not set'}</span
 												>
 											</div>
@@ -2590,21 +2590,21 @@
 
 								<!-- Schedule -->
 								<div
-									class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm transition-colors duration-200"
+									class="bg-surface-raised p-6 rounded-lg shadow-sm transition-colors duration-200"
 								>
 									<h3
-										class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
+										class="text-xl font-semibold text-content mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
 									>
 										Schedule
 									</h3>
 									<div class="grid grid-cols-[120px_1fr] gap-y-3">
 										<span class="text-grayblue-dark font-medium">Type:</span>
-										<span class="text-pc-darkblue dark:text-white capitalize">{scheduleType}</span>
+										<span class="text-content capitalize">{scheduleType}</span>
 
 										{#if scheduleType === 'basic'}
 											<span class="text-grayblue-dark font-medium">Start:</span>
 											<span
-												class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+												class="text-content transition-colors duration-200"
 											>
 												<Datetime value={formValues.sendStartAt} />
 												<RelativeTime value={formValues.sendStartAt} />
@@ -2612,7 +2612,7 @@
 
 											<span class="text-grayblue-dark font-medium">End:</span>
 											<span
-												class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+												class="text-content transition-colors duration-200"
 											>
 												<Datetime value={formValues.sendEndAt} />
 												<RelativeTime value={formValues.sendEndAt} />
@@ -2621,7 +2621,7 @@
 											{#if spreadOption && spreadOption !== SPREAD_MANUAL}
 												<span class="text-grayblue-dark font-medium">Spread:</span>
 												<span
-													class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+													class="text-content transition-colors duration-200"
 												>
 													{spreadOptionMap.byValue(spreadOption)}
 												</span>
@@ -2630,7 +2630,7 @@
 											{#if formValues.jitterMin !== 0 || formValues.jitterMax !== 0}
 												<span class="text-grayblue-dark font-medium">Jitter:</span>
 												<span
-													class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+													class="text-content transition-colors duration-200"
 												>
 													{formValues.jitterMin} to {formValues.jitterMax} minutes
 												</span>
@@ -2638,7 +2638,7 @@
 										{:else if scheduleType === 'schedule'}
 											<span class="text-grayblue-dark font-medium">Active days:</span>
 											<span
-												class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+												class="text-content transition-colors duration-200"
 											>
 												{formValues.constraintWeekDays.map((d) => dayMap[d]).join(', ') ||
 													'None selected'}
@@ -2646,7 +2646,7 @@
 
 											{#if formValues.contraintStartTime && formValues.contraintEndTime}
 												<span class="text-grayblue-dark font-medium">Hours:</span>
-												<span class="text-pc-darkblue dark:text-white">
+												<span class="text-content">
 													{formValues.contraintStartTime} - {formValues.contraintEndTime}
 												</span>
 											{/if}
@@ -2654,7 +2654,7 @@
 											{#if formValues.jitterMin !== 0 || formValues.jitterMax !== 0}
 												<span class="text-grayblue-dark font-medium">Jitter:</span>
 												<span
-													class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+													class="text-content transition-colors duration-200"
 												>
 													{formValues.jitterMin} to {formValues.jitterMax} minutes
 												</span>
@@ -2664,7 +2664,7 @@
 										{#if formValues.scheduleAt}
 											<span class="text-grayblue-dark font-medium">Schedule at:</span>
 											<span
-												class="text-pc-darkblue dark:text-gray-100 transition-colors duration-200"
+												class="text-content transition-colors duration-200"
 											>
 												<Datetime value={formValues.scheduleAt} />
 												<RelativeTime value={formValues.scheduleAt} />
@@ -2673,7 +2673,7 @@
 
 										{#if formValues.closeAt}
 											<span class="text-grayblue-dark font-medium">Close at:</span>
-											<span class="text-pc-darkblue dark:text-white">
+											<span class="text-content">
 												<Datetime value={formValues.closeAt} />
 												<RelativeTime value={formValues.closeAt} />
 											</span>
@@ -2685,17 +2685,17 @@
 							<!-- Third Row: Security & Privacy -->
 							<div class="grid grid-cols-1 gap-6">
 								<div
-									class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm transition-colors duration-200"
+									class="bg-surface-raised p-6 rounded-lg shadow-sm transition-colors duration-200"
 								>
 									<h3
-										class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
+										class="text-xl font-semibold text-content mb-4 border-b dark:border-gray-600 pb-2 transition-colors duration-200"
 									>
 										Security & Privacy
 									</h3>
 									<div class="grid grid-cols-[120px_1fr] gap-y-3">
 										<ConditionalDisplay show="blackbox">
 											<span class="text-grayblue-dark font-medium">Filtering:</span>
-											<span class="text-pc-darkblue dark:text-white">
+											<span class="text-content">
 												{#if allowDenyType === 'none'}
 													None
 												{:else}
@@ -2708,36 +2708,36 @@
 										</ConditionalDisplay>
 
 										<span class="text-grayblue-dark font-medium">Save Data:</span>
-										<span class="text-pc-darkblue dark:text-white"
+										<span class="text-content"
 											>{formValues.saveSubmittedData ? 'Enabled' : 'Disabled'}</span
 										>
 
 										<ConditionalDisplay show="blackbox">
 											<span class="text-grayblue-dark font-medium">Save Metadata:</span>
-											<span class="text-pc-darkblue dark:text-white"
+											<span class="text-content"
 												>{formValues.saveBrowserMetadata ? 'Enabled' : 'Disabled'}</span
 											>
 										</ConditionalDisplay>
 
 										<!--
 										<span class="text-grayblue-dark font-medium">Anonymization:</span>
-										<span class="text-pc-darkblue"
+										<span class="text-content"
 											>{formValues.isAnonymous ? 'Enabled' : 'Disabled'}</span
 										>
 										 -->
 
 										{#if formValues.webhooks.length > 0}
 											<span class="text-grayblue-dark font-medium">Webhooks:</span>
-											<div class="text-pc-darkblue dark:text-white space-y-2">
+											<div class="text-content space-y-2">
 												{#each formValues.webhooks as webhook, index}
 													<div class="border-l-2 border-blue-400 pl-3 py-1">
 														<div class="font-medium">
 															{webhookMap.byKey(webhook.id) || 'Not selected'}
 														</div>
-														<div class="text-sm text-gray-600 dark:text-gray-400">
+														<div class="text-sm text-content-muted">
 															Data Level: <span class="capitalize">{webhook.includeData}</span>
 														</div>
-														<div class="text-sm text-gray-600 dark:text-gray-400">
+														<div class="text-sm text-content-muted">
 															Events: {webhook.events.length === webhookEventOptions.length
 																? 'All Events'
 																: webhook.events.length + ' selected'}
@@ -2749,21 +2749,21 @@
 
 										{#if formValues.denyPageValue}
 											<span class="text-grayblue-dark font-medium">Deny Page:</span>
-											<span class="text-pc-darkblue dark:text-white"
+											<span class="text-content"
 												>{formValues.denyPageValue}</span
 											>
 										{/if}
 
 										{#if formValues.evasionPageValue}
 											<span class="text-grayblue-dark font-medium">Evasion Page:</span>
-											<span class="text-pc-darkblue dark:text-white"
+											<span class="text-content"
 												>{formValues.evasionPageValue}</span
 											>
 										{/if}
 
 										{#if formValues.anonymizeAt}
 											<span class="text-grayblue-dark font-medium">Anonymize all data at:</span>
-											<span class="text-pc-darkblue dark:text-white">
+											<span class="text-content">
 												<Datetime value={formValues.anonymizeAt} />
 												<RelativeTime value={formValues.anonymizeAt} />
 											</span>
@@ -2773,7 +2773,7 @@
 											<span class="text-grayblue-dark font-medium"
 												>Anonymize data at:</span
 											>
-											<span class="text-pc-darkblue dark:text-white">
+											<span class="text-content">
 												<Datetime value={formValues.dataAnonymizeAt} />
 												<RelativeTime value={formValues.dataAnonymizeAt} />
 											</span>
@@ -2792,7 +2792,7 @@
 				{#if currentStep > 1}
 					<button
 						type="button"
-						class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+						class="inline-flex items-center px-4 py-2 border border-hairline rounded-md shadow-sm text-sm font-medium text-content-muted bg-surface-raised hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
 						on:click={previousStep}
 					>
 						<svg
@@ -2879,8 +2879,8 @@
 	>
 		<div class="p-4">
 			<div class="mb-4">
-				<p class="text-sm text-gray-600 dark:text-gray-400">
-					Total: <span class="font-semibold text-pc-darkblue dark:text-white"
+				<p class="text-sm text-content-muted">
+					Total: <span class="font-semibold text-content"
 						>{formValues.selectedCount} recipients</span
 					>
 				</p>
@@ -2891,11 +2891,11 @@
 					{@const groupID = recipientGroupMap.byValue(groupName)}
 					{@const recipients = recipientGroupRecipients[groupID] || []}
 					<div
-						class="bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+						class="bg-surface-overlay rounded-lg border border-hairline"
 					>
 						<details class="group">
 							<summary
-								class="cursor-pointer p-4 font-semibold text-base text-pc-darkblue dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
+								class="cursor-pointer p-4 font-semibold text-base text-content hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg transition-colors list-none flex items-center gap-2"
 							>
 								<svg
 									class="w-4 h-4 transition-transform group-open:rotate-90"
@@ -2925,7 +2925,7 @@
 													: ''}
 											>
 												<span
-													class="text-sm text-gray-900 dark:text-gray-100 font-medium truncate flex-1"
+													class="text-sm text-content font-medium truncate flex-1"
 												>
 													{recipient.email}
 													{#if recipient.scimSoftDeletedAt}
@@ -2938,7 +2938,7 @@
 												</span>
 												{#if recipient.firstName || recipient.lastName}
 													<span
-														class="text-sm text-gray-500 dark:text-gray-400 ml-4 whitespace-nowrap"
+														class="text-sm text-content-subtle ml-4 whitespace-nowrap"
 													>
 														{recipient.firstName || ''}
 														{recipient.lastName || ''}
@@ -2948,7 +2948,7 @@
 										{/each}
 									</div>
 								{:else}
-									<p class="text-sm text-gray-500 dark:text-gray-400 italic">
+									<p class="text-sm text-content-subtle italic">
 										Loading recipients...
 									</p>
 								{/if}

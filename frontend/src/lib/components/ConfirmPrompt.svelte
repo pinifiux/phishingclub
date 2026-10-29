@@ -183,13 +183,13 @@
 				<p id="confirm-title" class="uppercase font-bold text-center py">Confirm action</p>
 			</div>
 			<h1
-				class="uppercase font-bold text-center text-gray-500 dark:text-gray-300 text-4xl pt-10 transition-colors duration-200"
+				class="font-serif text-[26px] font-bold leading-tight text-center text-content pt-8"
 			>
 				Are you sure?
 			</h1>
 			<p
 				id="confirm-description"
-				class="text-center text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="text-center text-content-muted transition-colors duration-200"
 			>
 				{confirm_text}
 			</p>

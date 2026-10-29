@@ -77,7 +77,7 @@
 		setupOSThemeListener();
 
 		const pinned = getCookie('menuPinned');
-		isMenuPinned = pinned === 'true';
+		isMenuPinned = pinned !== 'false'; // abierta por defecto, como la barra lateral de la SOC
 
 		(async () => {
 			// handle session
@@ -293,7 +293,7 @@
 				on:pinToggle={handlePinToggle}
 			/>
 		{/if}
-		<div class={`grid grid-cols-12 mr-10 mt-4 ${isMenuPinned ? 'menu-pinned ml-52' : 'ml-24'}`}>
+		<div class={`grid grid-cols-12 mr-6 my-6 ${isMenuPinned ? 'menu-pinned ml-[17.5rem]' : 'ml-24'}`}>
 			{#if installState === AppStateService.INSTALL.INSTALLED}
 				<MobileMenu
 					bind:visible={isMobileMenuVisible}
@@ -302,9 +302,11 @@
 				/>
 				<ProfileMenu {logout} bind:visible={isProfileMenuVisible} {toggleChangeCompanyModal} />
 			{/if}
-			<div class="col-start-1 col-end-13 row-start-1">
+			<main
+				class="col-start-1 col-end-13 row-start-1 min-w-0 rounded-xl border border-hairline bg-surface-raised p-6 shadow-xl shadow-black/20"
+			>
 				<slot />
-			</div>
+			</main>
 		</div>
 	{/if}
 </div>
@@ -315,11 +317,15 @@
 		overflow-x: auto;
 	}
 
+	:global(body) {
+		background-color: rgb(var(--pc-surface-inset)); /* como el shell de la SOC (bg-surface-inset) */
+		color: rgb(var(--pc-content-primary));
+	}
 	:global(body, table th) {
 		user-select: none;
 
-		/* font-family: "Phudu"; */
-		font-family: 'Titillium Web';
+		/* Dasenda: Geist (ver app.css) */
+		font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 	}
 	:global(table) {
 		user-select: text;

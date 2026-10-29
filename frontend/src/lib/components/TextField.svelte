@@ -60,7 +60,7 @@
 
 <label class="flex flex-col py-2">
 	<div class="flex items-center">
-		<p class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200">
+		<p class="py-1.5 text-xs font-medium text-content-muted">
 			<slot />
 		</p>
 		{#if toolTipText.length > 0}
@@ -70,9 +70,9 @@
 		{/if}
 		{#if optional === true}
 			<div
-				class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+				class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 			>
-				<p class="text-slate-600 dark:text-gray-400 text-xs transition-colors duration-200">
+				<p class="text-content-muted text-xs transition-colors duration-200">
 					optional
 				</p>
 			</div>
@@ -98,9 +98,9 @@
 		{required}
 		{placeholder}
 		{pattern}
-		class="text-ellipsis row-start-1 row-span-3 justify-self-center rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border focus:outline-none focus:border-solid focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200 {error
+		class="text-ellipsis row-start-1 row-span-3 justify-self-center py-2 pl-3 pr-3 font-normal rounded-md border border-hairline bg-surface-inset text-sm text-content outline-none placeholder:text-content-subtle focus:border-brand/60 {error
 			? 'border-red-500 dark:border-red-400'
-			: 'border-transparent dark:border-gray-700/60 focus:border-slate-400 dark:focus:border-highlight-blue/80'}"
+			: 'border-hairline focus:border-slate-400 dark:focus:border-highlight-blue/80'}"
 		class:w-24={width === 'small'}
 		class:w-60={width === 'medium'}
 		class:w-95={width === 'large'}

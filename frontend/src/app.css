@@ -19,8 +19,10 @@
 	--pc-accent-dark-mode-hover: 119 230 228;
 	--pc-accent-dark-mode-active: 43 153 152;
 
+	--pc-surface-base: var(--pc-surface-base-light);
 	--pc-surface-raised: var(--pc-surface-raised-light);
 	--pc-surface-overlay: var(--pc-surface-overlay-light);
+	--pc-surface-inset: var(--pc-surface-inset-light);
 	--pc-hairline: var(--pc-hairline-light);
 	--pc-content-primary: var(--pc-content-primary-light);
 	--pc-content-muted: var(--pc-content-muted-light);
@@ -44,6 +46,7 @@
 	--pc-surface-base-dark: 7 8 9;
 	--pc-surface-raised-dark: 18 18 19;
 	--pc-surface-overlay-dark: 28 29 32;
+	--pc-surface-inset-dark: 13 14 16;
 	--pc-hairline-dark: 37 37 38;
 	--pc-content-primary-dark: 237 237 237;
 	--pc-content-muted-dark: 163 168 173;
@@ -52,6 +55,7 @@
 	--pc-surface-base-light: 243 244 246;
 	--pc-surface-raised-light: 255 255 255;
 	--pc-surface-overlay-light: 238 240 242;
+	--pc-surface-inset-light: 243 244 246;
 	--pc-hairline-light: 230 232 235;
 	--pc-content-primary-light: 17 20 23;
 	--pc-content-muted-light: 75 83 89;
@@ -65,8 +69,10 @@ html.dark {
 	--pc-accent-hover: var(--pc-accent-dark-mode-hover);
 	--pc-accent-active: var(--pc-accent-dark-mode-active);
 
+	--pc-surface-base: var(--pc-surface-base-dark);
 	--pc-surface-raised: var(--pc-surface-raised-dark);
 	--pc-surface-overlay: var(--pc-surface-overlay-dark);
+	--pc-surface-inset: var(--pc-surface-inset-dark);
 	--pc-hairline: var(--pc-hairline-dark);
 	--pc-content-primary: var(--pc-content-primary-dark);
 	--pc-content-muted: var(--pc-content-muted-dark);
@@ -84,96 +90,98 @@ html.dark {
 	--pc-blue-900: 28 101 100;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Phudu:wght@700;900&family=Titillium+Web:wght@400;600&display=swap'); */
+/* Dasenda (Carpent v1.2) typography — same families as Cassiterion-SOC's
+   html.reseller-dasenda: Geist (UI), Instrument Serif (headings), IBM Plex Mono (code).
+   Self-hosted from the OFL fontsource packages in static/fonts. */
+@font-face {
+	font-family: 'Geist';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('/fonts/Geist-Variable.woff2') format('woff2');
+}
 
 @font-face {
-	font-family: 'Titillium Web';
+	font-family: 'Instrument Serif';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/TitilliumWeb-Regular.ttf') format('truetype');
+	src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2');
 }
 
 @font-face {
-	font-family: 'Titillium Web';
+	font-family: 'IBM Plex Mono';
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	font-display: swap;
-	src: url('/TitilliumWeb-SemiBold.ttf') format('truetype');
+	src: url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
 }
 
 @font-face {
-	font-family: 'Titillium Web';
+	font-family: 'IBM Plex Mono';
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 500;
 	font-display: swap;
-	src: url('/TitilliumWeb-Bold.ttf') format('truetype');
+	src: url('/fonts/IBMPlexMono-Medium.woff2') format('woff2');
 }
 
-/* For Phudu */
-@font-face {
-	font-family: 'Phudu';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url('/Phudu-Bold.ttf') format('truetype');
+/* radios y casillas en el acento Dasenda, como la SOC */
+input[type='radio'],
+input[type='checkbox'] {
+	accent-color: rgb(var(--pc-accent));
 }
 
-@font-face {
-	font-family: 'Phudu';
-	font-style: normal;
-	font-weight: 900;
-	font-display: swap;
-	src: url('/Phudu-Black.ttf') format('truetype');
+html {
+	font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
-/* custom properties for theming */
+/* custom properties for theming — valores Dasenda (mismos que la SOC) */
 :root {
 	/* light mode colors */
-	--color-bg-primary: #ffffff;
-	--color-bg-secondary: #f8f9fa;
-	--color-bg-tertiary: #f1f3f4;
-	--color-border: #e5e7eb;
-	--color-border-hover: #d1d5db;
-	--color-text-primary: #111827;
-	--color-text-secondary: #6b7280;
-	--color-text-tertiary: #9ca3af;
+	--color-bg-primary: #f3f4f6;
+	--color-bg-secondary: #ffffff;
+	--color-bg-tertiary: #eef0f2;
+	--color-border: #e6e8eb;
+	--color-border-hover: #cbd1d4;
+	--color-text-primary: #111417;
+	--color-text-secondary: #4b5359;
+	--color-text-tertiary: #636b72;
 	--color-shadow: rgba(0, 0, 0, 0.1);
 	--color-shadow-lg: rgba(0, 0, 0, 0.15);
 
 	/* form colors */
-	--color-input-bg: #ffffff;
-	--color-input-border: #d1d5db;
-	--color-input-border-focus: #2563eb;
+	--color-input-bg: #f3f4f6;
+	--color-input-border: #e6e8eb;
+	--color-input-border-focus: #0b6e73;
 
 	/* scrollbar colors */
-	--color-scrollbar-track: #f1f1f1;
-	--color-scrollbar-thumb: #819efb;
-	--color-scrollbar-thumb-hover: #6b85d6;
+	--color-scrollbar-track: #eef0f2;
+	--color-scrollbar-thumb: #a3a8ad;
+	--color-scrollbar-thumb-hover: #8b9196;
 }
 
 .dark {
 	/* dark mode colors */
-	--color-bg-primary: #111827;
-	--color-bg-secondary: #1f2937;
-	--color-bg-tertiary: #374151;
-	--color-border: #374151;
-	--color-border-hover: #4b5563;
-	--color-text-primary: #f9fafb;
-	--color-text-secondary: #d1d5db;
-	--color-text-tertiary: #9ca3af;
+	--color-bg-primary: #0d0e10;
+	--color-bg-secondary: #121213;
+	--color-bg-tertiary: #1c1d20;
+	--color-border: #252526;
+	--color-border-hover: #33353a;
+	--color-text-primary: #ededed;
+	--color-text-secondary: #a3a8ad;
+	--color-text-tertiary: #8b9196;
 	--color-shadow: rgba(0, 0, 0, 0.3);
 	--color-shadow-lg: rgba(0, 0, 0, 0.4);
 
 	/* form colors */
-	--color-input-bg: #374151;
-	--color-input-border: #4b5563;
-	--color-input-border-focus: #3b82f6;
+	--color-input-bg: #0d0e10;
+	--color-input-border: #252526;
+	--color-input-border-focus: #3ddbd9;
 
 	/* scrollbar colors */
-	--color-scrollbar-track: #374151;
-	--color-scrollbar-thumb: #6b7280;
-	--color-scrollbar-thumb-hover: #9ca3af;
+	--color-scrollbar-track: #121213;
+	--color-scrollbar-thumb: #33353a;
+	--color-scrollbar-thumb-hover: #5a5f66;
 }
 
 /* global styles */

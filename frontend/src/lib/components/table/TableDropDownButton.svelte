@@ -25,7 +25,7 @@
 	</button>
 {:else}
 	<button
-		class="w-full px py-1 text-slate-600 dark:text-gray-200 hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
+		class="w-full px py-1 text-content-muted hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
 		on:click
 		on:keydown={handleKeydown}
 		{title}

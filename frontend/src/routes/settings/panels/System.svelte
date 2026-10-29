@@ -163,14 +163,14 @@
 	</SettingsCard>
 
 	<SettingsCard title="Browser Cache">
-		<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+		<p class="text-content-muted text-sm transition-colors duration-200">
 			Chromium is downloaded and cached for PDF reports and remote browser sessions. Wipe to force a
 			fresh download.
 		</p>
 		<svelte:fragment slot="footer">
 			<Button
 				size={'large'}
-				backgroundColor="bg-red-600"
+				backgroundColor="bg-danger text-white hover:bg-danger/90"
 				disabled={isWipingBrowserCache}
 				on:click={() => (isWipeAlertVisible = true)}
 			>
@@ -182,33 +182,33 @@
 	<SettingsCard title="About">
 		<div class="space-y-3 text-sm">
 			<div class="flex items-center justify-between gap-2">
-				<span class="text-gray-500 dark:text-gray-400 transition-colors duration-200">Version</span>
+				<span class="text-content-subtle transition-colors duration-200">Version</span>
 				<button
 					on:click|preventDefault={() => onClickCopy(version)}
-					class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 py-1 px-2 rounded-md text-gray-700 dark:text-gray-200 transition-colors duration-200"
+					class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 py-1 px-2 rounded-md text-content-muted transition-colors duration-200"
 				>
 					<span class="font-mono">{version}</span>
 					<img class="w-4 h-4" src="/icon-copy.svg" alt="copy version" />
 				</button>
 			</div>
 			<div class="flex items-center justify-between gap-2">
-				<span class="text-gray-500 dark:text-gray-400 transition-colors duration-200">Status</span>
+				<span class="text-content-subtle transition-colors duration-200">Status</span>
 				{#if updateAvailable}
 					<a
 						href="/settings/update/"
-						class="text-blue-600 dark:text-white hover:underline transition-colors duration-200"
+						class="text-brand hover:underline transition-colors duration-200"
 						>Update available</a
 					>
 				{:else}
-					<span class="text-gray-700 dark:text-gray-200 transition-colors duration-200">Up to date</span
+					<span class="text-content-muted transition-colors duration-200">Up to date</span
 					>
 				{/if}
 			</div>
 			<div class="flex items-center justify-between gap-2">
-				<span class="text-gray-500 dark:text-gray-400 transition-colors duration-200">Licenses</span>
+				<span class="text-content-subtle transition-colors duration-200">Licenses</span>
 				<a
 					href="/licenses.txt"
-					class="text-blue-600 dark:text-white hover:underline transition-colors duration-200"
+					class="text-brand hover:underline transition-colors duration-200"
 					>View licenses</a
 				>
 			</div>

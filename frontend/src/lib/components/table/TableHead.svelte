@@ -1,3 +1,3 @@
-<thead class="table-header-group bg-white dark:bg-gray-900/60 transition-colors duration-200">
+<thead class="table-header-group text-left text-[11px] font-medium uppercase tracking-wide text-content-subtle">
 	<slot />
 </thead>

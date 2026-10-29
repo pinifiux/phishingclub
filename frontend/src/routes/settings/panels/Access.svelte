@@ -179,7 +179,7 @@
 						<Button size={'medium'} on:click={openEditSSO}>Edit SSO</Button>
 						<Button
 							size={'medium'}
-							backgroundColor="bg-red-600"
+							backgroundColor="bg-danger text-white hover:bg-danger/90"
 							on:click={() => {
 								isSSODeleteAlertVisible = true;
 							}}>Disable SSO</Button

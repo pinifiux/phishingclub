@@ -101,7 +101,7 @@
 {:else}
 	<div class="flex flex-wrap gap-6">
 		<SettingsCard title="SCIM Provisioning">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Global domain that serves SCIM provisioning. Must be publicly reachable on 443 with a valid
 				certificate; prefer a dedicated domain not used for campaigns.
 			</p>
@@ -120,7 +120,7 @@
 					toolTipText="Days a disabled recipient is kept before removal. 0 removes on the next prune."
 					>Retention (days)</TextField
 				>
-				<p class="mt-2 text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+				<p class="mt-2 text-content-muted text-sm transition-colors duration-200">
 					How long deprovisioned recipients are kept (disabled) before being permanently removed.
 				</p>
 				<FormError message={scimError} />

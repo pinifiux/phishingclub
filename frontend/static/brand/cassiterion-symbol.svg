@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 300">
+  <title>Cassiterion</title>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="M110 10 L65 55 L28 150 L58 235 L112 278 L178 205 L163 92 Z" fill="#1B222A" stroke="#C5A46B" stroke-width="1.2"/>
+    <path d="M110 10 L96 88 L65 55 Z" fill="#F1F0EB"/>
+    <path d="M96 88 L110 10 L128 83 L132 128 L100 145 Z" fill="#AEB1B0"/>
+    <path d="M110 10 L163 92 L128 83 Z" fill="#D6D8D5"/>
+    <path d="M163 92 L178 205 L132 128 Z" fill="#343B40"/>
+    <path d="M128 83 L163 92 L132 128 Z" fill="#70777A"/>
+    <path d="M65 55 L96 88 L78 160 L28 150 Z" fill="#8D9293"/>
+    <path d="M28 150 L58 235 L78 160 Z" fill="#B9BBB8"/>
+    <path d="M78 160 L100 145 L132 128 L119 215 L58 235 Z" fill="#1D2328"/>
+    <path d="M100 145 L132 128 L119 215 Z" fill="#5B6164"/>
+    <path d="M119 215 L178 205 L112 278 Z" fill="#262D32"/>
+    <path d="M58 235 L112 278 L119 215 Z" fill="#7B8082"/>
+    <path d="M65 55 L128 83 L96 88 Z" fill="#CBCDC9"/>
+    <path d="M96 88 L100 145 L78 160 Z" fill="#40474B"/>
+    <path d="M132 128 L178 205 L119 215 Z" fill="#10161A"/>
+    <g fill="none" stroke="#C5A46B" stroke-width="1.5">
+      <path d="M28 150 L96 88 L163 92 L178 205 L132 128 L65 55"/>
+      <path d="M96 88 L100 145 L119 215 L58 235 L28 150"/>
+      <path d="M100 145 L132 128 L119 215"/>
+      <path d="M163 92 L132 128 L100 145"/>
+      <path d="M65 55 L78 160"/>
+      <path d="M128 83 L132 128"/>
+    </g>
+    <g fill="#C5A46B" stroke="#C5A46B" stroke-width="1">
+      <circle cx="96" cy="88" r="5.5"/>
+      <circle cx="163" cy="92" r="5.5"/>
+      <circle cx="28" cy="150" r="5.5"/>
+      <circle cx="100" cy="145" r="5.5"/>
+      <circle cx="178" cy="205" r="5.5"/>
+      <circle cx="58" cy="235" r="5.5"/>
+      <circle cx="119" cy="215" r="5.5"/>
+    </g>
+  </g>
+</svg>

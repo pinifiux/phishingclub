@@ -13,7 +13,7 @@
 </script>
 
 <th
-	class="pl-4 w-12 bg-grayblue-light dark:bg-gray-800/60 py-4 border-hidden rounded-tl-lg rounded-bl-lg transition-colors duration-200"
+	class="pl-4 w-12 bg-surface-inset py-4 border-hidden rounded-tl-lg rounded-bl-lg transition-colors duration-200"
 >
 	<label class="relative inline-flex items-center cursor-pointer">
 		<input
@@ -24,12 +24,12 @@
 			tabindex="0"
 		/>
 		<div
-			class="w-5 h-5 border-2 border-slate-300 dark:border-gray-700/60 rounded
+			class="w-5 h-5 border-2 border-hairline rounded
 				peer-checked:border-cta-blue dark:peer-checked:border-highlight-blue/80 peer-checked:bg-cta-blue dark:peer-checked:bg-highlight-blue/80
 				peer-focus:border-slate-400 dark:peer-focus:border-highlight-blue/80
 				transition-all duration-200 ease-in-out
 				flex items-center justify-center
-				bg-slate-50 dark:bg-gray-900/60"
+				bg-surface-inset"
 			class:!bg-cta-blue={state === 'some'}
 			class:!border-cta-blue={state === 'some'}
 			class:dark:!bg-highlight-blue={state === 'some'}

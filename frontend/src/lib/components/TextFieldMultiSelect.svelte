@@ -282,7 +282,7 @@
 		<div class="flex items-center">
 			<p
 				id={labelId}
-				class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200"
+				class="font-semibold text-content-muted py-2 transition-colors duration-200"
 			>
 				<slot />
 			</p>
@@ -293,9 +293,9 @@
 			{/if}
 			{#if optional === true}
 				<div
-					class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+					class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 				>
-					<p class="text-slate-600 dark:text-gray-400 text-xs">optional</p>
+					<p class="text-content-muted text-xs">optional</p>
 				</div>
 			{/if}
 		</div>
@@ -323,7 +323,7 @@
 				on:keydown={handleKeyDown}
 				on:click={handleClick}
 				autocomplete="off"
-				class="w-full relative rounded-md py-2 pr-10 text-gray-600 dark:text-gray-300 border border-transparent focus:outline-none focus:border-solid focus:border focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal cursor-pointer focus:cursor-text transition-colors duration-200"
+				class="w-full relative rounded-md py-2 pr-10 text-content-muted border border-transparent focus:outline-none focus:border-solid focus:border focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal cursor-pointer focus:cursor-text transition-colors duration-200"
 				class:pl-10={showDropdown}
 				class:pl-4={!showDropdown}
 				placeholder={!hasValue && !showDropdown && value.length === 0
@@ -378,7 +378,7 @@
 					id={listboxId}
 					role="listbox"
 					aria-labelledby={labelId}
-					class="bg-gray-100 dark:bg-gray-900 list-none mt-4 z-[9999] rounded-md min-w-fit shadow-lg border border-gray-200 dark:border-gray-700/60 max-h-40 overflow-y-scroll transition-colors duration-200"
+					class="bg-gray-100 dark:bg-gray-900 list-none mt-4 z-[9999] rounded-md min-w-fit shadow-lg border border-hairline max-h-40 overflow-y-scroll transition-colors duration-200"
 				>
 					{#if allOptions.length}
 						{#each allOptions as option, index}
@@ -387,7 +387,7 @@
 									id="{listboxId}-option-{index}"
 									role="option"
 									aria-selected={value.includes(option)}
-									class="w-full text-left bg-slate-100 dark:bg-gray-900 rounded-md text-gray-600 dark:text-gray-300 hover:bg-grayblue-dark dark:hover:bg-highlight-blue/40 hover:text-white py-2 px-2 cursor-pointer focus:bg-grayblue-dark dark:focus:bg-highlight-blue/40 focus:text-white focus:outline-none transition-colors duration-200"
+									class="w-full text-left bg-surface-overlay rounded-md text-content-muted hover:bg-grayblue-dark dark:hover:bg-highlight-blue/40 hover:text-white py-2 px-2 cursor-pointer focus:bg-grayblue-dark dark:focus:bg-highlight-blue/40 focus:text-white focus:outline-none transition-colors duration-200"
 									on:click={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -403,7 +403,7 @@
 					{:else}
 						<li
 							role="none"
-							class="w-full bg-slate-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 py-2 px-2 transition-colors duration-200"
+							class="w-full bg-surface-overlay text-content-muted py-2 px-2 transition-colors duration-200"
 						>
 							No options available
 						</li>
@@ -420,7 +420,7 @@
 						on:click|preventDefault={removeSelectedOption}
 						on:keypress|preventDefault={removeSelectedOption}
 						data-value={option}
-						class="flex flex-row items-center bg-gray-100 dark:bg-gray-800/60 hover:bg-gray-200 dark:hover:bg-gray-700/80 px-2 py-1 rounded-md text-gray-900 dark:text-gray-300 text-xs transition-colors duration-200 flex-shrink-0"
+						class="flex flex-row items-center bg-surface-overlay hover:bg-gray-200 dark:hover:bg-gray-700/80 px-2 py-1 rounded-md text-content text-xs transition-colors duration-200 flex-shrink-0"
 						aria-label="Remove {option}"
 						style="max-width: 280px;"
 					>

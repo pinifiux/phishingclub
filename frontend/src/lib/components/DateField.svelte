@@ -60,7 +60,7 @@
 	>
 		<div class="flex items-center">
 			<p
-				class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200"
+				class="font-semibold text-content-muted py-2 transition-colors duration-200"
 			>
 				<slot />
 			</p>
@@ -71,9 +71,9 @@
 			{/if}
 			{#if optional === true}
 				<div
-					class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+					class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 				>
-					<p class="text-slate-600 dark:text-gray-400 text-xs transition-colors duration-200">
+					<p class="text-content-muted text-xs transition-colors duration-200">
 						optional
 					</p>
 				</div>
@@ -92,7 +92,7 @@
 		{required}
 		{disabled}
 		autocomplete="off"
-		class="date-field-input rounded-md text-center py-2 pl-2 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200"
+		class="date-field-input rounded-md text-center py-2 pl-2 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200"
 		class:text-left={textAlign == 'left'}
 		class:text-center={textAlign == 'center'}
 		class:text-right={textAlign == 'right'}

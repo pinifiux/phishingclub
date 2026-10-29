@@ -41,7 +41,7 @@
 
 <form
 	on:submit|preventDefault
-	class="grid grid-cols-3 grid-rows-1 w-full h-full flex-col bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+	class="grid grid-cols-3 grid-rows-1 w-full h-full flex-col bg-surface-raised text-content transition-colors duration-200"
 	class:opacity-70={isSubmitting}
 	bind:this={formElement}
 	{novalidate}

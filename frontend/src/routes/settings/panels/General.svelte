@@ -113,7 +113,7 @@
 <div class="flex flex-wrap gap-6">
 	<SettingsCard title="Display Mode">
 		<div class="space-y-4">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Select which features are available
 			</p>
 			<div class="space-y-3">
@@ -127,7 +127,7 @@
 					label="Red Team Phishing"
 					on:change={() => setDisplayMode(DISPLAY_MODE.BLACKBOX)}
 				/>
-				<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+				<p class="text-content-muted text-sm transition-colors duration-200">
 					Read about the difference between <a
 						class="white underline"
 						href="https://phishing.club/blog/phishing-simulation-vs-red-team-phishing/"

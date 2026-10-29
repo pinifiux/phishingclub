@@ -49,7 +49,7 @@
 	class:cursor-not-allowed={disabled}
 >
 	<div class="flex items-center">
-		<p class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200">
+		<p class="py-1.5 text-xs font-medium text-content-muted">
 			<slot />
 		</p>
 		{#if toolTipText.length > 0}
@@ -59,9 +59,9 @@
 		{/if}
 		{#if optional === true}
 			<div
-				class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+				class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 			>
-				<p class="text-slate-600 dark:text-gray-400 text-xs transition-colors duration-200">
+				<p class="text-content-muted text-xs transition-colors duration-200">
 					optional
 				</p>
 			</div>
@@ -84,12 +84,12 @@
 				{disabled}
 			/>
 			<div
-				class="w-5 h-5 border-2 border-slate-300 dark:border-gray-700/60 rounded
+				class="w-5 h-5 border-2 border-hairline rounded
                         peer-checked:border-cta-blue dark:peer-checked:border-highlight-blue/80 peer-checked:bg-cta-blue dark:peer-checked:bg-highlight-blue/80
                         peer-focus:border-slate-400 dark:peer-focus:border-highlight-blue/80 peer-focus:bg-gray-100 dark:peer-focus:bg-gray-700/60
                         transition-all duration-200 ease-in-out
                         flex items-center justify-center
-						bg-slate-50 dark:bg-gray-900/60"
+						bg-surface-inset"
 			>
 				{#if value}
 					<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

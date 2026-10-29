@@ -255,7 +255,7 @@
 	<div class="w-[780px] p-6 space-y-6">
 		{#if isLoading}
 			<div class="flex items-center justify-center py-10">
-				<p class="text-gray-500 dark:text-gray-400 transition-colors duration-200">Loading...</p>
+				<p class="text-content-subtle transition-colors duration-200">Loading...</p>
 			</div>
 		{:else if showTokenReveal && revealedToken}
 			<!-- ── step 2: token reveal — nothing else until dismissed ── -->
@@ -270,7 +270,7 @@
 						type="text"
 						readonly
 						value={revealedToken}
-						class="flex-1 px-3 py-2 text-sm rounded-md bg-white dark:bg-gray-900/60 border border-amber-300 dark:border-amber-600/60 text-gray-800 dark:text-gray-200 font-mono focus:outline-none transition-colors duration-200"
+						class="flex-1 px-3 py-2 text-sm rounded-md bg-white dark:bg-gray-900/60 border border-amber-300 dark:border-amber-600/60 text-content font-mono focus:outline-none transition-colors duration-200"
 					/>
 					<button
 						type="button"
@@ -290,8 +290,8 @@
 			</div>
 		{:else if !scimConfig}
 			<!-- ── step 1: no config yet ── -->
-			<p class="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-200">
-				Set up SCIM provisioning for <strong class="text-gray-700 dark:text-gray-300"
+			<p class="text-sm text-content-subtle transition-colors duration-200">
+				Set up SCIM provisioning for <strong class="text-content-muted"
 					>{company?.name}</strong
 				>. <br /> A bearer token will be generated once and must be copied into your identity provider.
 			</p>
@@ -300,7 +300,7 @@
 					type="button"
 					disabled={isBusy}
 					on:click={onSetUp}
-					class="bg-cta-blue dark:bg-highlight-blue/80 hover:bg-blue-700 dark:hover:bg-highlight-blue text-sm uppercase font-bold px-4 py-2 text-white rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+					class="bg-brand hover:bg-blue-700 dark:hover:bg-highlight-blue text-sm uppercase font-bold px-4 py-2 text-white rounded-md disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
 				>
 					{isSettingUp ? 'Setting up...' : 'Configure SCIM'}
 				</button>
@@ -310,20 +310,20 @@
 
 			<!-- status panel -->
 			<div
-				class="rounded-md border border-gray-200 dark:border-gray-700/60 p-4 space-y-3 transition-colors duration-200"
+				class="rounded-md border border-hairline p-4 space-y-3 transition-colors duration-200"
 			>
 				<div class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-					<span class="text-gray-500 dark:text-gray-500">Token prefix</span>
-					<span class="text-gray-800 dark:text-gray-200 font-mono">
+					<span class="text-content-subtle">Token prefix</span>
+					<span class="text-content font-mono">
 						{scimConfig.tokenPrefix ? scimConfig.tokenPrefix + '...' : '—'}
 					</span>
-					<span class="text-gray-500 dark:text-gray-500">Last sync</span>
-					<span class="text-gray-800 dark:text-gray-200">{formatDate(scimConfig.lastSyncAt)}</span>
+					<span class="text-content-subtle">Last sync</span>
+					<span class="text-content">{formatDate(scimConfig.lastSyncAt)}</span>
 				</div>
 
 				<!-- scim base url -->
-				<div class="pt-3 border-t border-gray-200 dark:border-gray-700/60 space-y-1">
-					<p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
+				<div class="pt-3 border-t border-hairline space-y-1">
+					<p class="text-xs font-semibold text-content-subtle">
 						SCIM Base URL - provide this to your identity provider
 					</p>
 					{#if scimDomain}
@@ -332,7 +332,7 @@
 								type="text"
 								readonly
 								value={scimBaseURL}
-								class="flex-1 px-3 py-2 text-xs rounded-md bg-gray-50 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-700/60 text-gray-700 dark:text-gray-300 font-mono focus:outline-none transition-colors duration-200"
+								class="flex-1 px-3 py-2 text-xs rounded-md bg-gray-50 dark:bg-gray-900/60 border border-hairline text-content-muted font-mono focus:outline-none transition-colors duration-200"
 							/>
 							<button
 								type="button"
@@ -354,8 +354,8 @@
 			<!-- enabled toggle -->
 			<div class="flex items-center justify-between">
 				<div>
-					<p class="text-sm font-medium text-gray-700 dark:text-gray-300">Provisioning</p>
-					<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+					<p class="text-sm font-medium text-content-muted">Provisioning</p>
+					<p class="text-xs text-content-subtle mt-0.5">
 						{scimConfig.enabled
 							? 'Active - IdP can push changes.'
 							: 'Paused - incoming SCIM requests will be rejected.'}
@@ -368,7 +368,7 @@
 					disabled={isBusy}
 					on:click={onToggleEnabled}
 					class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed
-						{scimConfig.enabled ? 'bg-cta-blue dark:bg-highlight-blue/80' : 'bg-gray-300 dark:bg-gray-600'}"
+						{scimConfig.enabled ? 'bg-brand' : 'bg-gray-300 dark:bg-gray-600'}"
 				>
 					<span
 						class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200
@@ -379,7 +379,7 @@
 
 			<!-- actions -->
 			<div
-				class="border-t border-gray-200 dark:border-gray-700/60 pt-4 flex gap-3 justify-end transition-colors duration-200"
+				class="border-t border-hairline pt-4 flex gap-3 justify-end transition-colors duration-200"
 			>
 				<button
 					type="button"
@@ -431,7 +431,7 @@
 		Are you sure you want to rotate the SCIM bearer token for
 		<strong>{company?.name}</strong>?
 	</p>
-	<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+	<p class="mt-2 text-sm text-content-subtle">
 		the existing token will be immediately invalidated. your identity provider must be updated with
 		the new token before provisioning can resume.
 	</p>
@@ -443,10 +443,10 @@
 	bind:visible={isRestoreAlertVisible}
 	onConfirm={onConfirmRestore}
 >
-	<div class="bg-gray-50 dark:bg-gray-700 p-3 rounded mb-4">
+	<div class="bg-surface-overlay p-3 rounded mb-4">
 		<p class="font-medium">{company?.name}</p>
 	</div>
-	<p class="text-sm text-gray-500 dark:text-gray-400">
+	<p class="text-sm text-content-subtle">
 		Clears the disabled mark from all disabled recipients, making them active again and cancelling
 		any pending prune.
 	</p>
@@ -459,10 +459,10 @@
 	onConfirm={onConfirmPrune}
 	verification="purge"
 >
-	<div class="bg-gray-50 dark:bg-gray-700 p-3 rounded mb-4">
+	<div class="bg-surface-overlay p-3 rounded mb-4">
 		<p class="font-medium">{company?.name}</p>
 	</div>
-	<p class="text-sm text-gray-500 dark:text-gray-400">
+	<p class="text-sm text-content-subtle">
 		Permanently deletes all disabled recipients. Their identity cannot be recovered; campaign
 		results are kept anonymized.
 	</p>
@@ -479,7 +479,7 @@
 		Are you sure you want to delete the SCIM configuration for
 		<strong>{company?.name}</strong>?
 	</p>
-	<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+	<p class="mt-2 text-sm text-content-subtle">
 		the bearer token will be invalidated and future syncs will stop. previously provisioned
 		recipients will not be removed.
 	</p>

@@ -69,14 +69,14 @@
 <div class="flex flex-wrap gap-6">
 	<SettingsCard title="Obfuscation Template">
 		<div class="space-y-4">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Customize the template used when obfuscation is enabled to.
 			</p>
-			<div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md transition-colors duration-200">
-				<p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
+			<div class="bg-surface-overlay p-3 rounded-md transition-colors duration-200">
+				<p class="text-sm text-content-muted mb-2">
 					<strong>Internal obfuscation variable:</strong>
 				</p>
-				<p class="text-xs text-gray-600 dark:text-gray-400 font-mono">
+				<p class="text-xs text-content-muted font-mono">
 					{'{{.Script}}'}
 				</p>
 			</div>
@@ -99,7 +99,7 @@
 			modalMode="update"
 		>
 			<div
-				class="w-80vw col-start-1 col-end-4 row-start-1 py-8 px-6 flex flex-col bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+				class="w-80vw col-start-1 col-end-4 row-start-1 py-8 px-6 flex flex-col bg-surface-raised text-content transition-colors duration-200"
 			>
 				<SimpleCodeEditor
 					bind:value={obfuscationTemplate}
@@ -108,7 +108,7 @@
 					showVimToggle={true}
 					showExpandButton={false}
 				/>
-				<p class="text-sm text-gray-600 dark:text-gray-300 my-4">
+				<p class="text-sm text-content-muted my-4">
 					Example <code class="bg-gray-200 dark:bg-gray-700 p-1 rounded text-xs"
 						>{"eval(atob('{{base64 .Script}}'))"}</code
 					>

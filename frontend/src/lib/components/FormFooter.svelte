@@ -19,7 +19,7 @@
 </script>
 
 <div
-	class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-gray-200 dark:border-gray-700 w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+	class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-hairline w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end bg-surface-raised text-content transition-colors duration-200"
 >
 	<button
 		type="reset"

@@ -765,8 +765,8 @@
 			<FormColumns>
 				<FormColumn>
 					<!-- Domain Information Section -->
-					<div class="mb-6 pt-4 pb-2 border-b border-gray-200 dark:border-gray-600 w-full">
-						<h3 class="text-base font-medium text-pc-darkblue dark:text-white mb-3">
+					<div class="mb-6 pt-4 pb-2 border-b border-hairline w-full">
+						<h3 class="text-base font-medium text-content mb-3">
 							Domain Information
 						</h3>
 						<div class="space-y-6">
@@ -807,7 +807,7 @@
 
 					<!-- TLS Configuration Section -->
 					<div class="pt-4 pb-2 w-full">
-						<h3 class="text-base font-medium text-pc-darkblue dark:text-white mb-3">
+						<h3 class="text-base font-medium text-content mb-3">
 							TLS Configuration
 						</h3>
 						<div class="space-y-6">

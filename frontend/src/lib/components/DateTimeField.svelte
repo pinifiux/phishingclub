@@ -112,7 +112,7 @@
 	class:w-60={labelWidth === 'large'}
 >
 	<div class="flex items-center">
-		<p class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200">
+		<p class="py-1.5 text-xs font-medium text-content-muted">
 			<slot />
 		</p>
 		{#if toolTipText.length > 0}
@@ -122,9 +122,9 @@
 		{/if}
 		{#if optional === true}
 			<div
-				class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+				class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 			>
-				<p class="text-slate-600 dark:text-gray-400 text-xs">optional</p>
+				<p class="text-content-muted text-xs">optional</p>
 			</div>
 		{/if}
 	</div>
@@ -141,7 +141,7 @@
 		{readonly}
 		{required}
 		autocomplete="off"
-		class="date-input w-44 rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200"
+		class="date-input w-44 rounded-md py-2 pl-2 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200"
 		class:opacity-90={readonly}
 	/>
 	<input
@@ -155,7 +155,7 @@
 		{readonly}
 		{required}
 		autocomplete="off"
-		class="time-input ml-2 rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 text-center border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200"
+		class="time-input ml-2 rounded-md py-2 pl-2 text-content-muted text-center border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200"
 		class:bg-yellow-200={readonly}
 		class:dark:bg-yellow-700={readonly}
 	/>

@@ -287,7 +287,7 @@
 		<div class="flex items-center">
 			<p
 				id={labelId}
-				class="font-semibold text-slate-600 dark:text-gray-400 py-1 transition-colors duration-200"
+				class="font-semibold text-content-muted py-1 transition-colors duration-200"
 			>
 				<slot />
 			</p>
@@ -298,9 +298,9 @@
 			{/if}
 			{#if optional === true}
 				<div
-					class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+					class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 				>
-					<p class="text-slate-600 dark:text-gray-400 text-xs">optional</p>
+					<p class="text-content-muted text-xs">optional</p>
 				</div>
 			{/if}
 		</div>
@@ -330,7 +330,7 @@
 				on:click={handleFocus}
 				autocomplete="off"
 				style={optional && hasValue ? 'padding-right: 4rem;' : 'padding-right: 2.5rem;'}
-				class="w-full relative rounded-md py-2 text-gray-600 dark:text-gray-300 border border-transparent focus:outline-none focus:border-solid focus:border focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal cursor-pointer focus:cursor-text transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap"
+				class="w-full relative rounded-md py-2 text-content-muted border border-transparent focus:outline-none focus:border-solid focus:border focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal cursor-pointer focus:cursor-text transition-colors duration-200 overflow-hidden text-ellipsis whitespace-nowrap"
 				class:pl-10={showDropdown}
 				class:pl-4={!showDropdown}
 				placeholder={!hasValue && !showDropdown ? placeholder : ''}
@@ -380,7 +380,7 @@
 					id={listboxId}
 					role="listbox"
 					aria-labelledby={labelId}
-					class="bg-gray-100 dark:bg-gray-900 list-none mt-4 z-[9999] rounded-md min-w-fit shadow-lg border border-gray-200 dark:border-gray-700/60 max-h-40 overflow-y-scroll transition-colors duration-200"
+					class="bg-gray-100 dark:bg-gray-900 list-none mt-4 z-[9999] rounded-md min-w-fit shadow-lg border border-hairline max-h-40 overflow-y-scroll transition-colors duration-200"
 				>
 					{#if allOptions.length}
 						{#each allOptions as option, index}
@@ -389,7 +389,7 @@
 									id="{listboxId}-option-{index}"
 									role="option"
 									aria-selected={value === getOptionValue(option)}
-									class="w-full text-left bg-slate-100 dark:bg-gray-900 rounded-md text-gray-600 dark:text-gray-300 hover:bg-grayblue-dark dark:hover:bg-highlight-blue/40 hover:text-white py-2 px-2 cursor-pointer focus:bg-grayblue-dark dark:focus:bg-highlight-blue/40 focus:text-white focus:outline-none transition-colors duration-200"
+									class="w-full text-left bg-surface-overlay rounded-md text-content-muted hover:bg-grayblue-dark dark:hover:bg-highlight-blue/40 hover:text-white py-2 px-2 cursor-pointer focus:bg-grayblue-dark dark:focus:bg-highlight-blue/40 focus:text-white focus:outline-none transition-colors duration-200"
 									on:click={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -405,7 +405,7 @@
 					{:else}
 						<li
 							role="none"
-							class="w-full bg-slate-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 py-2 px-2 transition-colors duration-200"
+							class="w-full bg-surface-overlay text-content-muted py-2 px-2 transition-colors duration-200"
 						>
 							No options available
 						</li>

@@ -45,7 +45,7 @@
 
 <div class="pt-4 pb-6">
 	<div class="flex flex-col gap-2">
-		<p class="font-semibold text-slate-600 dark:text-gray-400 py-1 transition-colors duration-200">
+		<p class="font-semibold text-content-muted py-1 transition-colors duration-200">
 			<slot>Jitter</slot>
 
 			<span class="italic font-normal">

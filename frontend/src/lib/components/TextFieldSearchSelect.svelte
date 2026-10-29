@@ -72,7 +72,7 @@
 	<label class="flex flex-col py-2 relative">
 		<div class="flex items-center">
 			<p
-				class="font-semibold text-slate-600 dark:text-gray-300 py-2 transition-colors duration-200"
+				class="font-semibold text-content-muted py-2 transition-colors duration-200"
 			>
 				<slot />
 			</p>
@@ -99,7 +99,7 @@
 				on:keyup={_onKeyUp}
 				on:click|stopPropagation={() => {}}
 				autocomplete="off"
-				class="w-full relative rounded-md py-2 pl-4 focus:pl-10 text-gray-600 dark:text-gray-100 border border-transparent focus:outline-none focus:border-solid focus:border focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal cursor-pointer focus:cursor-text transition-colors duration-200"
+				class="w-full relative rounded-md py-2 pl-4 focus:pl-10 text-gray-600 dark:text-gray-100 border border-transparent focus:outline-none focus:border-solid focus:border focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal cursor-pointer focus:cursor-text transition-colors duration-200"
 				{id}
 				{required}
 			/>
@@ -111,7 +111,7 @@
 		{#if options.length && showSelection}
 			<div class="w-96 absolute top-10 z-50">
 				<ul
-					class="bg-gray-100 dark:bg-gray-700 list-none mt-4 rounded-md min-w-fit shadow-md dark:shadow-gray-900/50 border border-gray-200 dark:border-gray-600 max-h-40 overflow-y-scroll transition-colors duration-200"
+					class="bg-surface-overlay list-none mt-4 rounded-md min-w-fit shadow-md dark:shadow-gray-900/50 border border-hairline max-h-40 overflow-y-scroll transition-colors duration-200"
 				>
 					{#each options as option}
 						<li class="break-words">

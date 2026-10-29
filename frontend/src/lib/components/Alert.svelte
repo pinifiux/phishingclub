@@ -260,7 +260,7 @@
 {#if visible}
 	<div
 		transition:fade={{ duration: 150 }}
-		class="fixed top-0 left-0 w-full h-full bg-overlay/[0.92] z-[19]"
+		class="fixed top-0 left-0 w-full h-full bg-black/60 backdrop-blur-sm z-[19]"
 	/>
 	<div
 		class="fixed top-0 left-0 w-full h-full flex justify-center items-center z-20"
@@ -271,16 +271,16 @@
 	>
 		<section
 			bind:this={alertElement}
-			class="ring-1 ring-white/10 w-[32rem] bg-white dark:bg-gray-800 opacity-100 rounded-md flex flex-col transition-colors duration-200"
+			class="w-[32rem] border border-hairline bg-surface-raised opacity-100 rounded-xl shadow-2xl overflow-hidden flex flex-col"
 		>
 			<!-- Header -->
 			<div
-				class="bg-red-700 dark:bg-red-700/90 text-white rounded-t-md py-4 px-8 flex items-center justify-between flex-shrink-0 transition-colors duration-200"
+				class="border-b border-hairline text-content py-3 px-5 flex items-center justify-between flex-shrink-0"
 			>
 				<div class="flex items-center">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-6 w-6 text-white mr-4"
+						class="h-5 w-5 text-danger mr-3"
 						fill="none"
 						viewBox="0 0 24 24"
 						stroke="currentColor"
@@ -292,7 +292,7 @@
 							d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
 						/>
 					</svg>
-					<h1 id="alert-title" class="uppercase mr-8 font-semibold text-2xl">{headline}</h1>
+					<h1 id="alert-title" class="mr-8 text-sm font-semibold text-content">{headline}</h1>
 				</div>
 				<button
 					class="w-4 hover:scale-110"
@@ -309,7 +309,7 @@
 			<div class="px-8 py-6">
 				<div
 					id="alert-description"
-					class="text-gray-600 dark:text-gray-400 transition-colors duration-200"
+					class="text-content-muted transition-colors duration-200"
 				>
 					{#if $$slots.default}
 						<slot />
@@ -343,7 +343,7 @@
 
 			<!-- Footer -->
 			<div
-				class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-gray-200 dark:border-gray-700/60 w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end px-8 bg-gray-50 dark:bg-gray-800/40 rounded-b-md transition-colors duration-200"
+				class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-hairline w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end px-8 bg-gray-50 dark:bg-gray-800/40 rounded-b-md transition-colors duration-200"
 			>
 				{#if !noCancel}
 					<button

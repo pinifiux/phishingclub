@@ -84,9 +84,9 @@ const applyThemeToHTML = (mode) => {
 	const html = document.documentElement;
 	if (mode === modeDark) {
 		html.classList.add('dark');
-		// Dasenda dark surface-base — same value as tailwind.config.js gray-900,
+		// Dasenda dark surface-inset — el fondo del shell de la SOC (bg-surface-inset),
 		// set inline so there's no flash of the old background before CSS paints.
-		html.style.backgroundColor = '#070809';
+		html.style.backgroundColor = '#0d0e10';
 	} else {
 		html.classList.remove('dark');
 		html.style.removeProperty('background-color');

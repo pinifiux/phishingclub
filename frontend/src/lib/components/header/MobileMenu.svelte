@@ -1,4 +1,5 @@
 <script>
+	import Logo from './Logo.svelte';
 	import { page } from '$app/stores';
 	import { menu, mobileTopMenu } from '$lib/consts/navigation';
 	import { shouldHideMenuItem } from '$lib/utils/common';
@@ -171,38 +172,38 @@
 
 	<!-- Mobile Menu -->
 	<div
-		class="mobile-menu-content fixed top-0 left-0 w-full h-full bg-gradient-to-b from-pc-darkblue to-slate-900 dark:from-gray-900 dark:to-gray-950 z-50 overflow-y-auto shadow-xl"
+		class="mobile-menu-content fixed top-0 left-0 w-full h-full bg-surface-inset z-50 overflow-y-auto shadow-xl"
 	>
 		<!-- Header -->
 		<div
-			class="mobile-menu-header flex justify-between h-20 items-center bg-pc-darkblue/90 dark:bg-gray-900/90 px-6 border-b border-white/10 dark:border-gray-700/50"
+			class="mobile-menu-header flex justify-between h-20 items-center bg-surface-inset px-6 border-b border-hairline"
 		>
-			<img class="w-40 h-auto" src="/logo-white.svg" alt="logo" />
+			<Logo size={16} />
 			<div class="flex items-center gap-2">
 				<div
-					class="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-white/10 dark:hover:bg-gray-600/30 transition-all duration-200"
+					class="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-surface-overlay transition-all duration-200"
 				>
 					<ThemeToggle />
 				</div>
 				<button
-					class="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-white/10 dark:hover:bg-gray-600/30 transition-all duration-200"
+					class="flex items-center justify-center w-12 h-12 rounded-lg hover:bg-surface-overlay transition-all duration-200"
 					on:click={() => (visible = false)}
 				>
-					<img class="w-6 h-6" src="/mob-menu-close.svg" alt="close mobile menu" />
+					<img class="w-6 h-6 invert dark:invert-0" src="/mob-menu-close.svg" alt="close mobile menu" />
 				</button>
 			</div>
 		</div>
 
 		<!-- Switch Company Section -->
-		<div class="px-6 py-4 border-b border-white/20 dark:border-highlight-blue/30">
+		<div class="px-6 py-4 border-b border-hairline">
 			<button
-				class="flex items-center w-full py-3 px-4 text-white bg-active-blue dark:bg-slate-800 rounded-lg transition-all duration-200 hover:bg-active-blue/80 dark:hover:bg-slate-700 font-medium"
+				class="flex items-center w-full py-2 px-3 rounded-md border border-hairline text-[13px] font-medium text-content-muted transition-colors hover:bg-surface-overlay hover:text-content"
 				on:click={() => {
 					visible = false;
 					toggleChangeCompanyModal();
 				}}
 			>
-				<div class="flex-shrink-0 mr-3 text-white dark:text-highlight-blue">
+				<div class="flex-shrink-0 mr-3 text-content-subtle">
 					{@html getTopMenuIcon('Change Company')}
 				</div>
 				<span class="flex-1 text-left">Switch Company</span>
@@ -210,9 +211,9 @@
 		</div>
 
 		<!-- Quick Actions Section -->
-		<div class="p-6 border-b border-white/20 dark:border-highlight-blue/30">
+		<div class="p-6 border-b border-hairline">
 			<h2
-				class="text-white/80 dark:text-highlight-blue text-lg font-semibold uppercase tracking-wider mb-4 text-left"
+				class="mb-2 px-3 text-left text-[10px] font-semibold uppercase tracking-[0.12em] text-content-subtle"
 			>
 				Quick Access
 			</h2>
@@ -220,7 +221,7 @@
 				{#each mobileTopMenu as link}
 					<ConditionalDisplay show={link.blackbox ? 'blackbox' : 'both'}>
 						<a
-							class="flex items-center w-full py-3 px-4 text-white text-lg font-medium rounded-lg transition-all duration-200 group {$page
+							class="flex items-center w-full py-1.5 px-3 text-[13px] font-medium rounded-md transition-colors group {$page
 								.url.pathname === link.route
 								? 'bg-active-blue shadow-lg dark:bg-active-blue'
 								: 'hover:bg-highlight-blue/30 hover:shadow-md dark:hover:bg-highlight-blue/20'}"
@@ -230,12 +231,12 @@
 							rel={link.external ? 'noreferrer' : undefined}
 							href={link.route}
 						>
-							<div class="flex-shrink-0 mr-3 text-white dark:text-highlight-blue">
+							<div class="flex-shrink-0 mr-3 text-content-subtle">
 								{@html getTopMenuIcon(link.label)}
 							</div>
 							<span class="flex-1 text-left">{link.label}</span>
 							{#if $page.url.pathname === link.route}
-								<div class="w-2 h-2 bg-white rounded-full"></div>
+								<div class="w-1.5 h-1.5 bg-brand rounded-full"></div>
 							{/if}
 						</a>
 					</ConditionalDisplay>
@@ -246,7 +247,7 @@
 		<!-- Main Navigation -->
 		<div class="p-6">
 			<h2
-				class="text-white/80 dark:text-highlight-blue text-lg font-semibold uppercase tracking-wider mb-4 text-left"
+				class="mb-2 px-3 text-left text-[10px] font-semibold uppercase tracking-[0.12em] text-content-subtle"
 			>
 				Navigation
 			</h2>
@@ -256,9 +257,9 @@
 						<ConditionalDisplay show={link.whitebox ? 'whitebox' : link.blackbox ? 'blackbox' : 'both'}>
 						<!-- section header -->
 						<div class="pt-4 pb-2 first:pt-0">
-							<div class="py-2 px-4 border-l-2 border-cta-blue/60 dark:border-highlight-blue/60">
+							<div class="py-1 px-3">
 								<h3
-									class="text-white dark:text-highlight-blue font-bold text-lg uppercase tracking-wide text-left"
+									class="text-left text-[10px] font-semibold uppercase tracking-[0.12em] text-content-subtle"
 								>
 									{link.label}
 								</h3>
@@ -269,12 +270,12 @@
 							{#each link.items as item, i (i)}
 								<ConditionalDisplay show={item.blackbox ? 'blackbox' : 'both'}>
 									<a
-										class="flex items-center w-full py-2.5 px-4 text-white/90 dark:text-gray-300 text-base font-medium rounded-lg transition-all duration-200 group hover:bg-highlight-blue/30 dark:hover:bg-highlight-blue/20 hover:text-white dark:hover:text-white"
+										class="flex items-center w-full py-1.5 px-3 text-[13px] font-medium rounded-md text-content-muted transition-colors group hover:bg-surface-overlay hover:text-content"
 										href={item.route}
 										on:click={() => (visible = false)}
 									>
 										<div
-											class="flex-shrink-0 mr-3 text-white/70 dark:text-highlight-blue/80 group-hover:text-white"
+											class="flex-shrink-0 mr-3 text-content-subtle group-hover:text-content-muted"
 										>
 											{@html getIconForRoute(item.route)}
 										</div>
@@ -296,11 +297,11 @@
 						<!-- standalone menu item -->
 						<div class="pt-4 pb-2 first:pt-0">
 							<a
-								class="flex items-center w-full py-3 px-4 text-white text-lg font-bold rounded-lg transition-all duration-200 group hover:bg-highlight-blue/30 dark:hover:bg-highlight-blue/20"
+								class="flex items-center w-full py-1.5 px-3 text-[13px] font-medium rounded-md text-content-muted transition-colors group hover:bg-surface-overlay hover:text-content"
 								href={link.route}
 								on:click={() => (visible = false)}
 							>
-								<div class="flex-shrink-0 mr-3 text-white dark:text-highlight-blue">
+								<div class="flex-shrink-0 mr-3 text-content-subtle">
 									{@html getIconForRoute(link.route)}
 								</div>
 								<span class="text-left">{link.label}</span>
@@ -312,10 +313,10 @@
 		</div>
 
 		<!-- Logout Section -->
-		<div class="p-6 border-t border-white/20 dark:border-highlight-blue/30 mt-auto">
+		<div class="p-6 border-t border-hairline mt-auto">
 			<button
 				on:click={onClickLogout}
-				class="w-full border-2 border-white/30 dark:border-highlight-blue/50 hover:border-highlight-blue/60 dark:hover:border-highlight-blue hover:bg-highlight-blue/20 dark:hover:bg-highlight-blue/20 uppercase font-medium py-2.5 px-6 rounded-lg transition-all duration-200 text-sm text-white/90 dark:text-highlight-blue hover:text-white dark:hover:text-white"
+				class="w-full rounded-md border border-hairline py-1.5 px-3 text-sm font-medium text-content-muted transition-colors hover:bg-surface-overlay hover:text-content"
 			>
 				Log Out
 			</button>

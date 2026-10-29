@@ -230,23 +230,23 @@
 		<nav class="mt-2 mb-1 text-sm">
 			<a
 				href="/company"
-				class="text-gray-500 dark:text-gray-400 hover:text-cta-blue dark:hover:text-highlight-blue transition-colors"
+				class="text-content-subtle hover:text-cta-blue dark:hover:text-highlight-blue transition-colors"
 			>
 				Companies
 			</a>
 			<span class="text-gray-400 dark:text-gray-600 mx-2">/</span>
-			<span class="text-gray-700 dark:text-gray-300">{company?.name}</span>
+			<span class="text-content-muted">{company?.name}</span>
 		</nav>
 
-		<nav class="mt-4 mb-6 border-b border-gray-200 dark:border-gray-700">
+		<nav class="mt-4 mb-6 border-b border-hairline">
 			<div class="flex">
 				{#each tabs as tab}
 					<button
 						on:click={() => selectTab(tab.id)}
 						class="px-6 py-3 text-sm font-medium border-b-2 transition-colors
 							{active === tab.id
-							? 'border-cta-blue dark:border-highlight-blue text-cta-blue dark:text-highlight-blue'
-							: 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'}"
+							? 'border-cta-blue dark:border-highlight-blue text-brand'
+							: 'border-transparent text-content-subtle hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'}"
 					>
 						{tab.label}
 					</button>
@@ -267,18 +267,18 @@
 								bind:value={formValues.name}>Company Name</TextField
 							>
 							<div class="flex flex-col py-2">
-								<p class="font-semibold text-slate-600 dark:text-gray-400 py-2">Comment</p>
+								<p class="font-semibold text-content-muted py-2">Comment</p>
 								<textarea
 									bind:value={formValues.comment}
 									maxlength={1000000}
 									rows="6"
 									placeholder="Add notes about this company..."
-									class="w-full p-3 rounded-md text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 resize-y transition-colors duration-200"
+									class="w-full p-3 rounded-md text-content-muted border border-hairline bg-surface-inset focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 resize-y transition-colors duration-200"
 								/>
 							</div>
 							<div class="flex flex-col py-2">
-								<p class="font-semibold text-slate-600 dark:text-gray-400 py-2">Banner Color</p>
-								<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
+								<p class="font-semibold text-content-muted py-2">Banner Color</p>
+								<p class="text-content-muted text-sm mb-3">
 									Tints the banner and frame shown while viewing as this company, making it easier to
 									recognize which company you are working in.
 								</p>
@@ -295,13 +295,13 @@
 										bind:value={formValues.color}
 										placeholder={DEFAULT_COMPANY_COLOR}
 										maxlength="7"
-										class="w-32 p-2 rounded-md text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
+										class="w-32 p-2 rounded-md text-content-muted border border-hairline bg-surface-inset focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
 									/>
 									{#if formValues.color}
 										<button
 											type="button"
 											on:click={() => (formValues.color = '')}
-											class="text-sm text-gray-500 dark:text-gray-400 hover:text-cta-blue dark:hover:text-highlight-blue transition-colors"
+											class="text-sm text-content-subtle hover:text-cta-blue dark:hover:text-highlight-blue transition-colors"
 										>
 											Reset to default
 										</button>
@@ -316,7 +316,7 @@
 					</SettingsCard>
 
 					<SettingsCard title="Auto-Prune Orphaned Recipients">
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<p class="text-content-muted text-sm mb-4">
 							Choose whether orphaned recipients are removed automatically.
 						</p>
 						<div class="space-y-2">
@@ -340,11 +340,11 @@
 			{:else if active === 'integrations'}
 				<div class="flex flex-wrap gap-6">
 					<SettingsCard title="SCIM Provisioning">
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<p class="text-content-muted text-sm mb-4">
 							Automatically provision recipients from your identity provider.
 						</p>
 						<div class="flex items-center gap-2 mb-6">
-							<span class="text-sm text-gray-500 dark:text-gray-400">Status</span>
+							<span class="text-sm text-content-subtle">Status</span>
 							<span
 								class="text-xs font-semibold px-2 py-1 rounded-full
 									{scimStatus === 'enabled'
@@ -380,7 +380,7 @@
 				{:else}
 				<div class="flex flex-wrap gap-6">
 					<SettingsCard title="Report Template">
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<p class="text-content-muted text-sm mb-4">
 							Override the global report template for this company.
 						</p>
 						<div class="mt-auto flex justify-end">
@@ -391,7 +391,7 @@
 					</SettingsCard>
 
 					<SettingsCard title="Report Delivery">
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<p class="text-content-muted text-sm mb-4">
 							Email the campaign report PDF to a recipient group, on demand or when a campaign is
 							closed.
 						</p>
@@ -405,8 +405,8 @@
 				</div>
 
 					<div class="mt-8">
-						<h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200">Delivery Log</h3>
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<h3 class="text-lg font-semibold text-content-muted">Delivery Log</h3>
+						<p class="text-content-muted text-sm mb-4">
 							Reports sent for this company, including automatic and on demand deliveries.
 						</p>
 						<CompanyReportDeliveryLog companyId={companyId} />
@@ -415,7 +415,7 @@
 			{:else if active === 'data'}
 				<div class="flex flex-wrap gap-6">
 					<SettingsCard title="Export">
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<p class="text-content-muted text-sm mb-4">
 							Download a ZIP with all company data, recipients, and campaign events.
 						</p>
 						<div class="mt-auto flex justify-end">
@@ -428,7 +428,7 @@
 			{:else if active === 'danger'}
 				<div class="flex flex-wrap gap-6">
 					<SettingsCard title="Delete Company">
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+						<p class="text-content-muted text-sm mb-4">
 							Permanently removes this company and all of its domains, campaigns, and recipients.
 							This cannot be undone.
 						</p>
@@ -458,7 +458,7 @@
 	>
 		<div>
 			<p class="mb-4">Are you sure you want to export all data for:</p>
-			<div class="bg-gray-50 dark:bg-gray-700 p-3 rounded mb-4">
+			<div class="bg-surface-overlay p-3 rounded mb-4">
 				<p class="font-medium">{company?.name}</p>
 			</div>
 			<p class="text-sm text-gray-500">

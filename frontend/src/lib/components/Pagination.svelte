@@ -43,22 +43,22 @@
 	});
 </script>
 
-<div class="flex items-center mb-8 mt-4">
+<div class="mt-3 mb-6 flex items-center gap-1 border-t border-hairline pt-2.5 text-xs text-content-subtle">
 	<button
-		class="bg-highlight-blue dark:bg-highlight-blue/80 w-8 text-white hover:bg-active-blue dark:hover:bg-highlight-blue m-1 rounded-md py-1 px-1 transition-colors duration-200"
+		class="grid h-7 w-7 place-items-center rounded border border-hairline text-content-muted hover:bg-surface-overlay disabled:opacity-40 transition-colors"
 		disabled={currentPage === 1}
 		class:opacity-50={currentPage === 1}
 		on:click|preventDefault={previousPage}>&lt;&lt;</button
 	>
 	<div
-		class="w-8 text-center bg-grayblue-light dark:bg-gray-800/60 text-gray-700 dark:text-gray-300 rounded-md py-1 px-1 transition-colors duration-200"
+		class="px-1.5 tabular-nums text-content-muted"
 	>
 		{currentPage}
 	</div>
 	<button
 		disabled={!hasNextPage}
 		class:opacity-50={!hasNextPage}
-		class=" bg-highlight-blue dark:bg-highlight-blue/80 w-8 text-white hover:bg-active-blue dark:hover:bg-highlight-blue m-1 rounded-md py-1 px-1 transition-colors duration-200"
+		class="grid h-7 w-7 place-items-center rounded border border-hairline text-content-muted hover:bg-surface-overlay disabled:opacity-40 transition-colors"
 		on:click|preventDefault={nextPage}>&gt;&gt;</button
 	>
 </div>

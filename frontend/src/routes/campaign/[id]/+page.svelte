@@ -1660,25 +1660,25 @@
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
 			<!-- campaign details card -->
 			<div
-				class="bg-white dark:bg-gray-900/80 p-6 rounded-lg shadow-md dark:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
+				class="bg-surface-raised p-6 rounded-lg shadow-md dark:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
 			>
 				<h3
-					class="text-lg font-semibold text-pc-darkblue dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700"
+					class="text-lg font-semibold text-content mb-4 pb-2 border-b border-hairline"
 				>
 					Campaign Details
 				</h3>
 				<div class="space-y-2.5 text-sm">
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Status:</span>
-						<span class="text-pc-darkblue dark:text-white font-semibold">
+						<span class="text-content-muted">Status:</span>
+						<span class="text-content font-semibold">
 							{toEvent(campaign.notableEventName).name}
 						</span>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Template:</span>
+						<span class="text-content-muted">Template:</span>
 						<button
-							class="text-cta-blue dark:text-blue-400 hover:underline text-right"
+							class="text-brand hover:underline text-right"
 							on:click={() => {
 								openTemplateModal(campaign.template?.id);
 							}}
@@ -1688,11 +1688,11 @@
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Groups:</span>
+						<span class="text-content-muted">Groups:</span>
 						<div class="text-right">
 							{#each campaign.recipientGroups as group, i}
 								<a
-									class="text-cta-blue dark:text-blue-400 hover:underline"
+									class="text-brand hover:underline"
 									href="/recipient/group/{recipientGroupMap.byValue(group)}"
 									target="_blank">{group}</a
 								>{#if i !== (campaign.recipientGroups?.length ?? 0) - 1},&nbsp;{/if}
@@ -1701,50 +1701,50 @@
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Type:</span>
-						<span class="text-pc-darkblue dark:text-white"
+						<span class="text-content-muted">Type:</span>
+						<span class="text-content"
 							>{isSelfManaged ? 'Self Managed' : 'Scheduled'}</span
 						>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Webhook:</span>
+						<span class="text-content-muted">Webhook:</span>
 						<div class="text-right">
 							{#if campaign.webhooks?.length}
 								{#each campaign.webhooks as wh, i}
 									<a
-										class="text-cta-blue dark:text-blue-400 hover:underline"
+										class="text-brand hover:underline"
 										href="/webhook?edit={wh.webhookID}"
 										target="_blank">{webhookMap.byKey(wh.webhookID) || wh.webhookID}</a
 									>{#if i < campaign.webhooks.length - 1},&nbsp;{/if}
 								{/each}
 							{:else if campaign.webhookID}
 								<a
-									class="text-cta-blue dark:text-blue-400 hover:underline"
+									class="text-brand hover:underline"
 									href="/webhook?edit={campaign.webhookID}"
 									target="_blank">{webhookMap.byKey(campaign.webhookID) || 'Yes'}</a
 								>
 							{:else}
-								<span class="text-pc-darkblue dark:text-white">None</span>
+								<span class="text-content">None</span>
 							{/if}
 						</div>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Data Saving:</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content-muted">Data Saving:</span>
+						<span class="text-content">
 							{campaign.saveSubmittedData ? 'Enabled' : 'Disabled'}
 						</span>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Test:</span>
-						<span class="text-pc-darkblue dark:text-white">{campaign.isTest ? 'Yes' : 'No'}</span>
+						<span class="text-content-muted">Test:</span>
+						<span class="text-content">{campaign.isTest ? 'Yes' : 'No'}</span>
 					</div>
 
 					<ConditionalDisplay show="blackbox">
 						<div class="flex justify-between">
-							<span class="text-gray-600 dark:text-gray-400">
+							<span class="text-content-muted">
 								{campaign?.allowDeny ? (allowedFilter ? 'Allow' : 'Deny') : ''}
 								IP Filters:
 							</span>
@@ -1753,7 +1753,7 @@
 									{#each campaign.allowDeny as allowDeny, i}
 										<a
 											href="/filter/?edit={allowDeny.id}"
-											class="text-cta-blue dark:text-blue-400 hover:underline"
+											class="text-brand hover:underline"
 											target="_blank"
 										>
 											{allowDeny.name}
@@ -1762,28 +1762,28 @@
 										{/if}
 									{/each}
 								{:else}
-									<span class="text-pc-darkblue dark:text-white">None</span>
+									<span class="text-content">None</span>
 								{/if}
 							</div>
 						</div>
 
 						<div class="flex justify-between">
-							<span class="text-gray-600 dark:text-gray-400">Deny Page:</span>
-							<span class="text-pc-darkblue dark:text-white">
+							<span class="text-content-muted">Deny Page:</span>
+							<span class="text-content">
 								{campaign.denyPage ? campaign.denyPage.name : 'None'}
 							</span>
 						</div>
 
 						<div class="flex justify-between">
-							<span class="text-gray-600 dark:text-gray-400">Evasion Page:</span>
-							<span class="text-pc-darkblue dark:text-white">
+							<span class="text-content-muted">Evasion Page:</span>
+							<span class="text-content">
 								{campaign.evasionPage ? campaign.evasionPage.name : 'None'}
 							</span>
 						</div>
 
 						<div class="flex justify-between">
-							<span class="text-gray-600 dark:text-gray-400">Metadata:</span>
-							<span class="text-pc-darkblue dark:text-white">
+							<span class="text-content-muted">Metadata:</span>
+							<span class="text-content">
 								{campaign.saveBrowserMetadata ? 'Enabled' : 'Disabled'}
 							</span>
 						</div>
@@ -1793,17 +1793,17 @@
 
 			<!-- timeline card -->
 			<div
-				class="bg-white dark:bg-gray-900/80 p-6 rounded-lg shadow-md dark:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
+				class="bg-surface-raised p-6 rounded-lg shadow-md dark:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
 			>
 				<h3
-					class="text-lg font-semibold text-pc-darkblue dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700"
+					class="text-lg font-semibold text-content mb-4 pb-2 border-b border-hairline"
 				>
 					Timeline
 				</h3>
 				<div class="space-y-2.5 text-sm">
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Created:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Created:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.createdAt} /></span
 						>
 					</div>
@@ -1811,82 +1811,82 @@
 					{#if !isSelfManaged}
 						{#if campaign.scheduleAt}
 							<div class="flex justify-between">
-								<span class="text-gray-600 dark:text-gray-400">Schedules at:</span>
-								<span class="text-pc-darkblue dark:text-white text-right"
+								<span class="text-content-muted">Schedules at:</span>
+								<span class="text-content text-right"
 									><Datetime value={campaign.scheduleAt} /></span
 								>
 							</div>
 						{/if}
 
 						<div class="flex justify-between">
-							<span class="text-gray-600 dark:text-gray-400">Delivery start:</span>
-							<span class="text-pc-darkblue dark:text-white text-right"
+							<span class="text-content-muted">Delivery start:</span>
+							<span class="text-content text-right"
 								><Datetime value={campaign.sendStartAt} /></span
 							>
 						</div>
 
 						<div class="flex justify-between">
-							<span class="text-gray-600 dark:text-gray-400">Delivery finish:</span>
-							<span class="text-pc-darkblue dark:text-white text-right"
+							<span class="text-content-muted">Delivery finish:</span>
+							<span class="text-content text-right"
 								><Datetime value={campaign.sendEndAt} /></span
 							>
 						</div>
 					{/if}
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Close At:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Close At:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.closeAt} /></span
 						>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Closed:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Closed:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.closedAt} /></span
 						>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Anonymize At:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Anonymize At:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.anonymizeAt} /></span
 						>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Anonymized:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Anonymized:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.anonymizedAt} /></span
 						>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Anonymize Data At:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Anonymize Data At:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.dataAnonymizeAt} /></span
 						>
 					</div>
 
 					<div class="flex justify-between">
-						<span class="text-gray-600 dark:text-gray-400">Data Anonymized:</span>
-						<span class="text-pc-darkblue dark:text-white text-right"
+						<span class="text-content-muted">Data Anonymized:</span>
+						<span class="text-content text-right"
 							><Datetime value={campaign.dataAnonymizedAt} /></span
 						>
 					</div>
 				</div>
 
 				{#if campaign.constraintWeekDays}
-					<div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+					<div class="mt-6 pt-4 border-t border-hairline">
 						<div class="mb-3">
-							<span class="text-gray-600 dark:text-gray-400 text-sm font-medium">Schedule:</span>
+							<span class="text-content-muted text-sm font-medium">Schedule:</span>
 						</div>
 						<div class="flex gap-1.5 mb-3">
 							{#each formatWeekDays(campaign.constraintWeekDays).days as day}
 								<div
 									class="w-8 h-8 flex items-center justify-center rounded text-xs transition-all {day.isActive
 										? 'bg-cta-blue text-white font-medium'
-										: 'bg-gray-100 dark:bg-gray-800 text-gray-400 border border-gray-200 dark:border-gray-700'}"
+										: 'bg-gray-100 dark:bg-gray-800 text-gray-400 border border-hairline'}"
 									title={day.full}
 								>
 									{day.short}
@@ -1921,7 +1921,7 @@
 								</span>
 								<button
 									on:click={() => timeFormat.update((f) => !f)}
-									class="ml-auto text-xs px-2 py-1 rounded border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400"
+									class="ml-auto text-xs px-2 py-1 rounded border border-hairline hover:bg-gray-50 dark:hover:bg-gray-800 text-content-muted"
 								>
 									{$timeFormat ? '12h' : '24h'}
 								</button>
@@ -1933,17 +1933,17 @@
 
 			<!-- actions card -->
 			<div
-				class="bg-white dark:bg-gray-900/80 p-6 rounded-lg shadow-md dark:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
+				class="bg-surface-raised p-6 rounded-lg shadow-md dark:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
 			>
 				<h3
-					class="text-lg font-semibold text-pc-darkblue dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700"
+					class="text-lg font-semibold text-content mb-4 pb-2 border-b border-hairline"
 				>
 					Actions
 				</h3>
 				<div class="space-y-3">
 					<!-- management actions -->
 					<div>
-						<p class="text-xs text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wide">
+						<p class="text-xs text-content-subtle mb-1 uppercase tracking-wide">
 							Manage
 						</p>
 						<div class="flex flex-wrap gap-2">
@@ -2019,8 +2019,8 @@
 					</div>
 
 					<!-- export actions -->
-					<div class="pt-3 border-t border-gray-200 dark:border-gray-700">
-						<p class="text-xs text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wide">
+					<div class="pt-3 border-t border-hairline">
+						<p class="text-xs text-content-subtle mb-1 uppercase tracking-wide">
 							Export
 						</p>
 						<div class="flex flex-wrap gap-2">
@@ -2042,8 +2042,8 @@
 					</div>
 
 					<!-- import section -->
-					<div class="pt-3 border-t border-gray-200 dark:border-gray-700">
-						<p class="text-xs text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wide">
+					<div class="pt-3 border-t border-hairline">
+						<p class="text-xs text-content-subtle mb-1 uppercase tracking-wide">
 							Import
 						</p>
 						<div
@@ -2125,7 +2125,7 @@
 						<TableCell>
 							{#if campaign.eventTypesIDToNameMap[event.eventID] === 'campaign_recipient_submitted_data' && (formatEventData(event.data, campaign.eventTypesIDToNameMap[event.eventID]).startsWith('🍪') || formatEventData(event.data, campaign.eventTypesIDToNameMap[event.eventID]).startsWith('🔑'))}
 								<button
-									class="hover:bg-gray-100 dark:hover:bg-gray-700 px-2 py-1 rounded-md transition-colors w-full text-left text-ellipsis overflow-hidden text-gray-900 dark:text-gray-100"
+									class="hover:bg-gray-100 dark:hover:bg-gray-700 px-2 py-1 rounded-md transition-colors w-full text-left text-ellipsis overflow-hidden text-content"
 									title={formatEventData(event.data, campaign.eventTypesIDToNameMap[event.eventID])}
 									on:click={() =>
 										onClickCopyEventData(
@@ -2446,7 +2446,7 @@
 					<TableCell>
 						{#if campaign.eventTypesIDToNameMap[event.eventID] === 'campaign_recipient_submitted_data' && (formatEventData(event.data, campaign.eventTypesIDToNameMap[event.eventID]).startsWith('🍪') || formatEventData(event.data, campaign.eventTypesIDToNameMap[event.eventID]).startsWith('🔑'))}
 							<button
-								class="hover:bg-gray-100 dark:hover:bg-gray-700 px-2 py-1 rounded-md transition-colors w-full text-left text-ellipsis overflow-hidden text-gray-900 dark:text-gray-100"
+								class="hover:bg-gray-100 dark:hover:bg-gray-700 px-2 py-1 rounded-md transition-colors w-full text-left text-ellipsis overflow-hidden text-content"
 								title={formatEventData(event.data, campaign.eventTypesIDToNameMap[event.eventID])}
 								on:click={() =>
 									onClickCopyEventData(
@@ -2502,7 +2502,7 @@
 		<div class="space-y-6">
 			<!-- Full-width Landing Page Flow -->
 			<div class="p-6 rounded-lg">
-				<h3 class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b pb-2">
+				<h3 class="text-xl font-semibold text-content mb-4 border-b pb-2">
 					Phishing Flow
 				</h3>
 
@@ -2510,8 +2510,8 @@
 				<div class="flex items-center justify-center mb-6 text-sm">
 					<div class="flex items-center flex-wrap justify-center gap-2">
 						<!-- First block is always the delivery method -->
-						<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
-							<div class="font-medium text-gray-800 dark:text-white">
+						<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
+							<div class="font-medium text-content">
 								{#if campaign.template?.email}
 									Email
 								{:else}
@@ -2527,17 +2527,17 @@
 
 						<!-- Before Landing -->
 						{#if campaign.template?.beforeLandingPage}
-							<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
-								<div class="font-medium text-gray-800 dark:text-white">Before Landing</div>
+							<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
+								<div class="font-medium text-content">Before Landing</div>
 							</div>
 							<!-- Only show arrow if there's a next step -->
 							{#if campaign.template?.landingPage || campaign.template?.landingProxy}
 								<div class="mx-2">→</div>
 							{/if}
 						{:else if campaign.template?.beforeLandingProxy}
-							<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
+							<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
 								<div
-									class="font-medium text-gray-800 dark:text-white flex items-center justify-center gap-1"
+									class="font-medium text-content flex items-center justify-center gap-1"
 								>
 									<ProxySvgIcon size="w-4 h-4" /> Before
 								</div>
@@ -2550,17 +2550,17 @@
 
 						<!-- Main Landing -->
 						{#if campaign.template?.landingPage}
-							<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
-								<div class="font-medium text-gray-800 dark:text-white">Main Landing</div>
+							<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
+								<div class="font-medium text-content">Main Landing</div>
 							</div>
 							<!-- Only show arrow if there's a next step -->
 							{#if campaign.template?.afterLandingPage || campaign.template?.afterLandingProxy || campaign.template?.afterLandingPageRedirectURL}
 								<div class="mx-2">→</div>
 							{/if}
 						{:else if campaign.template?.landingProxy}
-							<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
+							<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
 								<div
-									class="font-medium text-gray-800 dark:text-white flex items-center justify-center gap-1"
+									class="font-medium text-content flex items-center justify-center gap-1"
 								>
 									<ProxySvgIcon size="w-4 h-4" /> Main
 								</div>
@@ -2573,13 +2573,13 @@
 
 						<!-- After Landing or Redirect -->
 						{#if campaign.template?.afterLandingPage}
-							<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
-								<div class="font-medium text-gray-800 dark:text-white">After Landing</div>
+							<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
+								<div class="font-medium text-content">After Landing</div>
 							</div>
 						{:else if campaign.template?.afterLandingProxy}
-							<div class="text-center px-3 py-2 bg-pc-lightblue dark:bg-blue-600 rounded">
+							<div class="text-center px-3 py-2 bg-surface-inset border border-hairline rounded-md">
 								<div
-									class="font-medium text-gray-800 dark:text-white flex items-center justify-center gap-1"
+									class="font-medium text-content flex items-center justify-center gap-1"
 								>
 									<ProxySvgIcon size="w-4 h-4" /> After
 								</div>
@@ -2588,7 +2588,7 @@
 						{#if campaign.template?.afterLandingPageRedirectURL}
 							<div class="mx-2">→</div>
 							<div class="text-center px-3 py-2 bg-pc-lightorange dark:bg-orange-600 rounded">
-								<div class="font-medium text-gray-800 dark:text-white">Redirect</div>
+								<div class="font-medium text-content">Redirect</div>
 							</div>
 						{/if}
 					</div>
@@ -2599,25 +2599,25 @@
 			<div class="grid grid-cols-2 gap-6">
 				<!-- Basic Info Section -->
 				<div class="p-6 rounded-lg">
-					<h3 class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b pb-2">
+					<h3 class="text-xl font-semibold text-content mb-4 border-b pb-2">
 						Basic Information
 					</h3>
 					<div class="grid grid-cols-[120px_1fr] gap-y-3">
 						<span class="text-grayblue-dark font-medium">Name:</span>
-						<span class="text-pc-darkblue dark:text-white">{campaign.template?.name ?? ''}</span>
+						<span class="text-content">{campaign.template?.name ?? ''}</span>
 
 						<span class="text-grayblue-dark font-medium">Query Key:</span>
-						<span class="text-pc-darkblue dark:text-white"
+						<span class="text-content"
 							>{campaign.template?.urlIdentifier?.name ?? ''}</span
 						>
 
 						<span class="text-grayblue-dark font-medium">State Key:</span>
-						<span class="text-pc-darkblue dark:text-white"
+						<span class="text-content"
 							>{campaign.template?.stateIdentifier?.name ?? ''}</span
 						>
 
 						<span class="text-grayblue-dark font-medium">Delivery :</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content">
 							{#if campaign.template?.email}
 								Email ({campaign.template.email.name ?? ''})
 							{:else}
@@ -2626,7 +2626,7 @@
 						</span>
 
 						<span class="text-grayblue-dark font-medium">Before Page:</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content">
 							{#if campaign.template?.beforeLandingPage}
 								{campaign.template.beforeLandingPage.name}
 							{:else if campaign.template?.beforeLandingProxy}
@@ -2640,7 +2640,7 @@
 						</span>
 
 						<span class="text-grayblue-dark font-medium">Main Page:</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content">
 							{#if campaign.template?.landingPage}
 								{campaign.template.landingPage.name}
 							{:else if campaign.template?.landingProxy}
@@ -2654,7 +2654,7 @@
 						</span>
 
 						<span class="text-grayblue-dark font-medium">After Page:</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content">
 							{#if campaign.template?.afterLandingPage}
 								{campaign.template.afterLandingPage.name}
 							{:else if campaign.template?.afterLandingProxy}
@@ -2668,7 +2668,7 @@
 						</span>
 
 						<span class="text-grayblue-dark font-medium">Redirect URL:</span>
-						<span class="text-pc-darkblue dark:text-white"
+						<span class="text-content"
 							>{campaign.template?.afterLandingPageRedirectURL ?? 'N/A'}</span
 						>
 					</div>
@@ -2677,30 +2677,30 @@
 				<!-- Email Configuration -->
 				{#if campaign.template?.email}
 					<div class="p-6 rounded-lg">
-						<h3 class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b pb-2">
+						<h3 class="text-xl font-semibold text-content mb-4 border-b pb-2">
 							Email
 						</h3>
 						<div class="grid grid-cols-[120px_1fr] gap-y-3">
 							<span class="text-grayblue-dark font-medium">Name:</span>
-							<span class="text-pc-darkblue dark:text-white">{campaign.template?.email?.name}</span>
+							<span class="text-content">{campaign.template?.email?.name}</span>
 
 							<span class="text-grayblue-dark font-medium">Envelope:</span>
-							<span class="text-pc-darkblue dark:text-white"
+							<span class="text-content"
 								>{campaign.template?.email?.mailEnvelopeFrom}</span
 							>
 
 							<span class="text-grayblue-dark font-medium">From:</span>
-							<span class="text-pc-darkblue dark:text-white"
+							<span class="text-content"
 								>{campaign.template?.email?.mailHeaderFrom}</span
 							>
 
 							<span class="text-grayblue-dark font-medium">Subject:</span>
-							<span class="text-pc-darkblue dark:text-white"
+							<span class="text-content"
 								>{campaign.template?.email?.mailHeaderSubject}</span
 							>
 
 							<span class="text-grayblue-dark font-medium">Tracking:</span>
-							<span class="text-pc-darkblue dark:text-white"
+							<span class="text-content"
 								>{campaign.template?.email?.addTrackingPixel ? 'Enabled' : 'Disabled'}</span
 							>
 						</div>
@@ -2712,17 +2712,17 @@
 			<div class="grid grid-cols-2 gap-6">
 				<!-- Domain Configuration -->
 				<div class="p-6 rounded-lg">
-					<h3 class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b pb-2">
+					<h3 class="text-xl font-semibold text-content mb-4 border-b pb-2">
 						Domain
 					</h3>
 					<div class="grid grid-cols-[120px_1fr] gap-y-3">
 						<span class="text-grayblue-dark font-medium">Host Site:</span>
-						<span class="text-pc-darkblue dark:text-white"
+						<span class="text-content"
 							>{campaign.template?.domain?.hostWebsite ? 'Yes' : 'No'}</span
 						>
 
 						<span class="text-grayblue-dark font-medium">Domain:</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content">
 							<a
 								href="https://{campaign.template?.domain?.name}"
 								target="_blank"
@@ -2733,10 +2733,10 @@
 						</span>
 
 						<span class="text-grayblue-dark font-medium">URL Path:</span>
-						<span class="text-pc-darkblue dark:text-white">{campaign.template?.urlPath}</span>
+						<span class="text-content">{campaign.template?.urlPath}</span>
 
 						<span class="text-grayblue-dark font-medium">TLS:</span>
-						<span class="text-pc-darkblue dark:text-white">
+						<span class="text-content">
 							{campaign.template?.domain?.managedTLS
 								? 'Managed'
 								: campaign.template?.domain?.ownManagedTLS
@@ -2749,38 +2749,38 @@
 				<!-- SMTP/API Configuration -->
 				{#if campaign.template?.smtpConfiguration || campaign.template?.apiSender}
 					<div class="p-6 rounded-lg">
-						<h3 class="text-xl font-semibold text-pc-darkblue dark:text-white mb-4 border-b pb-2">
+						<h3 class="text-xl font-semibold text-content mb-4 border-b pb-2">
 							{campaign.template?.smtpConfiguration ? 'Email SMTP' : 'API Sender'}
 						</h3>
 						<div class="grid grid-cols-[120px_1fr] gap-y-3">
 							{#if campaign.template?.smtpConfiguration}
 								<span class="text-grayblue-dark font-medium">Name:</span>
-								<span class="text-pc-darkblue dark:text-white"
+								<span class="text-content"
 									>{campaign.template?.smtpConfiguration?.name}</span
 								>
 
 								<span class="text-grayblue-dark font-medium">Host:</span>
-								<span class="text-pc-darkblue dark:text-white"
+								<span class="text-content"
 									>{campaign.template?.smtpConfiguration?.host}</span
 								>
 
 								<span class="text-grayblue-dark font-medium">Port:</span>
-								<span class="text-pc-darkblue dark:text-white"
+								<span class="text-content"
 									>{campaign.template?.smtpConfiguration?.port}</span
 								>
 
 								<span class="text-grayblue-dark font-medium">Username:</span>
-								<span class="text-pc-darkblue dark:text-white">
+								<span class="text-content">
 									{campaign.template?.smtpConfiguration?.username || 'Not configured'}
 								</span>
 
 								<span class="text-grayblue-dark font-medium">Allow insecure: </span>
-								<span class="text-pc-darkblue dark:text-white">
+								<span class="text-content">
 									{!campaign.template?.smtpConfiguration?.ignoreCertErrors ? 'Disabled' : 'Enabled'}
 								</span>
 							{:else}
 								<span class="text-grayblue-dark font-medium">API Sender:</span>
-								<span class="text-pc-darkblue dark:text-white"
+								<span class="text-content"
 									>{campaign.template?.apiSender?.name}</span
 								>
 							{/if}
@@ -2793,7 +2793,7 @@
 	<Alert headline="close" bind:visible={isCloseModalVisible} onConfirm={onConfirmCloseCampaign}>
 		<div>
 			<ul
-				class="list-disc ml-8 mt-4 mb-4 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="list-disc ml-8 mt-4 mb-4 text-content-muted transition-colors duration-200"
 			>
 				<li class="list-tem">Stop any pending delivery</li>
 				<li class="list-tem">Links in e-mails and landing pages will stop working</li>
@@ -2810,7 +2810,7 @@
 	>
 		<div>
 			<ul
-				class="list-disc ml-8 mt-4 mb-4 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="list-disc ml-8 mt-4 mb-4 text-content-muted transition-colors duration-200"
 			>
 				<li class="list-tem">Stop any pending delivery</li>
 				<li class="list-tem">Links in e-mails and landing pages will stop working</li>
@@ -2828,7 +2828,7 @@
 	>
 		<div>
 			<ul
-				class="list-disc ml-8 mt-4 mb-4 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="list-disc ml-8 mt-4 mb-4 text-content-muted transition-colors duration-200"
 			>
 				<li class="list-tem">
 					Submitted data, user agent, ip and browser metadata will be anonymized
@@ -2851,21 +2851,21 @@
 			{#if sendMessageRecipient}
 				{@const recipient = campaignRecipients.find((r) => r.id === sendMessageRecipient.id)}
 				{#if recipient}
-					<p class="mb-4 text-gray-700 dark:text-gray-200 transition-colors duration-200">
+					<p class="mb-4 text-content-muted transition-colors duration-200">
 						{recipient.sentAt
 							? `Are you sure you want to send the campaign message again to:`
 							: `Are you sure you want to send the campaign message to:`}
 					</p>
 					<div
-						class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md mb-4 transition-colors duration-200"
+						class="bg-surface-overlay p-3 rounded-md mb-4 transition-colors duration-200"
 					>
-						<p class="font-medium text-gray-900 dark:text-gray-100 transition-colors duration-200">
+						<p class="font-medium text-content transition-colors duration-200">
 							{sendMessageRecipient.name}
 						</p>
-						<p class="text-gray-600 dark:text-gray-300 transition-colors duration-200">
+						<p class="text-content-muted transition-colors duration-200">
 							{sendMessageRecipient.email}
 						</p>
-						<p class="text-xs text-gray-600 dark:text-gray-400 mt-1 transition-colors duration-200">
+						<p class="text-xs text-content-muted mt-1 transition-colors duration-200">
 							Sender type: {campaign.template?.smtpConfigurationID ? 'SMTP' : 'API Sender'}
 						</p>
 						{#if recipient.sentAt}
@@ -2876,7 +2876,7 @@
 							</p>
 						{/if}
 					</div>
-					<p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200">
+					<p class="text-sm text-content-muted transition-colors duration-200">
 						This action will immediately send the message.
 					</p>
 				{/if}
@@ -2893,16 +2893,16 @@
 			{#if setAsSentRecipient}
 				{@const recipient = campaignRecipients.find((r) => r.id === setAsSentRecipient.id)}
 				{#if recipient}
-					<p class="mb-4 text-gray-700 dark:text-gray-200 transition-colors duration-200">
+					<p class="mb-4 text-content-muted transition-colors duration-200">
 						Are you sure you want to mark the campaign as sent for:
 					</p>
 					<div
-						class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md mb-4 transition-colors duration-200"
+						class="bg-surface-overlay p-3 rounded-md mb-4 transition-colors duration-200"
 					>
-						<p class="font-medium text-gray-900 dark:text-gray-100 transition-colors duration-200">
+						<p class="font-medium text-content transition-colors duration-200">
 							{setAsSentRecipient.name}
 						</p>
-						<p class="text-gray-600 dark:text-gray-300 transition-colors duration-200">
+						<p class="text-content-muted transition-colors duration-200">
 							{setAsSentRecipient.email}
 						</p>
 						{#if recipient.sentAt}
@@ -2913,7 +2913,7 @@
 							</p>
 						{/if}
 					</div>
-					<p class="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200">
+					<p class="text-sm text-content-muted transition-colors duration-200">
 						This action will mark the message as sent without actually sending it.
 					</p>
 				{/if}
@@ -2931,23 +2931,23 @@
 				<!-- token capture introduction section -->
 				<div>
 					<h3
-						class="text-xl font-semibold text-gray-700 dark:text-gray-200 transition-colors duration-200"
+						class="text-xl font-semibold text-content-muted transition-colors duration-200"
 					>
 						Import tokens
 					</h3>
-					<p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-200">
+					<p class="text-content-muted mb-4 transition-colors duration-200">
 						Tokens can be imported into <a
 							href="https://github.com/phishingclub/session-sushi"
 							target="_blank"
-							class="text-blue-600 dark:text-white hover:underline">Session Sushi</a
+							class="text-brand hover:underline">Session Sushi</a
 						> to hijack the captured session.
 					</p>
 				</div>
 
 				<!-- token copy section -->
-				<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md transition-colors duration-200">
+				<div class="bg-surface-overlay p-4 rounded-md transition-colors duration-200">
 					<button
-						class="text-blue-600 dark:text-white hover:text-blue-800 dark:hover:text-gray-300 font-medium inline-flex items-center gap-2"
+						class="text-brand hover:text-blue-800 dark:hover:text-gray-300 font-medium inline-flex items-center gap-2"
 						on:click={onClickCopyTokens}
 					>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2965,23 +2965,23 @@
 				<!-- cookie capture introduction section -->
 				<div>
 					<h3
-						class="text-xl font-semibold text-gray-700 dark:text-gray-200 transition-colors duration-200"
+						class="text-xl font-semibold text-content-muted transition-colors duration-200"
 					>
 						Import cookie
 					</h3>
-					<p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-200">
+					<p class="text-content-muted mb-4 transition-colors duration-200">
 						Cookies can be imported and exchanged for tokens using the <a
 							href="https://github.com/phishingclub/session-sushi"
 							target="_blank"
-							class="text-blue-600 dark:text-white hover:underline">Session Sushi</a
+							class="text-brand hover:underline">Session Sushi</a
 						> extension.
 					</p>
 				</div>
 
 				<!-- cookie copy section -->
-				<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md transition-colors duration-200">
+				<div class="bg-surface-overlay p-4 rounded-md transition-colors duration-200">
 					<button
-						class="text-blue-600 dark:text-white hover:text-blue-800 dark:hover:text-gray-300 font-medium inline-flex items-center gap-2"
+						class="text-brand hover:text-blue-800 dark:hover:text-gray-300 font-medium inline-flex items-center gap-2"
 						on:click={onClickCopyCookies}
 					>
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -3004,7 +3004,7 @@
 				</FormColumn>
 			</FormColumns>
 			<div
-				class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-gray-200 dark:border-gray-700 w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+				class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-hairline w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end bg-surface-raised text-content transition-colors duration-200"
 			>
 				<button
 					type="button"
@@ -3024,7 +3024,7 @@
 		cancel="Cancel"
 	>
 		<div>
-			<p class="text-gray-600 dark:text-gray-300 transition-colors duration-200">
+			<p class="text-content-muted transition-colors duration-200">
 				If this email contains a tracking pixel, viewing it will affect campaign statistics.
 			</p>
 		</div>
@@ -3040,7 +3040,7 @@
 		<FormGrid on:submit={onConfirmUploadReportedCSV} isSubmitting={isReportedCSVSubmitting}>
 			<FormColumns>
 				<FormColumn>
-					<p class="text-sm text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-200">
+					<p class="text-sm text-content-muted mb-4 transition-colors duration-200">
 						Select which columns contain the email addresses and report dates:
 					</p>
 
@@ -3091,7 +3091,7 @@
 		onConfirm={onConfirmGenerateReport}
 		ok="Generate"
 	>
-		<div class="mt-4 text-gray-700 dark:text-gray-200">
+		<div class="mt-4 text-content-muted">
 			Generate a PDF report for <strong>{campaign?.name}</strong>. <br />The report will download
 			automatically.
 		</div>
@@ -3102,7 +3102,7 @@
 		onConfirm={onConfirmSendReport}
 		ok="Send"
 	>
-		<div class="mt-4 text-gray-700 dark:text-gray-200">
+		<div class="mt-4 text-content-muted">
 			Send the campaign PDF report to the recipient group configured for this company.
 		</div>
 	</Alert>
@@ -3116,7 +3116,7 @@
 		noCancel={true}
 		ok="OK"
 	>
-		<div class="mt-4 text-gray-700 dark:text-gray-200">
+		<div class="mt-4 text-content-muted">
 			PDF report generation is not enabled. <br />Enable it in <strong>Settings</strong> under PDF Reports.
 		</div>
 	</Alert>

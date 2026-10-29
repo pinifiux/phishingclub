@@ -43,17 +43,18 @@
 </script>
 
 <div
-	class="bg-white dark:bg-gray-900/80 p-6 rounded-lg shadow-md dark:shadow-none border-l-[12px] {borderColor} hover:shadow-lg dark:hover:shadow-none transition-all duration-200 dark:ring-1 dark:ring-gray-600/30"
+	class="min-w-0 rounded-lg border border-hairline bg-surface-raised px-3.5 py-3"
+	data-accent={borderColor}
 >
 	<div
-		class="text-grayblue-dark dark:text-gray-500 text-sm font-semibold transition-colors duration-200"
+		class="flex min-h-[2.1em] items-start text-[10px] font-semibold uppercase leading-[1.15] tracking-[0.06em] text-content-subtle"
 	>
 		{title}
 	</div>
 	<div class="flex items-center justify-between">
 		<div class="flex items-center">
 			<span
-				class="text-3xl font-bold text-pc-darkblue dark:text-gray-300 transition-colors duration-200 {flash
+				class="mt-1 text-[25px] font-semibold leading-none tabular-nums text-content {flash
 					? 'flash'
 					: ''}"
 			>
@@ -82,13 +83,13 @@
 
 	{#if validPercentages.length > 0}
 		<button
-			class="mt-2 text-sm text-gray-600 dark:text-gray-500 flex items-center transition-colors duration-200"
+			class="mt-1 text-[11px] text-content-subtle flex items-center"
 			on:click={cyclePercentage}
 			class:cursor-pointer={validPercentages.length > 1}
 		>
 			<div class="flex items-center">
 				<span
-					class="text-pc-darkblue dark:text-gray-400 font-semibold transition-colors duration-200"
+					class="text-content-muted font-semibold"
 				>
 					{validPercentages[currentPercentageIndex].value}%
 				</span>

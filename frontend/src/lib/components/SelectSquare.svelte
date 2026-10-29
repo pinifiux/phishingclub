@@ -15,7 +15,7 @@
 <div class="flex flex-col gap-2 py-2">
 	{#if label}
 		<div class="flex flex-row items-center">
-			<div class="font-semibold text-slate-600 dark:text-gray-400 transition-colors duration-200">
+			<div class="font-semibold text-content-muted transition-colors duration-200">
 				{label}
 			</div>
 			{#if toolTipText.length > 0}
@@ -25,9 +25,9 @@
 			{/if}
 			{#if optional}
 				<div
-					class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+					class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 				>
-					<p class="text-slate-600 dark:text-gray-400 text-xs">optional</p>
+					<p class="text-content-muted text-xs">optional</p>
 				</div>
 			{/if}
 		</div>
@@ -50,7 +50,7 @@
           ${
 						value === option.value
 							? 'border-green-500 dark:border-green-400 bg-green-50 dark:bg-green-800/40 text-green-700 dark:text-green-300'
-							: 'border-gray-200 dark:border-gray-700/60 bg-white dark:bg-gray-900/60 text-gray-700 dark:text-gray-300'
+							: 'border-hairline bg-white dark:bg-gray-900/60 text-content-muted'
 					}
         `}
 				on:click={() => {
@@ -63,7 +63,7 @@
 				{/if}
 				<span class="font-medium text-sm">{option.label}</span>
 				{#if option.description}
-					<span class="text-xs text-gray-500 dark:text-gray-400 mt-1 transition-colors duration-200"
+					<span class="text-xs text-content-subtle mt-1 transition-colors duration-200"
 						>{option.description}</span
 					>
 				{/if}

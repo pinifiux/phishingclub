@@ -89,6 +89,10 @@
 		}
 	});
 
+	// mismo criterio de "activo" que el resaltado del enlace
+	const isActive = (route, path) =>
+		route === '/dashboard/' ? path.startsWith('/dashboard') : path === route;
+
 	$: hasCompanySelected =
 		context.current === AppStateService.CONTEXT.COMPANY && context.companyName;
 
@@ -197,25 +201,25 @@
 <div class="flex">
 	<nav
 		bind:this={menuElement}
-		class="hidden lg:flex flex-col fixed top-16 z-10 bg-gradient-to-b from-pc-darkblue to-indigo-400 dark:from-gray-900 dark:to-gray-800 rounded-br-lg overflow-x-hidden min-h-0 max-h-[calc(100vh-4rem)] box-content border-r-[1px] border-pc-darkblue dark:border-highlight-blue/40"
+		class="hidden lg:flex flex-col fixed top-[100px] z-10 bg-surface-inset overflow-x-hidden min-h-0 max-h-[calc(100vh-100px)] box-content px-3 py-4"
 		class:transition-all={!instantCollapse}
-		class:w-40={isExpanded}
-		class:w-12={!isExpanded}
-		class:!top-[100px]={hasCompanySelected}
-		class:!max-h-[calc(100vh-100px)]={hasCompanySelected}
+		class:w-60={isExpanded}
+		class:w-14={!isExpanded}
+		class:!top-[136px]={hasCompanySelected}
+		class:!max-h-[calc(100vh-136px)]={hasCompanySelected}
 	>
 		{#if !isPinned}
 			<div
-				class="bg-highlight-blue/20 dark:bg-gray-800/70 border-b w-full border-blue-700/30 dark:border-highlight-blue/40 transition-colors duration-200 flex items-center justify-between px-1"
+				class="mb-2 w-full flex items-center justify-between"
 			>
 				<div class="flex items-center w-full">
 					<button
-						class="flex items-center justify-center rounded-md hover:bg-blue-600/30 dark:hover:bg-highlight-blue/20 transition-colors group px-3 py-2"
+						class="flex items-center justify-center rounded-md p-1 text-content-subtle transition hover:bg-surface-raised hover:text-content-muted"
 						on:click={() => (isExpanded = !isExpanded)}
 						type="button"
 					>
 						<svg
-							class="text-blue-100 dark:text-highlight-blue duration-200 w-4 h-4 transition-colors"
+							class="duration-200 w-4 h-4 transition-colors"
 							class:rotate-180={!isExpanded}
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -232,7 +236,7 @@
 					</button>
 					{#if isExpanded}
 						<button
-							class="flex items-center justify-center rounded-md hover:bg-blue-600/30 dark:hover:bg-highlight-blue/20 transition-colors group px-3 py-2"
+							class="flex items-center justify-center rounded-md p-1 text-content-subtle transition hover:bg-surface-raised hover:text-content-muted"
 							title={isPinned ? 'Unpin menu' : 'Pin menu'}
 							on:click={() => dispatch('pinToggle')}
 							type="button"
@@ -244,7 +248,7 @@
 									viewBox="0 0 24 24"
 									fill="currentColor"
 									xmlns="http://www.w3.org/2000/svg"
-									class="w-4 h-4 text-blue-100 dark:text-highlight-blue"
+									class="w-4 h-4"
 								>
 									<path
 										d="M16 9V5a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v4l-4 4v2h6v5a1 1 0 0 0 2 0v-5h6v-2l-4-4z"
@@ -257,7 +261,7 @@
 									viewBox="0 0 24 24"
 									fill="none"
 									xmlns="http://www.w3.org/2000/svg"
-									class="w-4 h-4 text-blue-100 dark:text-highlight-blue"
+									class="w-4 h-4"
 								>
 									<path
 										d="M16 9V5a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v4l-4 4v2h6v5a1 1 0 0 0 2 0v-5h6v-2l-4-4z"
@@ -274,7 +278,7 @@
 
 		{#if isPinned}
 			<button
-				class="absolute top-2 z-10 flex items-center justify-center w-6 h-6 rounded-md bg-blue-600/30 dark:bg-gray-800/70 hover:bg-blue-600/50 dark:hover:bg-gray-700 transition-colors"
+				class="absolute top-2 z-10 flex items-center justify-center w-6 h-6 rounded-md text-content-subtle transition hover:bg-surface-raised hover:text-content-muted"
 				class:right-5={hasScrollbar}
 				class:right-2={!hasScrollbar}
 				title="Unpin menu"
@@ -287,7 +291,7 @@
 					viewBox="0 0 24 24"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					class="w-4 h-4 text-blue-100 dark:text-highlight-blue"
+					class="w-4 h-4"
 				>
 					<path
 						d="M16 9V5a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v4l-4 4v2h6v5a1 1 0 0 0 2 0v-5h6v-2l-4-4z"
@@ -303,16 +307,16 @@
 		<!-- Navigation Items -->
 		<div
 			bind:this={menuItemsElement}
-			class="flex flex-col flex-1 overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] {scrollBarClassesVertical} [&::-webkit-scrollbar-track]:bg-cta-blue dark:[&::-webkit-scrollbar-track]:bg-gray-800"
-			class:py-4={!isPinned}
+			class="flex flex-col flex-1 overflow-y-auto overflow-x-hidden [scrollbar-gutter:stable] {scrollBarClassesVertical} [&::-webkit-scrollbar-track]:bg-transparent"
+			class:pt-6={isPinned}
 		>
 			{#each menu as link}
 				{#if link.type === 'submenu'}
 					<ConditionalDisplay show={link.whitebox ? 'whitebox' : link.blackbox ? 'blackbox' : 'both'}>
-					<div class="py-1 mt-4 first:mt-0">
+					<div class="mt-4 first:mt-0">
 						{#if isExpanded}
 							<div
-								class="px-3 py-2 text-xs font-semibold text-blue-100 dark:text-highlight-blue uppercase tracking-wider transition-colors duration-200"
+								class="mb-1 px-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-content-subtle"
 							>
 								{link.label}
 							</div>
@@ -322,14 +326,14 @@
 							{#each link.items as item, i (i)}
 								<ConditionalDisplay show={item.blackbox ? 'blackbox' : 'both'}>
 									<a
-										class="flex items-center py-2 text-sm transition-all duration-150 relative group
+										class="flex items-center gap-2.5 rounded-md py-1.5 text-[13px] font-medium transition relative group
                                         {(
 											item.route === '/dashboard/'
 												? $page.url.pathname.startsWith('/dashboard')
 												: $page.url.pathname === item.route
 										)
-											? 'text-white font-medium bg-active-blue dark:bg-active-blue shadow-md'
-											: 'text-blue-100 dark:text-gray-200 hover:shadow-md hover:bg-highlight-blue/80 dark:hover:bg-highlight-blue/20 hover:text-white dark:hover:text-gray-100'}"
+											? 'bg-surface-overlay text-content'
+											: 'text-content-muted hover:bg-surface-raised hover:text-content'}"
 										class:hidden={shouldHideMenuItem(item.route)}
 										class:px-3={isExpanded}
 										class:justify-center={!isExpanded}
@@ -338,12 +342,12 @@
 										title={item.label}
 									>
 										<!-- Icon -->
-										<div class="flex-shrink-0 text-blue-100 dark:text-highlight-blue">
+										<div class="flex-shrink-0 [&>svg]:size-4 {isActive(item.route, $page.url.pathname) ? 'text-brand' : 'text-content-subtle group-hover:text-content-muted'}">
 											{@html getIconForRoute(item.route)}
 										</div>
 
 										{#if isExpanded}
-											<span class="ml-3 truncate">
+											<span class="truncate">
 												{#if i === 0}
 													Overview
 												{:else if item.singleLabel}
@@ -356,7 +360,7 @@
 
 										{#if item.route === '/dashboard/' ? $page.url.pathname.startsWith('/dashboard') : $page.url.pathname === item.route}
 											<div
-												class="absolute left-0 top-0 bottom-0 w-1 bg-white dark:bg-highlight-blue"
+												class="absolute left-0 top-1/2 h-4 w-0.5 -translate-y-1/2 rounded-r bg-brand"
 											></div>
 										{/if}
 									</a>
@@ -367,34 +371,34 @@
 					</ConditionalDisplay>
 				{:else}
 					<a
-						class="flex items-center py-2 text-sm transition-all duration-150 relative group
+						class="flex items-center gap-2.5 rounded-md py-1.5 text-[13px] font-medium transition relative group
                             {$page.url.pathname === link.route
-							? 'text-white font-medium bg-active-blue dark:bg-active-blue shadow-md'
-							: 'text-blue-100 dark:text-gray-200 hover:text-white dark:hover:text-gray-100 hover:bg-highlight-blue/80 dark:hover:bg-highlight-blue/20'}"
+							? 'bg-surface-overlay text-content'
+							: 'text-content-muted hover:bg-surface-raised hover:text-content'}"
 						class:px-3={isExpanded}
 						class:justify-center={!isExpanded}
 						draggable="false"
 						href={link.route}
 					>
 						<!-- Icon -->
-						<div class="flex-shrink-0 text-blue-100 dark:text-highlight-blue">
+						<div class="flex-shrink-0 [&>svg]:size-4 {$page.url.pathname === link.route ? 'text-brand' : 'text-content-subtle group-hover:text-content-muted'}">
 							{@html icons[link.label]}
 						</div>
 
 						{#if isExpanded}
-							<span class="ml-3 truncate">{link.label}</span>
+							<span class="truncate">{link.label}</span>
 						{:else}
 							<div
-								class="absolute left-14 rounded bg-gray-900 dark:bg-gray-800 text-white dark:text-highlight-blue px-2 py-1 ml-6 text-sm
+								class="absolute left-14 rounded-md bg-surface-overlay text-content px-2 py-1 ml-6 text-xs
 	                                invisible opacity-0 -translate-x-3 group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
-	                                transition-all duration-150 whitespace-nowrap z-50 shadow-lg border dark:border-highlight-blue/40"
+	                                transition-all duration-150 whitespace-nowrap z-50 shadow-lg border border-hairline"
 							>
 								{link.label}
 							</div>
 						{/if}
 
 						{#if $page.url.pathname === link.route}
-							<div class="absolute left-0 top-0 bottom-0 w-1 bg-white dark:bg-highlight-blue"></div>
+							<div class="absolute left-0 top-1/2 h-4 w-0.5 -translate-y-1/2 rounded-r bg-brand"></div>
 						{/if}
 					</a>
 				{/if}

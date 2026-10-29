@@ -30,10 +30,10 @@
 							}
 						}}
 						transition:slide|global
-						class="flex items-center bg-pleasant-gray dark:bg-gray-800/80 text-gray-500 dark:text-gray-300 shadow-lg dark:shadow-gray-900/50 capitalize text-xl p-4 first:mt-0 mt-4 min-w-max rounded-md justify-self-center w-full transition-colors duration-200"
+						class="flex items-center border border-hairline bg-surface-overlay text-content shadow-xl shadow-black/30 text-sm p-3 first:mt-0 mt-3 min-w-max rounded-lg justify-self-center w-full"
 					>
 						<!-- <img class="w-9 mr-6" draggable="false" src={src1} alt="checkmark success" /> -->
-						<svg class="w-11 mr-6" viewBox="0 0 32.25 32.4">
+						<svg class="w-6 mr-3" viewBox="0 0 32.25 32.4">
 							<path
 								in:draw
 								style="stroke-width: 2px; fill: none; stroke: #5dd8c4; stroke-linecap: round;"
@@ -60,10 +60,10 @@
 						}
 					}}
 					transition:slide|global
-					class="flex items-center bg-pleasant-gray dark:bg-gray-800/80 text-gray-500 dark:text-gray-300 shadow-lg dark:shadow-gray-900/50 capitalize text-xl p-4 first:mt-0 mt-4 min-w-max rounded-md justify-self-center w-full transition-colors duration-200"
+					class="flex items-center border border-hairline bg-surface-overlay text-content shadow-xl shadow-black/30 text-sm p-3 first:mt-0 mt-3 min-w-max rounded-lg justify-self-center w-full"
 				>
 					<!-- <img class="w-9 mr-6" draggable="false" src="/t-warning.svg" alt="checkmark warning" /> -->
-					<svg class="w-11 mr-6" viewBox="0 0 36.26 32.41">
+					<svg class="w-6 mr-3" viewBox="0 0 36.26 32.41">
 						<path
 							in:draw|global
 							style="stroke-width: 2px; fill: none; stroke: #d1c643; stroke-miterlimit: 10;"
@@ -101,10 +101,10 @@
 						}
 					}}
 					transition:slide|global
-					class="flex items-center bg-pleasant-gray dark:bg-gray-800/80 text-gray-500 dark:text-gray-300 shadow-lg dark:shadow-gray-900/50 capitalize text-xl p-4 first:mt-0 mt-4 min-w-max rounded-md justify-self-center w-full transition-colors duration-200"
+					class="flex items-center border border-hairline bg-surface-overlay text-content shadow-xl shadow-black/30 text-sm p-3 first:mt-0 mt-3 min-w-max rounded-lg justify-self-center w-full"
 				>
 					<!-- <img class="w-9 mr-6" draggable="false" src="/t-error.svg" alt="checkmark error" /> -->
-					<svg class="w-11 mr-6" viewBox="0 0 32.98 32.98">
+					<svg class="w-6 mr-3" viewBox="0 0 32.98 32.98">
 						<g>
 							<line
 								in:draw|global
@@ -143,10 +143,10 @@
 							removeToast(toast.id);
 						}
 					}}
-					class="flex items-center bg-pleasant-gray dark:bg-gray-800/80 text-gray-500 dark:text-gray-300 shadow-lg dark:shadow-gray-900/50 capitalize text-xl p-4 first:mt-0 mt-4 min-w-max rounded-md justify-self-center w-full transition-colors duration-200"
+					class="flex items-center border border-hairline bg-surface-overlay text-content shadow-xl shadow-black/30 text-sm p-3 first:mt-0 mt-3 min-w-max rounded-lg justify-self-center w-full"
 				>
 					<!-- <img class="w-9 mr-6" draggable="false" src="/t-info.svg" alt="checkmark info" /> -->
-					<svg class="w-11 mr-6" viewBox="0 0 32.79 32.79">
+					<svg class="w-6 mr-3" viewBox="0 0 32.79 32.79">
 						<circle
 							in:draw|global
 							style="stroke-width: 2px; fill: none; stroke: #86b1f2; stroke-linecap: round;"

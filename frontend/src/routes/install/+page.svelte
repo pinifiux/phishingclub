@@ -194,14 +194,14 @@
 <HeadTitle title="Setup" />
 
 <div
-	class="inset-0 z-50 min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+	class="inset-0 z-50 min-h-screen bg-surface-raised text-content transition-colors duration-200"
 >
 	<!-- theme toggle -->
 	<div class="fixed top-3 right-6 z-50">
 		<ThemeToggle />
 	</div>
 	<div class="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-		<p class="text-center text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200">
+		<p class="text-center text-sm text-content-muted transition-colors duration-200">
 			Complete the setup to get started with Phishing Club
 		</p>
 
@@ -218,7 +218,7 @@
 										? 'bg-blue-300 text-white'
 										: currentStep === index + 1
 											? 'bg-blue-600 text-white'
-											: 'bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600'
+											: 'bg-surface-raised text-content-subtle border-2 border-hairline'
 								}
 							`}
 						>
@@ -242,7 +242,7 @@
 						<span
 							class={`
 								mt-2 text-sm font-medium text-center
-								${currentStep > index + 1 || currentStep === index + 1 ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'}
+								${currentStep > index + 1 || currentStep === index + 1 ? 'text-brand' : 'text-content-subtle'}
 							`}
 						>
 							{step.name}
@@ -254,7 +254,7 @@
 
 		<div class="mt-8 sm:mx-auto sm:w-full sm:max-w-2xl">
 			<div
-				class="bg-white dark:bg-gray-800 px-4 shadow sm:rounded-lg sm:px-10 transition-colors duration-200"
+				class="bg-surface-raised px-4 shadow sm:rounded-lg sm:px-10 transition-colors duration-200"
 			>
 				<FormGrid bind:bindTo={form}>
 					<FormColumns>
@@ -299,10 +299,10 @@
 									</div>
 								{:else if currentStep === 2}
 									<div class="text-center py-8" id="step-2">
-										<h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
+										<h3 class="text-lg font-medium text-content mb-4">
 											Display Mode
 										</h3>
-										<div class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+										<div class="space-y-4 text-sm text-content-muted">
 											<p>Select which features are available</p>
 										</div>
 										<div class="mt-6 space-y-4 max-w-xs mx-auto">
@@ -310,16 +310,16 @@
 												class="flex items-start justify-start gap-3 p-4 border rounded-lg cursor-pointer transition-colors {selectedDisplayMode ===
 												DISPLAY_MODE.WHITEBOX
 													? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 dark:border-blue-600'
-													: 'border-gray-300 dark:border-gray-600'}"
+													: 'border-hairline'}"
 											>
 												<input
 													type="radio"
 													bind:group={selectedDisplayMode}
 													value={DISPLAY_MODE.WHITEBOX}
-													class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:ring-2"
+													class="mt-1 w-4 h-4 text-blue-600 bg-surface-overlay border-hairline focus:ring-blue-500 focus:ring-2"
 												/>
 												<div class="text-left">
-													<span class="text-sm font-medium text-gray-900 dark:text-gray-100 block">
+													<span class="text-sm font-medium text-content block">
 														Phishing Simulation
 													</span>
 												</div>
@@ -328,22 +328,22 @@
 												class="flex items-start justify-start gap-3 p-4 border rounded-lg cursor-pointer transition-colors {selectedDisplayMode ===
 												DISPLAY_MODE.BLACKBOX
 													? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 dark:border-blue-600'
-													: 'border-gray-300 dark:border-gray-600'}"
+													: 'border-hairline'}"
 											>
 												<input
 													type="radio"
 													bind:group={selectedDisplayMode}
 													value={DISPLAY_MODE.BLACKBOX}
-													class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:ring-2"
+													class="mt-1 w-4 h-4 text-blue-600 bg-surface-overlay border-hairline focus:ring-blue-500 focus:ring-2"
 												/>
 												<div class="text-left">
-													<span class="text-sm font-medium text-gray-900 dark:text-gray-100 block">
+													<span class="text-sm font-medium text-content block">
 														Red Team Phishing
 													</span>
 												</div>
 											</label>
 											<p
-												class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200"
+												class="text-content-muted text-sm transition-colors duration-200"
 											>
 												Read about the difference between <br />
 												<a
@@ -356,12 +356,12 @@
 									</div>
 								{:else if currentStep === 3}
 									<div class="text-center py-8" id="step-3">
-										<h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
+										<h3 class="text-lg font-medium text-content mb-4">
 											Example Templates
 										</h3>
-										<div class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+										<div class="space-y-4 text-sm text-content-muted">
 											<p>Install example templates?</p>
-											<p class="text-xs text-gray-500 dark:text-gray-400">
+											<p class="text-xs text-content-subtle">
 												Includes phishing pages and emails from
 												<a
 													href="https://github.com/phishingclub/templates"
@@ -378,9 +378,9 @@
 												<input
 													type="checkbox"
 													bind:checked={installTemplates}
-													class="w-4 h-4 text-blue-600 bg-gray-100 dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
+													class="w-4 h-4 text-blue-600 bg-surface-overlay border-hairline rounded focus:ring-blue-500 focus:ring-2"
 												/>
-												<span class="text-sm font-medium text-gray-900 dark:text-gray-100">
+												<span class="text-sm font-medium text-content">
 													Yes, install example templates
 												</span>
 											</label>
@@ -401,10 +401,10 @@
 									</div>
 								{:else}
 									<div class="text-center py-8 mx-auto max-w-md" id="step-{currentStep}">
-										<h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">
+										<h3 class="text-lg font-medium text-content mb-4">
 											Welcome to Phishing Club
 										</h3>
-										<div class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+										<div class="space-y-4 text-sm text-content-muted">
 											<p>
 												Get started by reading our
 												<a
@@ -437,7 +437,7 @@
 									{#if currentStep > 1}
 										<button
 											type="button"
-											class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+											class="inline-flex items-center px-4 py-2 border border-hairline rounded-md shadow-sm text-sm font-medium text-content-muted bg-surface-raised hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
 											on:click={previousStep}
 										>
 											<svg

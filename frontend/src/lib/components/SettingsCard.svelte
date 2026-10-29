@@ -6,10 +6,10 @@ export let widthClass = 'w-full sm:w-96';
 </script>
 
 <div
-	class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 flex flex-col {widthClass} transition-colors duration-200"
+	class="bg-surface-raised p-5 rounded-xl border border-hairline flex flex-col {widthClass}"
 >
 	<h2
-		class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6 transition-colors duration-200"
+		class="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-content-muted"
 	>
 		{title}
 	</h2>

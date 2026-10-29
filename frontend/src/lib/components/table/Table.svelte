@@ -65,11 +65,11 @@
 		<div
 			bind:this={tableWrapper}
 			class="
-			border-2 border-gray-200 dark:border-gray-700/60 rounded-md px-4 py-4 overflow-x-auto bg-white dark:bg-gray-900/80 transition-colors duration-200
+			rounded-xl border border-hairline px-4 py-3 overflow-x-auto bg-surface-raised
 			{scrollBarClassesHorizontal}"
 		>
 			<table
-				class="w-full table-fixed bg-white dark:bg-gray-900/80 transition-colors duration-200"
+				class="w-full table-fixed border-collapse text-sm"
 				class:animate-pulse={isGhost}
 			>
 				<TableHeader

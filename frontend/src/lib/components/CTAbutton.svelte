@@ -7,11 +7,11 @@
 	export let type = 'submit';
 </script>
 
-<div class="flex flex-col items-center justify-center w-full p-4 mt-8 h-16">
+<div class="mt-5 w-full">
 	<button
 		{disabled}
 		{type}
-		class="w-full p-2 text-white text-2xl bg-cta-blue dark:bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-700 rounded-lg font-phudu font-bold transition-colors duration-200 disabled:opacity-50 dark:disabled:opacity-60"
-		>Login</button
+		class="w-full rounded-md bg-brand px-3 py-2.5 text-sm font-semibold text-[#04231b] transition hover:brightness-110 disabled:opacity-50"
+		>Sign in</button
 	>
 </div>

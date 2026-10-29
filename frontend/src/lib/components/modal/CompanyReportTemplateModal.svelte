@@ -115,7 +115,7 @@
 	<Modal bind:visible headerText="Report Template — {company?.name}" onClose={close}>
 		<FormGrid on:submit={onSubmit} {isSubmitting} modalMode="update">
 			<div
-				class="w-80vw col-start-1 col-end-4 row-start-1 py-8 px-6 flex flex-col bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+				class="w-80vw col-start-1 col-end-4 row-start-1 py-8 px-6 flex flex-col bg-surface-raised text-content transition-colors duration-200"
 			>
 				<Editor contentType="report" bind:value={content} />
 				<FormError message={error} />

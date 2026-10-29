@@ -76,7 +76,7 @@
 	<Headline>Update</Headline>
 	<div class="pt-4">
 		<div
-			class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 transition-colors duration-200"
+			class="bg-surface-raised p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-hairline transition-colors duration-200"
 		>
 			<div class="grid grid-cols-1 gap-6">
 				<div>
@@ -84,26 +84,26 @@
 						<div class="mb-4">
 							<div class="flex items-center justify-between mb-4">
 								<div>
-									<p class="text-gray-700 dark:text-gray-200 transition-colors duration-200">
+									<p class="text-content-muted transition-colors duration-200">
 										Version {newVersion} is now available
 									</p>
 									<p class="mt-2">
 										<a
 											href="https://github.com/phishingclub/phishingclub/releases"
 											target="_blank"
-											class="text-blue-600 dark:text-white hover:text-blue-700 dark:hover:text-gray-200 underline transition-colors duration-200"
+											class="text-brand hover:text-blue-700 dark:hover:text-gray-200 underline transition-colors duration-200"
 										>
 											View release notes
 										</a>
 									</p>
 									{#if !isUpdateLocal}
-										<p class="mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-200">
+										<p class="mt-4 text-content-muted transition-colors duration-200">
 											This instance is was not setup using the <code>systemd install</code> and must
 											be updated manually.
 										</p>
 									{/if}
 									<p
-										class="mt-4 text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200"
+										class="mt-4 text-sm text-content-muted transition-colors duration-200"
 									>
 										Consider creating a backup before updating to ensure you can restore if needed.
 									</p>
@@ -141,18 +141,18 @@
 								/>
 							</svg>
 							<h3
-								class="mt-2 text-lg font-medium text-gray-900 dark:text-gray-100 transition-colors duration-200"
+								class="mt-2 text-lg font-medium text-content transition-colors duration-200"
 							>
 								System up to date!
 							</h3>
-							<p class="mt-1 text-gray-600 dark:text-gray-300 transition-colors duration-200">
+							<p class="mt-1 text-content-muted transition-colors duration-200">
 								An update notification is visible when a update is ready.
 							</p>
 							<p class="mt-3">
 								<a
 									href="https://github.com/phishingclub/phishingclub/releases"
 									target="_blank"
-									class="text-sm text-blue-600 dark:text-white hover:text-blue-700 dark:hover:text-gray-200 transition-colors duration-200"
+									class="text-sm text-brand hover:text-blue-700 dark:hover:text-gray-200 transition-colors duration-200"
 								>
 									View previous release information
 								</a>

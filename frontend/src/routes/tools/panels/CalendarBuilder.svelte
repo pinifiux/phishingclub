@@ -66,11 +66,11 @@
 	];
 
 	const selectClass =
-		'rounded-md py-2 pl-2 pr-8 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal cursor-pointer transition-colors duration-200';
+		'rounded-md py-2 pl-2 pr-8 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal cursor-pointer transition-colors duration-200';
 	const inputClass =
-		'rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200';
+		'rounded-md py-2 pl-2 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200';
 	const labelHeadClass =
-		'font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200';
+		'font-semibold text-content-muted py-2 transition-colors duration-200';
 
 	const pad = (n) => n.toString().padStart(2, '0');
 
@@ -290,8 +290,8 @@
 		{/if}
 	</div>
 
-	<div class="border-t border-gray-200 dark:border-gray-700 pt-3 space-y-2">
-		<p class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide">Event</p>
+	<div class="border-t border-hairline pt-3 space-y-2">
+		<p class="text-xs font-semibold text-content-subtle uppercase tracking-wide">Event</p>
 		<div class="grid grid-cols-2 gap-x-3">
 			<label class="flex flex-col py-1">
 				<p class={labelHeadClass}>Class</p>
@@ -317,8 +317,8 @@
 		</label>
 	</div>
 
-	<div class="border-t border-gray-200 dark:border-gray-700 pt-3 space-y-2">
-		<p class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide">Microsoft / Outlook</p>
+	<div class="border-t border-hairline pt-3 space-y-2">
+		<p class="text-xs font-semibold text-content-subtle uppercase tracking-wide">Microsoft / Outlook</p>
 		<TextField bind:value={icsMsTeamsUrl} width="full" placeholder="https://teams.microsoft.com/l/meetup-join/..." toolTipText="Renders a Join button in Outlook and Teams. Any URL works.">
 			Teams meeting URL
 		</TextField>
@@ -340,26 +340,26 @@
 		</label>
 	</div>
 
-	<div class="border-t border-gray-200 dark:border-gray-700 pt-3 space-y-2">
-		<p class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide">Google</p>
+	<div class="border-t border-hairline pt-3 space-y-2">
+		<p class="text-xs font-semibold text-content-subtle uppercase tracking-wide">Google</p>
 		<TextField bind:value={icsGoogleConference} width="full" placeholder="https://meet.google.com/..." toolTipText="Renders a Meet button. Restricted to meet.google.com. Use Location for other URLs.">
 			Conference URL
 		</TextField>
 	</div>
 
-	<div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+	<div class="border-t border-hairline pt-4">
 		<div class="flex items-center justify-between mb-2">
-			<p class="text-xs text-gray-600 dark:text-gray-400">Preview (.ics)</p>
+			<p class="text-xs text-content-muted">Preview (.ics)</p>
 			<button
 				type="button"
-				class="text-xs text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-200"
+				class="text-xs text-brand hover:underline transition-colors duration-200"
 				on:click={newICSUID}
 			>
 				Regenerate UID
 			</button>
 		</div>
 		{#if icsResult}
-			<pre class="text-xs font-mono text-gray-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 rounded-md p-3 max-h-48 overflow-y-auto whitespace-pre-wrap break-all transition-colors duration-200">{icsResult}</pre>
+			<pre class="text-xs font-mono text-content-muted bg-surface-inset rounded-md p-3 max-h-48 overflow-y-auto whitespace-pre-wrap break-all transition-colors duration-200">{icsResult}</pre>
 			<div class="flex flex-row justify-end items-center gap-2 mt-3">
 				<button
 					type="button"
@@ -377,7 +377,7 @@
 				</button>
 			</div>
 		{:else}
-			<p class="text-xs text-gray-500 dark:text-gray-500">Pick a start date and time to generate the invitation.</p>
+			<p class="text-xs text-content-subtle">Pick a start date and time to generate the invitation.</p>
 		{/if}
 	</div>
 </SettingsCard>

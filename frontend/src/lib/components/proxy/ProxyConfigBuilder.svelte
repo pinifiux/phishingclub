@@ -1434,7 +1434,7 @@
 							<label class="flex flex-col py-2">
 								<div class="flex items-center">
 									<p
-										class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200"
+										class="font-semibold text-content-muted py-2 transition-colors duration-200"
 									>
 										Name
 									</p>
@@ -1447,7 +1447,7 @@
 									required
 									minlength="1"
 									maxlength="64"
-									class="w-full text-ellipsis rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200"
+									class="w-full text-ellipsis rounded-md py-2 pl-2 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200"
 								/>
 							</label>
 						</div>
@@ -1455,7 +1455,7 @@
 							<label class="flex flex-col py-2">
 								<div class="flex items-center">
 									<p
-										class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200"
+										class="font-semibold text-content-muted py-2 transition-colors duration-200"
 									>
 										Description
 									</p>
@@ -1466,7 +1466,7 @@
 									on:input={handleDescriptionInput}
 									placeholder="Optional description"
 									maxlength="255"
-									class="w-full text-ellipsis rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200"
+									class="w-full text-ellipsis rounded-md py-2 pl-2 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200"
 								/>
 							</label>
 						</div>
@@ -1474,7 +1474,7 @@
 							<label class="flex flex-col py-2">
 								<div class="flex items-center">
 									<p
-										class="font-semibold text-slate-600 dark:text-gray-400 py-2 transition-colors duration-200"
+										class="font-semibold text-content-muted py-2 transition-colors duration-200"
 									>
 										Start URL
 									</p>
@@ -1486,7 +1486,7 @@
 									placeholder="https://login.example.com/auth"
 									required
 									minlength="3"
-									class="w-full text-ellipsis rounded-md py-2 pl-2 text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-700/60 focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-grayblue-light dark:bg-gray-900/60 font-normal transition-colors duration-200"
+									class="w-full text-ellipsis rounded-md py-2 pl-2 text-content-muted border border-hairline focus:outline-none focus:border-solid focus:border-slate-400 dark:focus:border-highlight-blue/80 focus:bg-gray-100 dark:focus:bg-gray-700/60 bg-surface-inset font-normal transition-colors duration-200"
 								/>
 							</label>
 							<span class="settings-field-hint"
@@ -1537,12 +1537,12 @@
 										class="flex flex-col gap-2 w-full p-3 text-left bg-white dark:bg-slate-800/40 border rounded-lg cursor-pointer transition-all duration-150
 												{expandedHostIndex === i
 											? 'border-sky-600 dark:border-sky-400 bg-sky-50 dark:bg-sky-900/20 shadow-sm ring-1 ring-sky-600/20 dark:ring-sky-400/20'
-											: 'border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700/30'}"
+											: 'border-hairline hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700/30'}"
 										on:click={() => (expandedHostIndex = i)}
 									>
 										<div class="flex flex-col gap-0.5 min-w-0">
 											<span
-												class="text-[0.625rem] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider"
+												class="text-[0.625rem] font-semibold text-content-subtle uppercase tracking-wider"
 												>From</span
 											>
 											<span
@@ -1552,11 +1552,11 @@
 										</div>
 										<div class="flex flex-col gap-0.5 min-w-0">
 											<span
-												class="text-[0.625rem] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider"
+												class="text-[0.625rem] font-semibold text-content-subtle uppercase tracking-wider"
 												>To</span
 											>
 											<span
-												class="text-sm text-gray-600 dark:text-gray-300 truncate"
+												class="text-sm text-content-muted truncate"
 												title={host.domain || '...'}>{host.domain || '...'}</span
 											>
 										</div>
@@ -1572,7 +1572,7 @@
 													</span>
 												{/if}
 												{#if host.rewrite?.length}
-													<span class="flex items-center gap-1 text-blue-600 dark:text-blue-400">
+													<span class="flex items-center gap-1 text-brand">
 														<span class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400"
 														></span>
 														{host.rewrite.length} rewrite
@@ -2707,7 +2707,7 @@
 							{#if configData.global.variables.enabled}
 								<div class="field-wrapper" style="margin-top: 0.75rem;">
 									<label class="flex flex-col">
-										<span class="text-sm font-medium text-pc-darkblue dark:text-white mb-1.5"
+										<span class="text-sm font-medium text-content mb-1.5"
 											>Allowed Variables (optional)</span
 										>
 										<div class="variables-selector">

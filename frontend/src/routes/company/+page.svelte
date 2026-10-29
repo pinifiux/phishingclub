@@ -168,7 +168,7 @@
 					<div>
 						<label
 							for="company-name"
-							class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+							class="block text-sm font-medium text-content-muted mb-2"
 						>
 							Company Name
 						</label>
@@ -188,14 +188,14 @@
 						<div class="flex items-center mb-2">
 							<label
 								for="company-comment"
-								class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+								class="block text-sm font-medium text-content-muted"
 							>
 								Comment
 							</label>
 							<div
-								class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+								class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 							>
-								<p class="text-slate-600 dark:text-gray-400 text-xs transition-colors duration-200">
+								<p class="text-content-muted text-xs transition-colors duration-200">
 									optional
 								</p>
 							</div>

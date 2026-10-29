@@ -967,17 +967,17 @@
 			bind:this={svg}
 			width="100%"
 			height={HEIGHT}
-			class="w-full bg-white dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700/60 rounded-lg"
+			class="w-full bg-surface-raised border border-hairline rounded-lg"
 		></svg>
 
 		<!-- svelte-native tooltip -->
 		{#if tooltipVisible && tooltipEvent}
 			<div
-				class="absolute z-50 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700/60 max-w-xs overflow-hidden pointer-events-none"
+				class="absolute z-50 bg-surface-raised rounded-lg shadow-xl border border-hairline max-w-xs overflow-hidden pointer-events-none"
 				style="left: {tooltipX}px; top: {tooltipY}px;"
 			>
 				<div class="border-t-4" style="border-top-color: {tooltipColor}">
-					<div class="px-4 py-3 text-gray-800 dark:text-gray-200">
+					<div class="px-4 py-3 text-content">
 						<div class="flex items-center space-x-2">
 							<div class="flex-shrink-0 w-5 h-5" style="color: {tooltipColor}">
 								{@html tooltipIcon}
@@ -992,7 +992,7 @@
 				<div class="px-4 py-3 space-y-2.5">
 					{#if tooltipEvent.recipient?.email}
 						<div class="flex items-center gap-2 min-w-0">
-							<div class="flex-shrink-0 w-4 h-4 text-gray-500 dark:text-gray-400">
+							<div class="flex-shrink-0 w-4 h-4 text-content-subtle">
 								<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path
 										stroke-linecap="round"
@@ -1002,14 +1002,14 @@
 									/>
 								</svg>
 							</div>
-							<span class="min-w-0 text-sm text-gray-700 dark:text-gray-300 truncate"
+							<span class="min-w-0 text-sm text-content-muted truncate"
 								>{tooltipEvent.recipient.email}</span
 							>
 						</div>
 					{/if}
 
 					<div class="flex items-center gap-2 min-w-0">
-						<div class="flex-shrink-0 w-4 h-4 text-gray-500 dark:text-gray-400">
+						<div class="flex-shrink-0 w-4 h-4 text-content-subtle">
 							<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path
 									stroke-linecap="round"
@@ -1019,17 +1019,17 @@
 								/>
 							</svg>
 						</div>
-						<span class="min-w-0 text-sm text-gray-700 dark:text-gray-300">
+						<span class="min-w-0 text-sm text-content-muted">
 							{tooltipFormattedDate.split(',')[0]}
 							{tooltipFormattedTime}
 						</span>
 					</div>
 
 					{#if tooltipEvent.ip || tooltipEvent.userAgent}
-						<div class="pt-2.5 border-t border-gray-200 dark:border-gray-600 space-y-2">
+						<div class="pt-2.5 border-t border-hairline space-y-2">
 							{#if tooltipEvent.ip}
 								<div class="flex items-center gap-2 min-w-0">
-									<div class="flex-shrink-0 w-4 h-4 text-gray-500 dark:text-gray-400">
+									<div class="flex-shrink-0 w-4 h-4 text-content-subtle">
 										<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path
 												stroke-linecap="round"
@@ -1039,14 +1039,14 @@
 											/>
 										</svg>
 									</div>
-									<span class="min-w-0 text-xs text-gray-600 dark:text-gray-400 truncate"
+									<span class="min-w-0 text-xs text-content-muted truncate"
 										>{tooltipEvent.ip}</span
 									>
 								</div>
 							{/if}
 							{#if tooltipEvent.userAgent}
 								<div class="flex items-start gap-2 min-w-0">
-									<div class="flex-shrink-0 w-4 h-4 text-gray-500 dark:text-gray-400 mt-0.5">
+									<div class="flex-shrink-0 w-4 h-4 text-content-subtle mt-0.5">
 										<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path
 												stroke-linecap="round"
@@ -1056,7 +1056,7 @@
 											/>
 										</svg>
 									</div>
-									<span class="min-w-0 text-xs text-gray-600 dark:text-gray-400 break-words">
+									<span class="min-w-0 text-xs text-content-muted break-words">
 										{parseUserAgent(tooltipEvent.userAgent)}
 									</span>
 								</div>
@@ -1065,9 +1065,9 @@
 					{/if}
 
 					{#if tooltipEvent.data}
-						<div class="pt-2.5 border-t border-gray-200 dark:border-gray-600">
+						<div class="pt-2.5 border-t border-hairline">
 							<div class="flex items-start gap-2 min-w-0">
-								<div class="flex-shrink-0 w-4 h-4 text-gray-500 dark:text-gray-400 mt-0.5">
+								<div class="flex-shrink-0 w-4 h-4 text-content-subtle mt-0.5">
 									<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path
 											stroke-linecap="round"
@@ -1077,7 +1077,7 @@
 										/>
 									</svg>
 								</div>
-								<span class="min-w-0 text-xs text-gray-600 dark:text-gray-400 break-all">
+								<span class="min-w-0 text-xs text-content-muted break-all">
 									{tooltipEvent.data.length > 100
 										? tooltipEvent.data.substring(0, 100) + '…'
 										: tooltipEvent.data}
@@ -1094,7 +1094,7 @@
 				<div class="relative filter-dropdown">
 					<button
 						on:click|stopPropagation={() => (showFilterDropdown = !showFilterDropdown)}
-						class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
+						class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
 					>
 						<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path
@@ -1107,16 +1107,16 @@
 					</button>
 					{#if showFilterDropdown}
 						<div
-							class="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-900/80 rounded-md shadow-lg border border-gray-200 dark:border-gray-700/60 z-50"
+							class="absolute right-0 mt-2 w-80 bg-surface-raised rounded-md shadow-lg border border-hairline z-50"
 						>
 							<div class="p-3">
-								<h3 class="text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">
+								<h3 class="text-sm font-medium text-content-muted mb-3">
 									Filter Events
 								</h3>
 
 								<div class="space-y-3">
 									<div>
-										<h4 class="text-xs font-medium text-gray-600 dark:text-gray-300 mb-2">
+										<h4 class="text-xs font-medium text-content-muted mb-2">
 											Recipient Events
 										</h4>
 										<div class="space-y-1 pl-2">
@@ -1126,13 +1126,13 @@
 														type="checkbox"
 														bind:checked={eventFilters[key]}
 														on:change={invalidateCacheAndUpdate}
-														class="rounded border-slate-300 dark:border-gray-700/60"
+														class="rounded border-hairline"
 													/>
 													<span
 														class="w-2.5 h-2.5 rounded-full flex-shrink-0"
 														style="background-color: {getEventColor(key)}"
 													></span>
-													<span class="text-gray-600 dark:text-gray-300"
+													<span class="text-content-muted"
 														>{toEvent(key)?.name ?? key}</span
 													>
 												</label>
@@ -1141,13 +1141,13 @@
 									</div>
 								</div>
 
-								<div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600 flex gap-2">
+								<div class="mt-3 pt-3 border-t border-hairline flex gap-2">
 									<button
 										on:click={() => {
 											Object.keys(eventFilters).forEach((k) => (eventFilters[k] = true));
 											invalidateCacheAndUpdate();
 										}}
-										class="flex-1 px-2 py-1 text-xs bg-cta-blue dark:bg-highlight-blue/80 text-white rounded hover:bg-blue-500 dark:hover:bg-highlight-blue focus:outline-none transition-colors duration-200"
+										class="flex-1 px-2 py-1 text-xs bg-brand text-white rounded hover:bg-blue-500 dark:hover:bg-highlight-blue focus:outline-none transition-colors duration-200"
 									>
 										Select All
 									</button>
@@ -1162,7 +1162,7 @@
 									</button>
 									<button
 										on:click={() => (showFilterDropdown = false)}
-										class="px-2 py-1 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+										class="px-2 py-1 text-xs text-content-muted hover:text-gray-800 dark:hover:text-gray-200"
 									>
 										✕
 									</button>
@@ -1174,26 +1174,26 @@
 				<label
 					class="inline-flex items-center gap-1 px-2 py-1 border rounded-md text-xs font-medium transition-colors duration-200 {followCurrentTime
 						? 'border-blue-400 text-blue-600 bg-blue-50 dark:border-highlight-blue/60 dark:text-highlight-blue dark:bg-highlight-blue/10'
-						: 'border-slate-300 dark:border-gray-700/60 text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60'}"
+						: 'border-hairline text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60'}"
 				>
 					Follow:
 					<input type="checkbox" bind:checked={followCurrentTime} class="accent-blue-600" />
 				</label>
 				<button
 					on:click={resetZoom}
-					class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
+					class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
 				>
 					Reset Zoom
 				</button>
 				<button
 					on:click={() => (use24Hour = !use24Hour)}
-					class="inline-flex items-center px-2 py-1 border border-slate-300 dark:border-gray-700/60 rounded-md text-xs font-medium text-slate-600 dark:text-gray-300 bg-grayblue-light dark:bg-gray-900/60 hover:bg-gray-100 dark:hover:bg-gray-700/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
+					class="inline-flex items-center px-2 py-1 border border-hairline rounded-md text-xs font-medium text-content-muted bg-surface-inset hover:bg-gray-100 dark:hover:bg-gray-700/60 focus:outline-none focus:border-slate-400 dark:focus:border-highlight-blue/80 transition-colors duration-200"
 				>
 					{use24Hour ? '12H' : '24H'}
 				</button>
 			</div>
 			<div
-				class="absolute top-2 left-2 text-xs text-slate-600 dark:text-gray-400 bg-grayblue-light dark:bg-gray-900/60 px-2 py-1 rounded border border-slate-300 dark:border-gray-700/60"
+				class="absolute top-2 left-2 text-xs text-content-muted bg-surface-inset px-2 py-1 rounded border border-hairline"
 			>
 				{currentCenterDate.toLocaleString()} &middot; {filteredCount}/{processedEvents.length}
 			</div>

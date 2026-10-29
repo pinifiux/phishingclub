@@ -274,7 +274,7 @@
 	};
 </script>
 
-<p class="text-gray-600 dark:text-gray-300 text-sm mb-2">
+<p class="text-content-muted text-sm mb-2">
 	Manually recorded campaign results for reporting on activity run outside the platform.
 </p>
 <BigButton on:click={openCreateModal}>Add</BigButton>
@@ -300,7 +300,7 @@
 			<TableCell>
 				<button
 					on:click={() => openUpdateModal(stats.id)}
-					class="block w-full py-1 text-left font-medium text-gray-900 dark:text-gray-100"
+					class="block w-full py-1 text-left font-medium text-content"
 				>
 					{stats.campaignName}
 				</button>

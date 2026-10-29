@@ -318,7 +318,7 @@
 	<div bind:this={bindTo}>
 		<div
 			transition:fade={{ duration: 150 }}
-			class="fixed top-0 left-0 w-full h-full bg-overlay/[0.92]"
+			class="fixed top-0 left-0 w-full h-full bg-black/60 backdrop-blur-sm"
 			style="z-index: 19;"
 		/>
 		<div
@@ -330,20 +330,20 @@
 		>
 			<section
 				bind:this={modalElement}
-				class="ring-1 ring-white/10 bg-white dark:bg-gray-800 opacity-100 rounded-md flex flex-col transition-all duration-200
+				class="border border-hairline bg-surface-raised opacity-100 rounded-xl shadow-2xl overflow-hidden flex flex-col transition-all duration-200
 					{fullscreen
 					? 'fixed inset-0 w-full h-full max-w-none max-h-none rounded-none'
 					: 'w-auto ml-20 mr-8 max-h-[90vh]'}"
 			>
 				<div
 					class:opacity-20={isSubmitting}
-					class="bg-cta-blue dark:bg-blue-800 text-white py-4 px-8 flex justify-between flex-shrink-0 transition-colors duration-200
+					class="border-b border-hairline text-content py-3 px-5 flex justify-between flex-shrink-0
 						{fullscreen ? '' : 'rounded-t-md'}"
 				>
 					<div class="flex-1">
-						<h1 id="modal-title" class="uppercase mr-8 font-semibold text-2xl">{headerText}</h1>
+						<h1 id="modal-title" class="mr-8 text-sm font-semibold text-content">{headerText}</h1>
 						{#if description}
-							<p id="modal-description" class="mt-2 text-sm opacity-90">{description}</p>
+							<p id="modal-description" class="mt-1 text-xs text-content-muted">{description}</p>
 						{/if}
 					</div>
 					<button
@@ -354,7 +354,7 @@
 						data-close-button
 						aria-label="Close modal"
 					>
-						<img class="w-full" src="/close-white.svg" alt="" />
+						<img class="w-full opacity-60 invert dark:invert-0" src="/close-white.svg" alt="" />
 					</button>
 				</div>
 				<div

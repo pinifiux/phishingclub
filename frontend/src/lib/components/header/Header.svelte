@@ -109,7 +109,7 @@
 <div class="sticky top-0 z-20">
 	<CompanyBanner />
 	<div
-		class="header-container col-span-12 h-16 bg-pc-darkblue dark:bg-gray-800 border-b border-pc-darkblue/20 dark:border-highlight-blue/30 flex justify-between items-center"
+		class="header-container col-span-12 h-[100px] bg-surface-inset border-b border-hairline flex justify-between items-center px-6"
 	>
 		<Logo />
 		{#if isInstalled}
@@ -123,25 +123,28 @@
 						<span>Update Available</span>
 					</a>
 				{/if}
-				<div class="relative ml-10 flex items-center gap-4">
+				<div class="relative ml-10 flex items-center gap-3 text-xs">
+					<span class="rounded-full border border-hairline px-3 py-1 text-content-muted">Phishing simulation</span>
 					<ThemeToggle />
 					<button
 						id="toggle-profile-menu"
-						class="group flex items-center"
+						class="group flex items-center gap-2 rounded-full border border-hairline py-1 pl-1 pr-3 text-content-muted transition hover:border-content-subtle/60 hover:bg-surface-overlay"
 						on:click={() => (isProfileMenuVisible = !isProfileMenuVisible)}
 					>
 						<!-- main circle with initials -->
 						<div
-							class="w-10 h-10 rounded-full bg-cta-blue hover:bg-cta-blue/80 dark:bg-active-blue dark:hover:bg-active-blue/80 dark:border dark:border-highlight-blue/40 flex items-center justify-center text-white font-medium relative transition-colors duration-200"
+							class="relative grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand to-brand/50 text-[12px] font-bold uppercase text-[#04231b] shadow-sm ring-1 ring-white/10"
 						>
 							{initials}
 
 							<div class="absolute -bottom-1 -right-1 w-5 h-5"></div>
 						</div>
 
+						<span class="max-w-[190px] truncate text-[13px] font-medium text-content">{username}</span>
+
 						<!-- dropdown indicator -->
 						<svg
-							class="w-4 h-4 ml-2 text-gray-300 dark:text-highlight-blue transition-transform duration-200 group-hover:text-white"
+							class="w-3.5 h-3.5 text-content-subtle transition-transform duration-200 group-hover:text-content-muted"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -168,7 +171,7 @@
 					class="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-white/10 dark:hover:bg-white/10 transition-colors duration-200"
 					on:click={() => (isMobileMenuVisible = !isMobileMenuVisible)}
 				>
-					<img class="w-6 h-6" src="/mob-menu-button.svg" alt="toggle mobile menu" />
+					<img class="w-6 h-6 invert dark:invert-0" src="/mob-menu-button.svg" alt="toggle mobile menu" />
 				</button>
 			</div>
 		{/if}
@@ -176,17 +179,5 @@
 </div>
 
 <style>
-	/* prevent any hover effects on the header */
-	.header-container {
-		background-color: #0b2063 !important;
-	}
-	.header-container:hover {
-		background-color: #0b2063 !important;
-	}
-	:global(.dark) .header-container {
-		background-color: #1f2937 !important;
-	}
-	:global(.dark) .header-container:hover {
-		background-color: #1f2937 !important;
-	}
+	/* Dasenda: la cabecera usa los tokens de superficie (bg-surface-base). */
 </style>

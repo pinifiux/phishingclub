@@ -516,16 +516,16 @@
 					<div class="mb-6 pt-4">
 						<label class="flex flex-col">
 							<div class="flex items-center py-2">
-								<p class="font-semibold text-slate-600 dark:text-gray-400">Header Rules</p>
+								<p class="font-semibold text-content-muted">Header Rules</p>
 								<ToolTip>
 									Add header key/value regex patterns to match. Both key and value must match for
 									the rule to trigger.
 								</ToolTip>
 								<div
-									class="bg-gray-100 dark:bg-gray-800/60 ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
+									class="bg-surface-overlay ml-2 px-2 rounded-md transition-colors duration-200 h-6 flex items-center"
 								>
 									<p
-										class="text-slate-600 dark:text-gray-400 text-xs transition-colors duration-200"
+										class="text-content-muted text-xs transition-colors duration-200"
 									>
 										optional
 									</p>

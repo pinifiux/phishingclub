@@ -106,18 +106,18 @@
 		class="lg:flex flex-col h-fit lg:col-start-10 lg:col-span-3 row-start-1 xl:col-start-11 xl:col-span-2 2xl:col-start-11 2xl:col-span-2 sticky top-20 z-30 min-w-[250px]"
 	>
 		<div
-			class="flex flex-col bg-gradient-to-b from-cta-blue to-indigo-500 dark:from-gray-800 dark:to-gray-700 rounded-md transition-colors duration-200 dark:border dark:border-highlight-blue/30"
+			class="flex flex-col rounded-lg border border-hairline bg-surface-raised p-1 shadow-xl shadow-black/30"
 			in:fadeIn={{ duration: 150 }}
 		>
 			<!-- Change Company at top with distinct styling -->
 			<button
-				class="flex items-center pl-5 py-3 text-white bg-active-blue dark:bg-slate-800 first:rounded-t-md transition-colors duration-200 hover:bg-active-blue/80 dark:hover:bg-slate-700 border-b border-active-blue/50 dark:border-slate-700"
+				class="mb-1 flex items-center rounded-md border-b border-hairline pl-3 py-2 text-[13px] font-medium text-content-muted transition-colors hover:bg-surface-overlay hover:text-content"
 				on:click={() => {
 					visible = false;
 					toggleChangeCompanyModal();
 				}}
 			>
-				<div class="flex-shrink-0 mr-3 text-white dark:text-highlight-blue">
+				<div class="flex-shrink-0 mr-3 text-content-subtle">
 					{@html getTopMenuIcon('Change Company')}
 				</div>
 				<span class="font-medium">Switch Company</span>
@@ -126,10 +126,10 @@
 			{#each topMenu as item}
 				<ConditionalDisplay show={item.blackbox ? 'blackbox' : 'both'}>
 					<a
-						class="flex items-center pl-5 py-2 text-white last:rounded-md first:rounded-t-md transition-colors duration-200 {$page
+						class="flex items-center rounded-md pl-3 py-1.5 text-[13px] font-medium transition-colors {$page
 							.url.pathname === item.route
-							? 'bg-active-blue shadow-md dark:bg-active-blue'
-							: 'hover:shadow-md hover:bg-highlight-blue/80 dark:hover:bg-highlight-blue/20'}"
+							? 'bg-surface-overlay text-content'
+							: 'text-content-muted hover:bg-surface-overlay hover:text-content'}"
 						class:hidden={shouldHideMenuItem(item.route)}
 						target={item.external ? '_blank' : undefined}
 						rel={item.external ? 'noreferrer' : undefined}
@@ -139,7 +139,7 @@
 						}}
 						href={item.route}
 					>
-						<div class="flex-shrink-0 mr-3 text-white dark:text-highlight-blue">
+						<div class="flex-shrink-0 mr-3 text-content-subtle">
 							{@html getTopMenuIcon(item.label)}
 						</div>
 						<span>{item.label}</span>
@@ -147,17 +147,17 @@
 				</ConditionalDisplay>
 				{#if item.label === 'Settings' && isCompanyContext && companyID}
 					<a
-						class="flex items-center pl-5 py-2 text-white transition-colors duration-200 {$page.url
+						class="flex items-center rounded-md pl-3 py-1.5 text-[13px] font-medium transition-colors {$page.url
 							.pathname === `/company/${companyID}`
-							? 'bg-active-blue shadow-md dark:bg-active-blue'
-							: 'hover:shadow-md hover:bg-highlight-blue/80 dark:hover:bg-highlight-blue/20'}"
+							? 'bg-surface-overlay text-content'
+							: 'text-content-muted hover:bg-surface-overlay hover:text-content'}"
 						draggable="false"
 						on:click={() => {
 							visible = false;
 						}}
 						href={`/company/${companyID}`}
 					>
-						<div class="flex-shrink-0 mr-3 text-white dark:text-highlight-blue">
+						<div class="flex-shrink-0 mr-3 text-content-subtle">
 							{@html getTopMenuIcon('Settings')}
 						</div>
 						<span>Company Settings</span>
@@ -166,9 +166,9 @@
 			{/each}
 			<button
 				on:click={logout}
-				class="bg-white dark:bg-gray-800 dark:border dark:border-highlight-blue/40 uppercase font-bold hover:bg-cta-blue/10 dark:hover:bg-highlight-blue/20 py-2 mx-4 my-4 rounded-md transition-colors duration-200"
+				class="m-2 rounded-md border border-hairline py-1.5 text-sm font-medium transition-colors hover:bg-surface-overlay"
 			>
-				<p class="text-cta-blue dark:text-highlight-blue py px-8 transition-colors duration-200">
+				<p class="px-8 text-content-muted">
 					Log Out
 				</p>
 			</button>

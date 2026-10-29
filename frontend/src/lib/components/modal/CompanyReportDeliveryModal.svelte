@@ -223,7 +223,7 @@
 	<div class="w-[640px] p-6 space-y-6">
 		{#if isLoading}
 			<div class="flex items-center justify-center py-10">
-				<p class="text-gray-500 dark:text-gray-400">Loading...</p>
+				<p class="text-content-subtle">Loading...</p>
 			</div>
 		{:else if !pdfEnabled}
 			<div
@@ -235,7 +235,7 @@
 				</p>
 			</div>
 		{:else}
-			<p class="text-sm text-gray-500 dark:text-gray-400">
+			<p class="text-sm text-content-subtle">
 				Email the campaign report PDF to a recipient group, on demand or automatically when a
 				campaign is closed.
 				{#if isGlobal}
@@ -248,8 +248,8 @@
 
 			{#if config && !isGlobal}
 				<div class="flex items-center gap-2 text-sm">
-					<span class="text-gray-500 dark:text-gray-500">Last sent</span>
-					<span class="text-gray-800 dark:text-gray-200">{formatDate(config.lastSentAt)}</span>
+					<span class="text-content-subtle">Last sent</span>
+					<span class="text-content">{formatDate(config.lastSentAt)}</span>
 				</div>
 			{/if}
 
@@ -257,8 +257,8 @@
 				<!-- enabled toggle -->
 				<div class="flex items-center justify-between">
 					<div>
-						<p class="text-sm font-medium text-gray-700 dark:text-gray-300">Enabled</p>
-						<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+						<p class="text-sm font-medium text-content-muted">Enabled</p>
+						<p class="text-xs text-content-subtle mt-0.5">
 							Turn report delivery on for this company.
 						</p>
 					</div>
@@ -269,7 +269,7 @@
 						disabled={isBusy}
 						on:click={() => (form.enabled = !form.enabled)}
 						class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none disabled:opacity-50
-							{form.enabled ? 'bg-cta-blue dark:bg-highlight-blue/80' : 'bg-gray-300 dark:bg-gray-600'}"
+							{form.enabled ? 'bg-brand' : 'bg-gray-300 dark:bg-gray-600'}"
 					>
 						<span
 							class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200
@@ -281,10 +281,10 @@
 				<!-- send on finish toggle -->
 				<div class="flex items-center justify-between">
 					<div>
-						<p class="text-sm font-medium text-gray-700 dark:text-gray-300">
+						<p class="text-sm font-medium text-content-muted">
 							Send automatically on finish
 						</p>
-						<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+						<p class="text-xs text-content-subtle mt-0.5">
 							Deliver the report when a campaign is closed. When off, send on demand only.
 						</p>
 					</div>
@@ -295,7 +295,7 @@
 						disabled={isBusy || !form.enabled}
 						on:click={() => (form.sendOnFinish = !form.sendOnFinish)}
 						class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed
-							{form.sendOnFinish ? 'bg-cta-blue dark:bg-highlight-blue/80' : 'bg-gray-300 dark:bg-gray-600'}"
+							{form.sendOnFinish ? 'bg-brand' : 'bg-gray-300 dark:bg-gray-600'}"
 					>
 						<span
 							class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200
@@ -333,7 +333,7 @@
 
 			<!-- email body -->
 			<div class="flex flex-col py-2">
-				<p class="font-semibold text-slate-600 dark:text-gray-400 py-2">Email body</p>
+				<p class="font-semibold text-content-muted py-2">Email body</p>
 				<SimpleCodeEditor
 					bind:value={form.emailBody}
 					language="html"
@@ -341,7 +341,7 @@
 					showVimToggle={true}
 					showExpandButton={true}
 				/>
-				<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+				<p class="text-xs text-content-subtle mt-1">
 					Subject and body support the same variables as the report template, such as {'{{.CompanyName}}'},
 					{' '}{'{{.CampaignName}}'} and {'{{.ReportDate}}'}.
 					{isGlobal
@@ -352,7 +352,7 @@
 
 			<!-- actions -->
 			<div
-				class="border-t border-gray-200 dark:border-gray-700/60 pt-4 flex gap-3 justify-end items-center"
+				class="border-t border-hairline pt-4 flex gap-3 justify-end items-center"
 			>
 				{#if config}
 					<button

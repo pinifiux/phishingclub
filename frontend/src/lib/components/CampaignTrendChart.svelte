@@ -1059,7 +1059,7 @@
 			header.style.borderTopColor = hoveredMetricInfo?.color || '#3b82f6';
 
 			const headerContent = document.createElement('div');
-			headerContent.className = 'px-4 py-3 text-gray-800 dark:text-gray-200';
+			headerContent.className = 'px-4 py-3 text-content';
 
 			const headerFlex = document.createElement('div');
 			headerFlex.className = 'flex items-center space-x-2';
@@ -1074,7 +1074,7 @@
 			title.textContent = data.name;
 
 			const date = document.createElement('p');
-			date.className = 'text-xs text-gray-600 dark:text-gray-400';
+			date.className = 'text-xs text-content-muted';
 			date.textContent = formattedDate;
 
 			textContainer.appendChild(title);
@@ -1095,7 +1095,7 @@
 			// no icon needed for cleaner look
 
 			const recipientsText = document.createElement('span');
-			recipientsText.className = 'text-sm text-gray-700 dark:text-gray-300';
+			recipientsText.className = 'text-sm text-content-muted';
 			recipientsText.textContent = `Total Recipients: ${data.totalRecipients || 0}`;
 
 			recipientsSection.appendChild(recipientsText);
@@ -1105,7 +1105,7 @@
 			if (visibleMetricsList.length > 0) {
 				const metricsSection = document.createElement('div');
 				metricsSection.className =
-					'mt-3 pt-3 border-t border-gray-200 dark:border-gray-600 space-y-2';
+					'mt-3 pt-3 border-t border-hairline space-y-2';
 
 				visibleMetricsList.forEach((metric) => {
 					const metricRow = document.createElement('div');
@@ -1119,7 +1119,7 @@
 					metricDot.style.backgroundColor = metric.color;
 
 					const metricLabel = document.createElement('span');
-					metricLabel.className = 'text-sm text-gray-700 dark:text-gray-300 flex-1 pr-4';
+					metricLabel.className = 'text-sm text-content-muted flex-1 pr-4';
 					metricLabel.textContent = metric.label;
 
 					const metricValue = document.createElement('span');
@@ -1140,10 +1140,10 @@
 			// add click hint if campaign has an id
 			if (data.campaignId) {
 				const clickHint = document.createElement('div');
-				clickHint.className = 'mt-3 pt-3 border-t border-gray-200 dark:border-gray-600';
+				clickHint.className = 'mt-3 pt-3 border-t border-hairline';
 
 				const hintText = document.createElement('p');
-				hintText.className = 'text-xs text-gray-500 dark:text-gray-400 text-center italic';
+				hintText.className = 'text-xs text-content-subtle text-center italic';
 				hintText.textContent = 'Click to view campaign details';
 
 				clickHint.appendChild(hintText);
@@ -1241,7 +1241,7 @@
 	{#if isLoading}
 		<!-- ghost/skeleton loader matching final chart layout -->
 		<div
-			class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200 animate-pulse"
+			class="bg-surface-raised rounded-lg border border-hairline p-6 transition-colors duration-200 animate-pulse"
 		>
 			<!-- header skeleton -->
 			<div class="flex flex-row items-center justify-between mb-2 pb-0 flex-wrap gap-2">
@@ -1265,12 +1265,12 @@
 		<div>
 			{#if hasAttemptedLoad && !isLoading && campaignStats.length < 2}
 				<div
-					class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200"
+					class="bg-surface-raised rounded-lg border border-hairline p-6 transition-colors duration-200"
 				>
 					<!-- Match the height structure of the data container -->
 					<div class="flex flex-row items-center justify-between mb-2 pb-0 flex-wrap gap-2">
 						<h4
-							class="text-sm font-medium text-gray-600 dark:text-gray-300 m-0 transition-colors duration-200"
+							class="text-sm font-medium text-content-muted m-0 transition-colors duration-200"
 						>
 							Trend Analytics
 						</h4>
@@ -1281,7 +1281,7 @@
 					<div class="flex items-center justify-center min-h-[350px] py-16">
 						<div class="text-center">
 							<svg
-								class="mx-auto h-12 w-12 text-cta-blue dark:text-highlight-blue transition-colors duration-200"
+								class="mx-auto h-12 w-12 text-brand transition-colors duration-200"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
@@ -1295,12 +1295,12 @@
 								/>
 							</svg>
 							<h3
-								class="mt-3 text-lg font-medium text-gray-900 dark:text-gray-100 transition-colors duration-200"
+								class="mt-3 text-lg font-medium text-content transition-colors duration-200"
 							>
 								Insufficient data for trend analysis
 							</h3>
 							<p
-								class="mt-2 text-sm text-gray-600 dark:text-gray-400 transition-colors duration-200"
+								class="mt-2 text-sm text-content-muted transition-colors duration-200"
 							>
 								Trend analysis requires at least 2 completed campaigns to show meaningful patterns.
 							</p>
@@ -1309,23 +1309,23 @@
 				</div>
 			{:else}
 				<div
-					class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-200"
+					class="bg-surface-raised rounded-lg border border-hairline p-6 transition-colors duration-200"
 				>
 					<!-- Trendline stats and controls above chart -->
 					<div class="flex flex-row items-center justify-between mb-2 pb-0 flex-wrap gap-2">
 						<h4
-							class="text-sm font-medium text-gray-600 dark:text-gray-300 m-0 transition-colors duration-200"
+							class="text-sm font-medium text-content-muted m-0 transition-colors duration-200"
 						>
 							Trendline: Last {trendStats ? trendStats.n : campaignStats.length} Campaigns (average)
 						</h4>
 						<div class="flex flex-wrap items-center gap-2 mb-0">
 							<label
-								class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+								class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 							>
 								Time range:
 								<select
 									bind:value={selectedTimeRange}
-									class="border border-gray-300 dark:border-gray-600 rounded px-1 py-0 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+									class="border border-hairline rounded px-1 py-0 text-xs bg-surface-raised text-content-muted hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 									style="height: 1.5rem;"
 								>
 									{#each timeRanges as range}
@@ -1335,7 +1335,7 @@
 							</label>
 							{#if campaignStats.length > 1}
 								<label
-									class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+									class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 								>
 									Trendline N:
 									<input
@@ -1344,12 +1344,12 @@
 										max={campaignStats.length}
 										bind:value={trendN}
 										on:input={() => (userHasSetTrendN = true)}
-										class="h-6 w-8 px-2 text-center border border-gray-300 dark:border-gray-600 rounded py-0 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+										class="h-6 w-8 px-2 text-center border border-hairline rounded py-0 text-xs bg-surface-raised text-content-muted hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 									/>
 								</label>
 							{/if}
 							<label
-								class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+								class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 							>
 								Moving Avg N:
 								<input
@@ -1358,18 +1358,18 @@
 									max={campaignStats.length}
 									bind:value={movingAvgN}
 									on:input={() => (userHasSetMovingAvgN = true)}
-									class="h-6 w-8 px-2 text-center border border-gray-300 dark:border-gray-600 rounded py-0 text-xs bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
+									class="h-6 w-8 px-2 text-center border border-hairline rounded py-0 text-xs bg-surface-raised text-content-muted hover:border-cta-blue dark:hover:border-highlight-blue focus:border-cta-blue dark:focus:border-highlight-blue transition-colors duration-200"
 								/>
 							</label>
 							<label
-								class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+								class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 							>
 								Log scale:
 								<input type="checkbox" bind:checked={useLogScale} class="accent-blue-600" />
 							</label>
 							<div class="ml-auto flex items-center">
 								<label
-									class="flex items-center gap-1 text-xs text-gray-700 dark:text-gray-300 transition-colors duration-200"
+									class="flex items-center gap-1 text-xs text-content-muted transition-colors duration-200"
 								>
 									Relative metrics:
 									<input
@@ -1392,7 +1392,7 @@
 											style="background-color: {metric.color}"
 										></div>
 										<span
-											class="text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors duration-200"
+											class="text-sm font-medium text-content-muted transition-colors duration-200"
 											>{metric.label}</span
 										>
 									</div>
@@ -1410,7 +1410,7 @@
 						</div>
 					{:else}
 						<div
-							class="text-center text-gray-400 dark:text-gray-500 text-sm py-4 transition-colors duration-200"
+							class="text-center text-content-subtle text-sm py-4 transition-colors duration-200"
 						>
 							No trendline stats to display (trendStats is null or not enough data).
 						</div>
@@ -1421,12 +1421,12 @@
 							<div class="relative">
 								<div
 									bind:this={chartContainer}
-									class="min-h-[220px] max-h-[280px] w-full box-border relative rounded-md bg-white dark:bg-gray-900 m-1 transition-colors duration-200"
+									class="min-h-[220px] max-h-[280px] w-full box-border relative rounded-md bg-surface-raised m-1 transition-colors duration-200"
 									style="contain: layout style;"
 								></div>
 								<div
 									bind:this={tooltip}
-									class="absolute z-50 hidden bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700/60 max-w-xs transition-colors duration-200"
+									class="absolute z-50 hidden bg-surface-raised rounded-lg shadow-xl border border-hairline max-w-xs transition-colors duration-200"
 								></div>
 							</div>
 						{/if}

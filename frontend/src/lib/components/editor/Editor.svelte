@@ -622,10 +622,10 @@
 </script>
 
 <div
-	class="w-80vw z-[9000] col-start-1 col-end-4 flex flex-col bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+	class="w-80vw z-[9000] col-start-1 col-end-4 flex flex-col bg-surface-raised text-content transition-colors duration-200"
 >
 	<div
-		class="bg-white dark:bg-gray-800 transition-colors duration-200"
+		class="bg-surface-raised transition-colors duration-200"
 		class:fixed={isExpanded}
 		class:inset-0={isExpanded}
 		class:z-50={isExpanded}
@@ -641,7 +641,7 @@
 		<!-- details -->
 		{#if !isExpanded}
 			<div
-				class="flex flex-col lg:flex-row lg:items-center h-auto w-full justify-between mb-4 bg-white dark:bg-gray-800 transition-colors duration-200"
+				class="flex flex-col lg:flex-row lg:items-center h-auto w-full justify-between mb-4 bg-surface-raised transition-colors duration-200"
 			>
 				<slot />
 			</div>
@@ -654,7 +654,7 @@
 			<button
 				type="button"
 				on:click={triggerFileInput}
-				class="h-8 border-2 border-gray-300 dark:border-gray-600 rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="h-8 border-2 border-hairline rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-surface-raised text-content-muted transition-colors duration-200"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -711,7 +711,7 @@
 
 			<!-- template selector -->
 			<select
-				class="h-8 border-2 border-gray-300 dark:border-gray-600 rounded-md px-3 bg-white dark:bg-gray-700 text-black dark:text-gray-200 cursor-pointer transition-colors duration-200"
+				class="h-8 border-2 border-hairline rounded-md px-3 bg-surface-raised text-black dark:text-gray-200 cursor-pointer transition-colors duration-200"
 				on:change={(e) => {
 					const t = /** @type {HTMLSelectElement} */ (e.target);
 					if (t.value) {
@@ -736,7 +736,7 @@
 					id="domain-select"
 					bind:value={selectedDomain}
 					on:change={selectPreviewDomain}
-					class="h-8 w-64 border-2 border-gray-300 dark:border-gray-600 rounded-md px-3 bg-white dark:bg-gray-700 text-black dark:text-gray-200 cursor-pointer transition-colors duration-200 text-ellipsis"
+					class="h-8 w-64 border-2 border-hairline rounded-md px-3 bg-surface-raised text-black dark:text-gray-200 cursor-pointer transition-colors duration-200 text-ellipsis"
 				>
 					{#if domainMap.values().length}
 						<option value="" class="italic">Select preview domain...</option>
@@ -797,7 +797,7 @@
 			<button
 				type="button"
 				on:click={openFullPagePreview}
-				class="h-8 border-2 border-gray-300 dark:border-gray-600 rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="h-8 border-2 border-hairline rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-surface-raised text-content-muted transition-colors duration-200"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -819,7 +819,7 @@
 			<button
 				type="button"
 				on:click={() => (isExpanded = !isExpanded)}
-				class="h-8 border-2 border-gray-300 dark:border-gray-600 rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+				class="h-8 border-2 border-hairline rounded-md px-3 text-center cursor-pointer hover:opacity-80 flex items-center justify-center gap-2 bg-surface-raised text-content-muted transition-colors duration-200"
 			>
 				{#if !isExpanded}
 					<!-- Expand icon -->

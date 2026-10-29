@@ -5,10 +5,36 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				phudu: ['Phudu', 'sans-serif'],
-				titilium: ['Titillium Web', 'sans-serif']
+				// Dasenda (Carpent v1.2): Geist para la UI, Instrument Serif para títulos
+				// y IBM Plex Mono para código. phudu/titilium se mantienen como alias
+				// para no tocar las clases existentes; ambos apuntan a Geist.
+				phudu: ['Geist', 'sans-serif'],
+				titilium: ['Geist', 'sans-serif'],
+				sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				serif: ['Instrument Serif', 'Georgia', 'serif'],
+				mono: ['IBM Plex Mono', 'ui-monospace', 'monospace']
 			},
 			colors: {
+				// Tokens semánticos con los mismos nombres que Cassiterion-SOC
+				// (tailwind.config.js de la SOC), para que el shell y los componentes
+				// usen las mismas clases: bg-surface-raised, border-hairline, text-content…
+				brand: 'rgb(var(--pc-accent) / <alpha-value>)',
+				surface: {
+					base: 'rgb(var(--pc-surface-base) / <alpha-value>)',
+					raised: 'rgb(var(--pc-surface-raised) / <alpha-value>)',
+					overlay: 'rgb(var(--pc-surface-overlay) / <alpha-value>)',
+					inset: 'rgb(var(--pc-surface-inset) / <alpha-value>)'
+				},
+				hairline: 'rgb(var(--pc-hairline) / <alpha-value>)',
+				content: {
+					DEFAULT: 'rgb(var(--pc-content-primary) / <alpha-value>)',
+					muted: 'rgb(var(--pc-content-muted) / <alpha-value>)',
+					subtle: 'rgb(var(--pc-content-subtle) / <alpha-value>)'
+				},
+				success: '#22c55e',
+				warning: '#f59e0b',
+				danger: '#f43f5e',
+				info: '#38bdf8',
 				overlay: 'rgb(10 10 12 / <alpha-value>)',
 				// Dasenda surface/content ramp, replacing Tailwind's default gray
 				// scale — the single highest-leverage change for the app's overall

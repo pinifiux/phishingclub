@@ -3,6 +3,6 @@
 	console.log(name);
 </script>
 
-<main class="text-gray-900 dark:text-gray-100 transition-colors duration-200">
+<main class="text-content transition-colors duration-200">
 	Hello {name}!
 </main>

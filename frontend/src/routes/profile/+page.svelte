@@ -359,10 +359,10 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				<!-- Profile Settings -->
 				<div
-					class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 min-h-[300px] flex flex-col transition-colors duration-200"
+					class="bg-surface-raised p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-hairline min-h-[300px] flex flex-col transition-colors duration-200"
 				>
 					<h2
-						class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6 transition-colors duration-200"
+						class="text-xl font-semibold text-content-muted mb-6 transition-colors duration-200"
 					>
 						Account Details
 					</h2>
@@ -404,10 +404,10 @@
 
 				<!-- Password Settings -->
 				<div
-					class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 min-h-[300px] flex flex-col transition-colors duration-200"
+					class="bg-surface-raised p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-hairline min-h-[300px] flex flex-col transition-colors duration-200"
 				>
 					<h2
-						class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6 transition-colors duration-200"
+						class="text-xl font-semibold text-content-muted mb-6 transition-colors duration-200"
 					>
 						Password Settings
 					</h2>
@@ -444,7 +444,7 @@
 						</Form>
 					{:else}
 						<div
-							class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md text-gray-600 dark:text-gray-300"
+							class="bg-surface-overlay p-4 rounded-md text-content-muted"
 						>
 							This account has no password set and signs in via SSO.
 						</div>
@@ -452,10 +452,10 @@
 				</div>
 				<!-- MFA Section -->
 				<div
-					class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 min-h-[300px] flex flex-col transition-colors duration-200"
+					class="bg-surface-raised p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-hairline min-h-[300px] flex flex-col transition-colors duration-200"
 				>
 					<h2
-						class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6 transition-colors duration-200"
+						class="text-xl font-semibold text-content-muted mb-6 transition-colors duration-200"
 					>
 						Multi-Factor Authentication
 					</h2>
@@ -497,7 +497,7 @@
 						{/if}
 					{:else}
 						<div
-							class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md text-gray-600 dark:text-gray-300"
+							class="bg-surface-overlay p-4 rounded-md text-content-muted"
 						>
 							MFA is managed through your SSO provider.
 						</div>
@@ -506,10 +506,10 @@
 
 				<!-- API Key Section -->
 				<div
-					class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 min-h-[300px] flex flex-col transition-colors duration-200"
+					class="bg-surface-raised p-6 rounded-lg shadow-sm dark:shadow-gray-900/50 border border-hairline min-h-[300px] flex flex-col transition-colors duration-200"
 				>
 					<h2
-						class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6 transition-colors duration-200"
+						class="text-xl font-semibold text-content-muted mb-6 transition-colors duration-200"
 					>
 						API Access
 					</h2>
@@ -527,7 +527,7 @@
 								</div>
 							{:else}
 								<div
-									class="bg-gray-50 dark:bg-gray-800 p-4 rounded-md text-gray-600 dark:text-gray-300 mb-4"
+									class="bg-surface-overlay p-4 rounded-md text-content-muted mb-4"
 								>
 									No API key currently exists.
 								</div>
@@ -550,8 +550,8 @@
 				<FormColumns>
 					<FormColumn>
 						<div class="space-y-4 w-full">
-							<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md">
-								<p class="text-sm text-gray-700 dark:text-gray-300">
+							<div class="bg-surface-overlay p-4 rounded-md">
+								<p class="text-sm text-content-muted">
 									Disabling MFA will reduce the security of your account. Please confirm this action
 									by entering a verification code.
 								</p>
@@ -590,21 +590,21 @@
 									<h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">
 										1. Scan QR Code
 									</h3>
-									<p class="text-gray-600 dark:text-gray-300 mb-4">
+									<p class="text-content-muted mb-4">
 										Use your authenticator app (like Google Authenticator or Authy) to scan the QR
 										code below.
 									</p>
-									<div class="flex justify-center bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
+									<div class="flex justify-center bg-surface-overlay p-6 rounded-lg">
 										<img class="max-w-[200px]" id="totp-qr-code" alt="QR code for MFA TOTP setup" />
 									</div>
 								</div>
 
 								<!-- Alternative Method -->
-								<div class="border-gray-200 dark:border-gray-600 pt-4">
-									<h3 class="text-lg font-medium text-gray-700 dark:text-gray-200 mb-2">
+								<div class="border-hairline pt-4">
+									<h3 class="text-lg font-medium text-content-muted mb-2">
 										Can't scan the QR code?
 									</h3>
-									<p class="text-gray-600 dark:text-gray-300 mb-2">
+									<p class="text-content-muted mb-2">
 										Enter this code manually in your authenticator app:
 									</p>
 									<button
@@ -618,11 +618,11 @@
 								</div>
 
 								<!-- Step 2 -->
-								<div class="border-t border-gray-200 dark:border-gray-600 pt-4">
-									<h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">
+								<div class="border-t border-hairline pt-4">
+									<h3 class="text-xl font-semibold text-content-muted mb-2">
 										2. Verify Setup
 									</h3>
-									<p class="text-gray-600 dark:text-gray-300 mb-4">
+									<p class="text-content-muted mb-4">
 										Enter the 6-digit code from your authenticator app:
 									</p>
 									<TextField
@@ -642,10 +642,10 @@
 					<FormColumns>
 						<FormColumn>
 							<div class="space-y-6 w-full">
-								<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md">
+								<div class="bg-surface-overlay p-4 rounded-md">
 									<div class="flex items-center">
 										<div class="w-2 h-2 bg-green-500 rounded-full mr-3" />
-										<span class="text-gray-900 dark:text-white font-medium"
+										<span class="text-content font-medium"
 											>MFA Setup Successful</span
 										>
 									</div>
@@ -655,7 +655,7 @@
 									<h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">
 										Save Your Recovery Code
 									</h3>
-									<p class="text-gray-600 dark:text-gray-300 mb-4">
+									<p class="text-content-muted mb-4">
 										Store this recovery code in a safe place. You'll need it if you lose access to
 										your authenticator app:
 									</p>
@@ -667,9 +667,9 @@
 										<img class="ml-2 w-4 h-4" src="/icon-copy.svg" alt="copy code" />
 									</button>
 
-									<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md mb-6">
-										<p class="font-semibold text-gray-900 dark:text-white mb-2">Important:</p>
-										<p class="text-sm text-gray-700 dark:text-gray-300">
+									<div class="bg-surface-overlay p-4 rounded-md mb-6">
+										<p class="font-semibold text-content mb-2">Important:</p>
+										<p class="text-sm text-content-muted">
 											Without this recovery code, you may lose access to your account if you lose
 											your authenticator device.
 										</p>

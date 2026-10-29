@@ -588,7 +588,7 @@
 							<button
 								type="button"
 								on:click={() => onClickExport(provider.id)}
-								class="w-full px py-1 text-slate-600 dark:text-gray-200 hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
+								class="w-full px py-1 text-content-muted hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
 							>
 								<p class="ml-2 text-left">Read Token</p>
 							</button>
@@ -598,7 +598,7 @@
 								<button
 									type="button"
 									on:click={() => onClickAuthorize(provider.id)}
-									class="w-full px py-1 text-slate-600 dark:text-gray-200 hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
+									class="w-full px py-1 text-content-muted hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
 								>
 									<p class="ml-2 text-left">Authorize</p>
 								</button>
@@ -606,14 +606,14 @@
 								<button
 									type="button"
 									on:click={() => onClickAuthorize(provider.id)}
-									class="w-full px py-1 text-slate-600 dark:text-gray-200 hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
+									class="w-full px py-1 text-content-muted hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
 								>
 									<p class="ml-2 text-left">Re-authorize</p>
 								</button>
 								<button
 									type="button"
 									on:click={() => openRemoveAuthAlert(provider)}
-									class="w-full px py-1 text-slate-600 dark:text-gray-200 hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
+									class="w-full px py-1 text-content-muted hover:bg-highlight-blue dark:hover:bg-highlight-blue/50 hover:text-white cursor-pointer text-left transition-colors duration-200"
 								>
 									<p class="ml-2 text-left">Remove Authorization</p>
 								</button>
@@ -643,7 +643,7 @@
 						Name
 					</TextField>
 					{#if modalMode === 'update' && formValues.isImported}
-						<p class="text-sm text-gray-600 dark:text-gray-400 italic">
+						<p class="text-sm text-content-muted italic">
 							This is an imported provider. Only the name can be edited.
 						</p>
 					{:else}
@@ -713,7 +713,7 @@
 			<div class="mb-4 flex gap-2">
 				<label
 					for="import-file-input"
-					class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md font-medium text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer transition-colors"
+					class="inline-flex items-center px-4 py-2 bg-surface-raised border border-hairline rounded-md font-medium text-sm text-content-muted hover:bg-gray-50 dark:hover:bg-gray-600 cursor-pointer transition-colors"
 				>
 					<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path
@@ -734,7 +734,7 @@
 				/>
 				<button
 					type="button"
-					class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md font-medium text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+					class="inline-flex items-center px-4 py-2 bg-surface-raised border border-hairline rounded-md font-medium text-sm text-content-muted hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
 					on:click={() => {
 						navigator.clipboard.writeText(`[
   {
@@ -765,7 +765,7 @@
 			<div class="mb-4">
 				<label
 					for="import-token-textarea"
-					class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+					class="block text-sm font-medium text-content-muted mb-2"
 				>
 					Token JSON
 				</label>
@@ -785,7 +785,7 @@
     "expires_at": 0
   }
 ]`}
-					class="w-full h-96 px-3 py-2 text-sm font-mono bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-gray-200 resize-none"
+					class="w-full h-96 px-3 py-2 text-sm font-mono bg-surface-raised border border-hairline rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-gray-200 resize-none"
 				></textarea>
 			</div>
 		</div>
@@ -805,21 +805,21 @@
 		<div class="mt-4 min-w-[800px]">
 			<!-- Expiration Info Section -->
 			<div class="mb-4">
-				<h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">Token Information</h3>
-				<p class="text-gray-600 dark:text-gray-400 mt-2">
+				<h3 class="text-xl font-semibold text-content-muted">Token Information</h3>
+				<p class="text-content-muted mt-2">
 					<span class="font-medium">Expires at:</span>
-					<span class="text-pc-darkblue dark:text-white font-semibold ml-2"
+					<span class="text-content font-semibold ml-2"
 						>{exportTokenExpiry}</span
 					>
 				</p>
 			</div>
 
 			<!-- Token JSON Section -->
-			<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md">
+			<div class="bg-surface-overlay p-4 rounded-md">
 				<div class="mb-3">
 					<label
 						for="export-token-textarea"
-						class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+						class="block text-sm font-medium text-content-muted mb-2"
 					>
 						Token JSON
 					</label>
@@ -827,12 +827,12 @@
 						id="export-token-textarea"
 						readonly
 						value={exportTokensText}
-						class="w-full h-96 px-3 py-2 text-sm font-mono bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-gray-200 resize-none"
+						class="w-full h-96 px-3 py-2 text-sm font-mono bg-surface-raised border border-hairline rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-gray-200 resize-none"
 					/>
 				</div>
 				<button
 					type="button"
-					class="text-blue-600 dark:text-white hover:text-blue-800 dark:hover:text-gray-300 font-medium inline-flex items-center gap-2"
+					class="text-brand hover:text-blue-800 dark:hover:text-gray-300 font-medium inline-flex items-center gap-2"
 					on:click={onClickCopyExport}
 				>
 					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -854,7 +854,7 @@
 				</FormColumn>
 			</FormColumns>
 			<div
-				class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-gray-200 dark:border-gray-700 w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+				class="py-4 row-span-2 col-start-1 col-span-3 border-t-2 border-hairline w-full flex flex-row justify-center items-center sm:justify-center md:justify-center lg:justify-end xl:justify-end 2xl:justify-end bg-surface-raised text-content transition-colors duration-200"
 			>
 				<button
 					type="button"

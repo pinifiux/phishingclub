@@ -238,7 +238,7 @@
 				</div>
 			{:else}
 				<div
-					class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200"
+					class="bg-surface-overlay p-3 rounded-md text-sm text-content-muted transition-colors duration-200"
 				>
 					<strong>Global Import:</strong> All templates and assets will be imported as shared resources.
 				</div>
@@ -262,14 +262,14 @@
 
 	<SettingsCard title="Backup">
 		<div class="space-y-4">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Create a backup of database, assets, attachments and certificates.
 			</p>
 
 			{#if availableBackups.length > 0}
-				<div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md transition-colors duration-200">
+				<div class="bg-surface-overlay p-3 rounded-md transition-colors duration-200">
 					<h4
-						class="font-medium text-gray-900 dark:text-gray-100 mb-2 transition-colors duration-200"
+						class="font-medium text-content mb-2 transition-colors duration-200"
 					>
 						Available:
 					</h4>
@@ -278,7 +278,7 @@
 							<div class="flex items-start justify-between gap-4 text-sm">
 								<div class="flex flex-col min-w-0 flex-1">
 									<span
-										class="text-gray-700 dark:text-gray-200 text-xs font-medium transition-colors duration-200"
+										class="text-content-muted text-xs font-medium transition-colors duration-200"
 									>
 										{new Date(backup.createdAt).toLocaleString()}
 									</span>
@@ -300,7 +300,7 @@
 				</div>
 			{:else if !isLoadingBackups}
 				<div
-					class="bg-gray-50 dark:bg-gray-700 p-3 rounded-md text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200"
+					class="bg-surface-overlay p-3 rounded-md text-sm text-content-muted transition-colors duration-200"
 				>
 					No backups available yet.
 				</div>
@@ -315,10 +315,10 @@
 
 	<SettingsCard title="Auto-Prune Recipients">
 		<div class="space-y-4">
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Automatically delete orphaned recipients (not in any group) on a hourly schedule.
 			</p>
-			<p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-200">
+			<p class="text-content-muted text-sm transition-colors duration-200">
 				Applies to shared recipients that do not belong to any company. Each company controls its
 				own pruning from its company settings.
 			</p>
@@ -350,14 +350,14 @@
 {#if isImportResultModalVisible && importResult}
 	<Modal headerText="Import Summary" bind:visible={isImportResultModalVisible}>
 		<div
-			class="p-6 max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+			class="p-6 max-h-[80vh] overflow-y-auto bg-surface-raised text-content transition-colors duration-200"
 			bind:this={importModalContent}
 		>
 			<div class="space-y-6">
 				<div class="grid grid-cols-3 gap-6">
 					<div>
 						<h3
-							class="font-semibold text-gray-900 dark:text-gray-100 mb-2 transition-colors duration-200"
+							class="font-semibold text-content mb-2 transition-colors duration-200"
 						>
 							Assets (Global/Shared)
 						</h3>
@@ -366,14 +366,14 @@
 							<li>Skipped: {importResult.assets_skipped}</li>
 							<li>Errors: {importResult.assets_errors}</li>
 						</ul>
-						<p class="text-xs text-gray-500 dark:text-gray-400 mt-1 transition-colors duration-200">
+						<p class="text-xs text-content-subtle mt-1 transition-colors duration-200">
 							Assets are always imported as global resources
 						</p>
 					</div>
 
 					<div>
 						<h3
-							class="font-semibold text-gray-900 dark:text-gray-100 mb-2 transition-colors duration-200"
+							class="font-semibold text-content mb-2 transition-colors duration-200"
 						>
 							Pages
 						</h3>
@@ -387,7 +387,7 @@
 
 					<div>
 						<h3
-							class="font-semibold text-gray-900 dark:text-gray-100 mb-2 transition-colors duration-200"
+							class="font-semibold text-content mb-2 transition-colors duration-200"
 						>
 							Emails
 						</h3>
@@ -566,9 +566,9 @@
 							<strong>Note:</strong> This is not a substitute for having proper automated and tested backup
 							and recovery plans at the operating system level.
 						</p>
-						<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md">
-							<h3 class="font-semibold text-gray-900 dark:text-white mb-2">What will be backed up:</h3>
-							<ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+						<div class="bg-surface-overlay p-4 rounded-md">
+							<h3 class="font-semibold text-content mb-2">What will be backed up:</h3>
+							<ul class="text-sm text-content-muted space-y-1">
 								<li>• SQLite database (including WAL files)</li>
 								<li>• Asset files</li>
 								<li>• Attachment files</li>
@@ -576,9 +576,9 @@
 							</ul>
 						</div>
 
-						<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-md">
-							<h3 class="font-semibold text-gray-900 dark:text-white mb-2">Important:</h3>
-							<ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+						<div class="bg-surface-overlay p-4 rounded-md">
+							<h3 class="font-semibold text-content mb-2">Important:</h3>
+							<ul class="text-sm text-content-muted space-y-1">
 								<li>• Large databases may take significant time to backup</li>
 								<li>• Operations may be affected during the backup process</li>
 								<li>• Ensure you have sufficient disk space</li>
