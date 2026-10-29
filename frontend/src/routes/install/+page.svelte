@@ -202,7 +202,7 @@
 	</div>
 	<div class="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
 		<p class="text-center text-sm text-content-muted transition-colors duration-200">
-			Complete the setup to get started with Phishing Club
+			Complete the setup to get started with CrainePhish
 		</p>
 
 		<div class="sm:mx-auto sm:max-w-2xl mt-8">
@@ -402,7 +402,7 @@
 								{:else}
 									<div class="text-center py-8 mx-auto max-w-md" id="step-{currentStep}">
 										<h3 class="text-lg font-medium text-content mb-4">
-											Welcome to Phishing Club
+											Welcome to CrainePhish
 										</h3>
 										<div class="space-y-4 text-sm text-content-muted">
 											<p>

@@ -73,7 +73,7 @@
 	const ssoErrorMessage = (reason) => {
 		switch (reason) {
 			case 'not_provisioned':
-				return 'SSO login failed: this account does not exist in Phishing Club. An administrator must create it first.';
+				return 'SSO login failed: this account does not exist in CrainePhish. An administrator must create it first.';
 			case 'email_not_verified':
 				return 'SSO login failed: your email is not verified by the identity provider.';
 			case 'no_email':

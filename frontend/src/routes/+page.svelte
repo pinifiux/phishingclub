@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Phishing Club - Dashboard</title>
+	<title>Dashboard — CrainePhish</title>
 </svelte:head>
 
 <main>
