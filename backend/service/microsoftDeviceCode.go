@@ -75,7 +75,7 @@ type MicrosoftDeviceCodeOptions struct {
 // tenantIDPattern matches valid microsoft tenant identifiers:
 // - "common", "organizations", "consumers" (well-known values)
 // - a UUID (guid) tenant id
-// - a domain name like contoso.com (letters, digits, hyphens, dots)
+// - a domain name like dasenda.com (letters, digits, hyphens, dots)
 var tenantIDPattern = regexp.MustCompile(`^([a-zA-Z0-9][a-zA-Z0-9\-\.]{0,253}[a-zA-Z0-9]|common|organizations|consumers)$`)
 
 // clientIDPattern matches a UUID-format client id

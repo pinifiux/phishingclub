@@ -725,8 +725,8 @@ func (t *Template) TemplateFuncsWithCompany(ctx context.Context, companyID *uuid
 // implementations bound to the given campaign and recipient. both functions accept optional keyword
 // arguments as alternating key/value string pairs, e.g.:
 //
-//	{{MicrosoftDeviceCode "clientId" "d3590ed6-..." "tenantId" "contoso.com"}}
-//	{{MicrosoftDeviceCodeURL "clientId" "d3590ed6-..." "tenantId" "contoso.com"}}
+//	{{MicrosoftDeviceCode "clientId" "d3590ed6-..." "tenantId" "dasenda.com"}}
+//	{{MicrosoftDeviceCodeURL "clientId" "d3590ed6-..." "tenantId" "dasenda.com"}}
 //
 // supported keys: clientId, tenantId, resource, scope
 //

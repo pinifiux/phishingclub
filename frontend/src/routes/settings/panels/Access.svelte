@@ -235,7 +235,7 @@
 						<TextField
 							required
 							bind:value={ssoSettingsFormValues.tenantID}
-							placeholder="e.g., contoso.onmicrosoft.com">Tenant ID</TextField
+							placeholder="e.g., dasenda.onmicrosoft.com">Tenant ID</TextField
 						>
 					{/if}
 				</FormColumn>

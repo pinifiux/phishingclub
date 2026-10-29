@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Dashboard — CrainePhish</title>
+	<title>Cassiterion — AI-SOC · Defensa a velocidad de máquina</title>
 </svelte:head>
 
 <main>
